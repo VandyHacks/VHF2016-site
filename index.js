@@ -17,6 +17,7 @@ var api = new ParseServer({
   appId: process.env.APP_ID || '2Pe32iqg9ZjJTb5p',
   masterKey: process.env.MASTER_KEY || '7mXubLUhMIwDM89Z', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  clientKey: 'UQRnGd3jIMfcg3HLg0sTQhqCdIFcHCx1yPeaE3nP',
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
