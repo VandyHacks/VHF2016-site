@@ -2,6 +2,8 @@
 // compatible API routes.
 
 var express = require('express');
+var cors = require('cors') // add this line below it
+
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
@@ -14,10 +16,13 @@ if (!databaseUri) {
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || '2Pe32iqg9ZjJTb5p',
-  masterKey: process.env.MASTER_KEY || '7mXubLUhMIwDM89Z', //Add your master key here. Keep it secret!
+  appId: process.env.APP_ID || 'DfoMH2OG5zwZ2Fsr0cbcuYkT2NFSrq89zBRIah3H',
+  masterKey: process.env.MASTER_KEY || '7XmGJax9QL9mxoZsu9AFhN51He5CFbPgVyywmINc', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
-  clientKey: 'UQRnGd3jIMfcg3HLg0sTQhqCdIFcHCx1yPeaE3nP',
+  javascriptKey: process.env.JAVASCRIPT_KEY || '',  //** add this line no need to set values, they will be overwritten by heroku config vars
+  restAPIKey: process.env.REST_API_KEY || '', //** add this line
+  dotNetKey: process.env.DOT_NET_KEY || '', //** add this line
+  clientKey: process.env.CLIENT_KEY || '', //** add this line
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
@@ -27,6 +32,7 @@ var api = new ParseServer({
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 var app = express();
+app.use(cors()); // add this line below it
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
