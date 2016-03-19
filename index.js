@@ -2,7 +2,7 @@
 // compatible API routes.
 
 var express = require('express');
-//var cors = require('cors') // add this line below it
+var cors = require('cors') // add this line below it
 
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
@@ -32,7 +32,7 @@ var api = new ParseServer({
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 var app = express();
-//app.use(cors()); // add this line below it
+app.use(cors()); // add this line below it
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
