@@ -22,7 +22,7 @@ var api = new ParseServer({
   javascriptKey: process.env.JAVASCRIPT_KEY || '',  //** add this line no need to set values, they will be overwritten by heroku config vars
   restAPIKey: process.env.REST_API_KEY || '', //** add this line
   dotNetKey: process.env.DOT_NET_KEY || '', //** add this line
-  clientKey: process.env.CLIENT_KEY || '', //** add this line
+  clientKey: process.env.CLIENT_KEY || 'Z5a3HxPPGeb52GU0gYr0Uc1P5Cm8Abb2c1XJDckr', //** add this line
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
