@@ -15,7 +15,7 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://vandyhacks:EpsbyAWGrN4Z3nLc@ds011429.mlab.com:11429/vandyhacks',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'DfoMH2OG5zwZ2Fsr0cbcuYkT2NFSrq89zBRIah3H',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
