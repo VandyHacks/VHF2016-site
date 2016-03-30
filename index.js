@@ -24,6 +24,7 @@ var api = new ParseServer({
   restAPIKey: process.env.REST_API_KEY || '', //** add this line
   dotNetKey: process.env.DOT_NET_KEY || '', //** add this line
   clientKey: process.env.CLIENT_KEY || '', //** add this line
+  facebookAppIds: 
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
@@ -32,13 +33,10 @@ var api = new ParseServer({
 var app = express();
 app.use(cors()); // add this line below it
 
-// Serve static assets from the /public folder
-//app.use('/public', express.static(path.join(__dirname, '/public')));
+console.log(databaseUri);
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || 'https://cryptic-gorge-28973.herokuapp.com/parse/1';
-console.log(process.env.PARSE_MOUNT);
-console.log(mountPath);
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
