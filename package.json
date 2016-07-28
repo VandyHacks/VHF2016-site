@@ -1,0 +1,31 @@
+{
+  "name": "vhf-2016-website",
+  "version": "1.0.0",
+  "description": "My progress on the VHF2016 website!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melvinlu/vhf-2016-website.git"
+  },
+  "author": "Melvin Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melvinlu/vhf-2016-website/issues"
+  },
+  "homepage": "https://github.com/melvinlu/vhf-2016-website#readme",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
