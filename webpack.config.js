@@ -2,11 +2,11 @@ module.exports = {
 	entry: './js/index.js',
 	output: {
 		path: './',
-		filename: 'index.js'
+		filename: 'bundle.js'
 	},
 	devServer: {
 		inline: true,
-		port: 3333
+		port: process.env.PORT || 3333
 	},
 	module: {
 		loaders: [
