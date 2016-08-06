@@ -1,24 +1,25 @@
 {
-  "name": "react-practice",
+  "name": "vhf-2016-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "My progress on the VHF2016 website!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack --config ./webpack.config.js --progress --colors",
     "dev": "webpack-dev-server",
+    "build": "webpack --config ./webpack.config.js --progress --colors",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melvinlu/react-practice.git"
+    "url": "git+https://github.com/melvinlu/vhf-2016-website.git"
   },
-  "author": "",
+  "author": "Melvin Lu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/melvinlu/react-practice/issues"
+    "url": "https://github.com/melvinlu/vhf-2016-website/issues"
   },
-  "homepage": "https://github.com/melvinlu/react-practice#readme",
+  "homepage": "https://github.com/melvinlu/vhf-2016-website#readme",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.10.4",

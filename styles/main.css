@@ -1,3 +1,6 @@
+/* This contains the CSS for all three pages of the website. Thus, there may be some confusion/ambiguity
+   with the class names until this code is refactored and the CSS is split into 3 different files. */
+
 @font-face {
      font-family: 'sofiaprocondblack';
      src: url('SofiaProCondBlack.ttf');
@@ -10,7 +13,7 @@
 
 html {
 	height: 100%;
-    overflow: hidden;
+	overflow-y: hidden;
 }
 
 body {
@@ -36,6 +39,16 @@ p {
 	font-weight: bold;
 	margin: 0 auto 0 auto;
 	line-height: 30px;
+}
+
+/* For horizontal scrolling */
+tr { 
+  vertical-align: top;
+}
+
+/* Fixed width for now... for best results, set to width of window/monitor */
+.page { 
+  width: 1920px;
 }
 
 /* clouds */
@@ -82,9 +95,9 @@ p {
     position: absolute;
 }
 
-#wrapper {
+#grass {
     height: 12%;
-    width: 100%;
+    width: 305%;
     left: 0;
     bottom: 0;
     z-index: -2;
@@ -155,3 +168,79 @@ p {
     height: 40%;
     position: absolute;
 }
+
+/* Page 2 */
+/* Why does left have to be increased by 100%? (width of page), I thought the tables took
+   care of that for us? */
+.description {
+	font-family: 'SofiaProCondLight';
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #1A3244;
+	position: absolute;
+	top: 5%;
+	left: 105%;
+	text-align: center;
+	z-index: 1;
+	width: 25%;
+}
+
+.cloud {
+	z-index: -1;
+	moz-transform: scaleX(-1);
+	o-transform: scaleX(-1);
+	webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	ms-filter: "FlipH";
+	position: absolute;
+	top: 7%;
+	left: 130%;
+}
+
+.p2tree1 {
+	position: absolute;
+	bottom: 12.5%;
+	width: 15%;
+	height: auto;
+	left: 100%;
+}
+
+.p2tree2 {
+	position: absolute;
+	bottom: 3%;
+	width: 4%;
+	height: auto;
+	left: 115%;
+}
+
+.p2tree3 {
+	position: absolute;
+	bottom: 11%;
+	width: 8%;
+	height: auto;
+	left: 118.5%;
+}
+
+.treehouse {
+	height: 110%;
+	width: auto;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 125%;
+	right: 0;
+	bottom: -1%;
+}
+
+.squirrel {
+	position: absolute;
+	bottom: 3%;
+	width: 10%;
+	height: auto;
+	left: 175%;
+}
+
+/* Page 3 */
+
+/* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */

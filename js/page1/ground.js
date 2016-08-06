@@ -6,7 +6,6 @@ export default class Ground extends React.Component {
 		return(
 			<div className="hidden-xs hidden-sm">
 			<img src="styles/kirkland.svg" className="kirkland"/>
-			<div id="wrapper"/>
 			<Tree path="styles/tree1.svg" class="tree1"/>
 			<Tree path="styles/tree2.svg" class="tree2"/>
 			<Tree path="styles/tree3.svg" class="tree3"/>

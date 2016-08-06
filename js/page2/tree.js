@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Cloud extends React.Component {
+export default class Tree extends React.Component {
 	render() {
 		return(
 			<div>
@@ -10,11 +10,7 @@ export default class Cloud extends React.Component {
 	}
 }
 
-Cloud.propTypes = {
+Tree.propTypes = {
 	path: React.PropTypes.string,
 	class: React.PropTypes.string
-}
-
-Cloud.defaultProps = {
-	path: 'styles/cloud.svg'
 }
