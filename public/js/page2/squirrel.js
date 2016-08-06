@@ -4,7 +4,7 @@ export default class Squirrel extends React.Component {
 	render() {
 		return(
 			<div>
-			<img src="public/img/squirrel.svg" className="squirrel hidden-xs hidden-sm"/>
+			<img src="img/squirrel.svg" className="squirrel hidden-xs hidden-sm"/>
 			</div>
 		);
 	}

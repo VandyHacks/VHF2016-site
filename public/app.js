@@ -1,11 +1,11 @@
 const path = require('path'); 
 const express = require('express');
 const webpack = require('webpack'); 
-const config = require('../../webpack.config.js');
+const config = require('../webpack.config.js');
 
 const app = express(); 
 
-const publicPath = path.resolve(__dirname, '../../public');
+const publicPath = path.resolve(__dirname);
 console.log(publicPath)
 app.use(express.static(__dirname)); 
 app.get('/', function response(req, res) {  
