@@ -243,4 +243,59 @@ tr {
 
 /* Page 3 */
 
+.faq {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'sofiaprocondblack';
+    position: absolute;
+    top: 3%;
+    left: 205%;
+    width: 100%;
+}
+
+.faqCloud1 {
+    position: absolute;
+    top: 7%;
+    width: 15%;
+    height: auto;
+    left: 200%;
+}
+
+.faqCloud2 {
+    moz-transform: scaleX(-1);
+    o-transform: scaleX(-1);
+    webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    ms-filter: "FlipH";
+    position: absolute;
+    top: 38%;
+    width: 10%;
+    height: auto;
+    left: 230%;
+}
+
+.faqCloud3 {
+    moz-transform: scaleX(-1);
+    o-transform: scaleX(-1);
+    webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    ms-filter: "FlipH";
+    position: absolute;
+    top: 11%;
+    width: 20%;
+    height: auto;
+    left: 280%;
+}
+
+/* 
+.city {
+    position: absolute;
+    width: 100%;
+    left: 200%;
+    bottom: 0;
+}
+*/
+
 /* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
