@@ -16,5 +16,5 @@ Cloud.propTypes = {
 }
 
 Cloud.defaultProps = {
-	path: 'styles/cloud.svg'
+	path: 'public/img/cloud.svg'
 }

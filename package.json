@@ -2,7 +2,7 @@
   "name": "vhf-2016-website",
   "version": "1.0.0",
   "description": "My progress on the VHF2016 website!",
-  "main": "index.js",
+  "main": "public/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack --config ./webpack.config.js --progress --colors",
