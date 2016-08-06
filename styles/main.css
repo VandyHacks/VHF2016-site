@@ -1,0 +1,157 @@
+@font-face {
+     font-family: 'sofiaprocondblack';
+     src: url('SofiaProCondBlack.ttf');
+}
+
+@font-face {
+     font-family: 'sofiaprocondlight';
+     src: url('SofiaProCondLight.ttf');
+}
+
+html {
+	height: 100%;
+    overflow: hidden;
+}
+
+body {
+	background: #99D6D3;
+    background: -webkit-linear-gradient(#90DBDB, #99D6D3); 
+    background: -o-linear-gradient(#90DBDB, #99D6D3); 
+    background: -moz-linear-gradient(#90DBDB, #99D6D3); 
+    background: linear-gradient(#90DBDB, #99D6D3);
+}
+
+h1 {
+	font-family: 'sofiaprocondblack';
+	text-transform: uppercase;
+	color: #1C3144;
+	font-size: 3em;
+	margin: 10% auto 0 auto;
+}
+
+p {
+	font-family: 'sofiaprocondlight';
+	color: #1C3144;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	line-height: 30px;
+}
+
+/* clouds */
+.cloud1  {
+	top: 5%;
+	left: -5%;
+	max-height: 15%;
+	position: absolute;
+	z-index: -1;
+}
+
+.cloud2 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    top: 8%;
+    right: 2%;
+    max-height: 25%;
+    position: absolute;
+    z-index: -2;
+}
+
+.cloud3 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    left: 25%;
+    top: 30%;
+    max-height: 15%;
+    position: absolute;
+    z-index: -3;
+}
+
+.kirkland {
+    bottom: 0;
+    left: 10%;
+    height: 95%;
+    position: absolute;
+}
+
+#wrapper {
+    height: 12%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+    position: absolute;
+    background-color: #7DCE5C;
+}
+
+/* trees */
+.tree1 {
+    bottom: 5%;
+    left: 3%;
+    height: 35%;
+    position: absolute;
+    z-index: -1;
+}
+
+.tree2 {
+    bottom:3%;
+    left: 10%;
+    height: 23%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree3 {
+    bottom: 5%;
+    left: 12%;
+    height: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+.tree4 {
+    bottom: 3%;
+    left: 18%;
+    height: 20%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree5 {
+    bottom: 2%;
+    left: 24%;
+    height: 20%;
+    position: absolute;
+    z-index: 3;
+}
+
+.tree6 {
+    bottom: 3%;
+    left: 39%;
+    height: 17%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree7 {
+    bottom: 2%;
+    left: 42%;
+    height: 25%;
+    position: absolute;
+    z-index: 1;
+}
+
+.tree8 {
+    bottom: 4%;
+    right: 23%;
+    height: 40%;
+    position: absolute;
+}
