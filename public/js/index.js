@@ -10,6 +10,10 @@ import Ground from './page1/ground.js';
 // Page 2
 import Sky2 from './page2/sky.js';
 import Ground2 from './page2/ground.js';
+// Page 3
+import FAQ from './page3/faq.js';
+import Sky3 from './page3/sky.js';
+import Ground3 from './page3/ground.js';
 
 
 class Page1 extends React.Component {
@@ -40,7 +44,9 @@ class Page3 extends React.Component {
 	render() {
 		return (
 			<div>
-			FAQ Page
+			<FAQ />
+			<Sky3 />
+			<Ground3 />
 			</div>
 		);
 	}
