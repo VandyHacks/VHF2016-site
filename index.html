@@ -2,19 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>VandyHacks 2016</title>
+	<link rel="stylesheet" type="text/css"  href="styles/main.css">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css"  href="styles/main.css">
-
-	<title>VandyHacks 2016</title>
+	<!-- Horizontal Scroll -->
+	<script src="js/jquery.mousewheel.min.js"/></script>
+	<!-- Why isn't this working? -->
+	<script>
+	$(function() {
+	  	$("body").mousewheel(function(evt, chg) {
+	    	this.scrollLeft -= (chg * 50); 
+	    	evt.preventDefault();
+		});
+	});
+	</script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div id="main"/>
-		<script src="index.js"></script>
-	</div>
+	<!-- Horizontal page...is there a React-like component for HTML tables or will this play nicely with ReactJS? -->
+	<table cellspacing="30">
+	<tr>
+	<td>
+	<div id="page1" class="page"/>
+	</td>
+	<td>
+	<div id="page2" class="page"/>
+	</td>
+	<td>
+	<div id="page3" class="page"/>
+	</td>
+	</tr></table>
+	<script src="index.js"></script>
 </body>
 </html>

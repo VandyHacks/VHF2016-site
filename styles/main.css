@@ -1,0 +1,246 @@
+/* This contains the CSS for all three pages of the website. Thus, there may be some confusion/ambiguity
+   with the class names until this code is refactored and the CSS is split into 3 different files. */
+
+@font-face {
+     font-family: 'sofiaprocondblack';
+     src: url('SofiaProCondBlack.ttf');
+}
+
+@font-face {
+     font-family: 'sofiaprocondlight';
+     src: url('SofiaProCondLight.ttf');
+}
+
+html {
+	height: 100%;
+	overflow-y: hidden;
+}
+
+body {
+	background: #99D6D3;
+    background: -webkit-linear-gradient(#90DBDB, #99D6D3); 
+    background: -o-linear-gradient(#90DBDB, #99D6D3); 
+    background: -moz-linear-gradient(#90DBDB, #99D6D3); 
+    background: linear-gradient(#90DBDB, #99D6D3);
+}
+
+h1 {
+	font-family: 'sofiaprocondblack';
+	text-transform: uppercase;
+	color: #1C3144;
+	font-size: 3em;
+	margin: 10% auto 0 auto;
+}
+
+p {
+	font-family: 'sofiaprocondlight';
+	color: #1C3144;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	line-height: 30px;
+}
+
+/* For horizontal scrolling */
+tr { 
+  vertical-align: top;
+}
+
+/* Fixed width for now... for best results, set to width of window/monitor */
+.page { 
+  width: 1920px;
+}
+
+/* clouds */
+.cloud1  {
+	top: 5%;
+	left: -5%;
+	max-height: 15%;
+	position: absolute;
+	z-index: -1;
+}
+
+.cloud2 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    top: 8%;
+    right: 2%;
+    max-height: 25%;
+    position: absolute;
+    z-index: -2;
+}
+
+.cloud3 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    left: 25%;
+    top: 30%;
+    max-height: 15%;
+    position: absolute;
+    z-index: -3;
+}
+
+.kirkland {
+    bottom: 0;
+    left: 10%;
+    height: 95%;
+    position: absolute;
+}
+
+#grass {
+    height: 12%;
+    width: 305%;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+    position: absolute;
+    background-color: #7DCE5C;
+}
+
+/* trees */
+.tree1 {
+    bottom: 5%;
+    left: 3%;
+    height: 35%;
+    position: absolute;
+    z-index: -1;
+}
+
+.tree2 {
+    bottom:3%;
+    left: 10%;
+    height: 23%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree3 {
+    bottom: 5%;
+    left: 12%;
+    height: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+.tree4 {
+    bottom: 3%;
+    left: 18%;
+    height: 20%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree5 {
+    bottom: 2%;
+    left: 24%;
+    height: 20%;
+    position: absolute;
+    z-index: 3;
+}
+
+.tree6 {
+    bottom: 3%;
+    left: 39%;
+    height: 17%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tree7 {
+    bottom: 2%;
+    left: 42%;
+    height: 25%;
+    position: absolute;
+    z-index: 1;
+}
+
+.tree8 {
+    bottom: 4%;
+    right: 23%;
+    height: 40%;
+    position: absolute;
+}
+
+/* Page 2 */
+/* Why does left have to be increased by 100%? (width of page), I thought the tables took
+   care of that for us? */
+.description {
+	font-family: 'SofiaProCondLight';
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #1A3244;
+	position: absolute;
+	top: 5%;
+	left: 105%;
+	text-align: center;
+	z-index: 1;
+	width: 25%;
+}
+
+.cloud {
+	z-index: -1;
+	moz-transform: scaleX(-1);
+	o-transform: scaleX(-1);
+	webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	ms-filter: "FlipH";
+	position: absolute;
+	top: 7%;
+	left: 130%;
+}
+
+.p2tree1 {
+	position: absolute;
+	bottom: 12.5%;
+	width: 15%;
+	height: auto;
+	left: 100%;
+}
+
+.p2tree2 {
+	position: absolute;
+	bottom: 3%;
+	width: 4%;
+	height: auto;
+	left: 115%;
+}
+
+.p2tree3 {
+	position: absolute;
+	bottom: 11%;
+	width: 8%;
+	height: auto;
+	left: 118.5%;
+}
+
+.treehouse {
+	height: 110%;
+	width: auto;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 125%;
+	right: 0;
+	bottom: -1%;
+}
+
+.squirrel {
+	position: absolute;
+	bottom: 3%;
+	width: 10%;
+	height: auto;
+	left: 175%;
+}
+
+/* Page 3 */
+
+/* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
