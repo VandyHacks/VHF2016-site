@@ -24,7 +24,7 @@ class Page1 extends React.Component {
 			<Description />
 			<div id="grass"/>
 			<Ground />
-	        </div>
+			</div>
 		);
 	}
 }

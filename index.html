@@ -11,11 +11,12 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- Horizontal Scroll -->
 	<script src="public/js/jquery.mousewheel.min.js"/></script>
-	<!-- Why isn't this working? -->
 	<script>
 	$(function() {
-	  	$("body").mousewheel(function(evt, chg) {
-	    	this.scrollLeft -= (chg * 50); 
+	  	$("html, body").mousewheel(function(evt, chg) {
+	  		// Workaround since Chrome & FF use different selectors...
+	  		var cur = $("body").scrollLeft() ? $("body").scrollLeft() : $("html").scrollLeft();
+	  		$("html, body").scrollLeft(cur - chg * 65);
 	    	evt.preventDefault();
 		});
 	});
