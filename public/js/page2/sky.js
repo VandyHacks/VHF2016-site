@@ -1,10 +1,11 @@
 import React from 'react';
+import Image from '../image.js';
 
 export default class Sky2 extends React.Component {
 	render() {
 		return(
 			<div>
-			<img src="public/img/cloud.svg" className="cloud hidden-xs hidden-sm"/>
+			<Image path="img/cloud.svg" class="cloud hidden-xs hidden-sm"/>
 			<div className="description">
 				Founded in the spring of 2015, VandyHacks was the first collegiate
 	          	hackathon to call the rockin' city of Nashville, Tennessee home.  Now, we're
