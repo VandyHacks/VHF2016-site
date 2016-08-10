@@ -331,3 +331,18 @@ tr {
         font-size: 1.2em;
     }
 }
+
+/* A one row table might not be the right solution for mobile-friendly responsiveness... */
+@media(max-width: 769px) {
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #grass {
+        display: none;
+    }
+}
