@@ -9,18 +9,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- Horizontal Scroll -->
-	<script src="js/jquery.mousewheel.min.js"/></script>
-	<script>
-	$(function() {
-	  	$("html, body").mousewheel(function(evt, chg) {
-	  		// Workaround since Chrome & FF use different selectors...
-	  		var cur = $("body").scrollLeft() ? $("body").scrollLeft() : $("html").scrollLeft();
-	  		$("html, body").scrollLeft(cur - chg * 65);
-	    	evt.preventDefault();
-		});
-	});
-	</script>
 </head>
 <body>
 	<!-- Horizontal page...is there a React-like component for HTML tables or will this play nicely with ReactJS? -->
