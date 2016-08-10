@@ -12,13 +12,14 @@
 	<!-- Horizontal Scroll -->
 	<script src="js/jquery.mousewheel.min.js"/></script>
 	<script>
-	$(function() {
-	  	$("html, body").mousewheel(function(evt, chg) {
-	  		// Workaround since Chrome & FF use different selectors...
-	  		var cur = $("body").scrollLeft() ? $("body").scrollLeft() : $("html").scrollLeft();
-	  		$("html, body").scrollLeft(cur - chg * 65);
-	    	evt.preventDefault();
-		});
+  $(function() {
+    $("html, body").mousewheel(function(evt, chg) {
+      // Workaround since Chrome & FF use different selectors...
+      var cur = $("body").scrollLeft() ? $("body").scrollLeft() : $("html").scrollLeft();
+      $("html, body").scrollLeft(cur - chg * 10);
+      //this.scrollLeft -= (delta * 50);
+      evt.preventDefault();
+    });
 	});
 	</script>
 </head>
