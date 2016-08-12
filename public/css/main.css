@@ -1,6 +1,15 @@
 /* This contains the CSS for all three pages of the website. Thus, there may be some confusion/ambiguity
    with the class names until this code is refactored and the CSS is split into 3 different files. */
 
+* {
+ margin: 0;
+ padding: 0;
+}
+
+html, body {
+  overflow: hidden;
+}
+
 @font-face {
      font-family: 'sofiaprocondblack';
      src: url('SofiaProCondBlack.ttf');
@@ -11,16 +20,11 @@
      src: url('SofiaProCondLight.ttf');
 }
 
-html {
-    height: 100%;
-    overflow-y: hidden;
-}
-
 body {
 	background: #99D6D3;
-    background: -webkit-linear-gradient(#90DBDB, #99D6D3); 
-    background: -o-linear-gradient(#90DBDB, #99D6D3); 
-    background: -moz-linear-gradient(#90DBDB, #99D6D3); 
+    background: -webkit-linear-gradient(#90DBDB, #99D6D3);
+    background: -o-linear-gradient(#90DBDB, #99D6D3);
+    background: -moz-linear-gradient(#90DBDB, #99D6D3);
     background: linear-gradient(#90DBDB, #99D6D3);
 }
 
