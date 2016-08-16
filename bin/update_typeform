@@ -19,7 +19,7 @@ function connectDB(query){
 		if (err) {
 			console.log(err);
 		};
-		console.log(result.rows[0]);
+		//console.log(result.rows[0]);
 
 		client.end();
 
@@ -62,7 +62,7 @@ function getQueryString(res){
 		if (res.answers[answer] !== ""){
 			var question  = getTableCol(answer);
 			if (map.hasOwnProperty(question)){
-				map[question] += " " + question;
+				map[question] += " " + res.answers[answer];
 			}
 			else {
 				map[question] = res.answers[answer];
