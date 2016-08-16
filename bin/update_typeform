@@ -1,0 +1,29 @@
+#! /app/.heroku/node/bin/node
+function updateDB() {
+	var http = require('http');
+
+	
+	var options = {
+	  host: 'https://api.typeform.com',
+	  path: '/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead'
+	};
+
+	callback = function(response) {
+	  var str = '';
+
+	  //another chunk of data has been recieved, so append it to `str`
+	  response.on('data', function (chunk) {
+	    str += chunk;
+	  });
+
+	  //the whole response has been recieved, so we just print it out here
+	  response.on('end', function () {
+	    console.log(str);
+	  });
+	}
+
+	http.request(options, callback).end();
+	  
+}
+updateDB();
+process.exit();
