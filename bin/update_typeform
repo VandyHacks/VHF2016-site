@@ -1,29 +1,94 @@
 #! /app/.heroku/node/bin/node
+var rp = require('request-promise');
 function updateDB() {
-	var http = require('http');
+	rp('https://api.typeform.com/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead&completed=true')
+    .then(function (htmlString) {
+        // Process html...
+        var data = JSON.parse(htmlString);
+        for (var i =0; i< data.responses.length; i++){
+        	var res = data.responses[i];
+        	for (var answer in res.answers){
+        		if (res.answers[answer] !== ""){
+        			sqlDb(answer, res.answers[answer]);
+        		}
+        	}
+        }
+    })
+    .catch(function (err) {
+        // Crawling failed...
+        console.log(err);
+    });	  
+}
 
-	
-	var options = {
-	  host: 'https://api.typeform.com',
-	  path: '/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead'
-	};
-
-	callback = function(response) {
-	  var str = '';
-
-	  //another chunk of data has been recieved, so append it to `str`
-	  response.on('data', function (chunk) {
-	    str += chunk;
-	  });
-
-	  //the whole response has been recieved, so we just print it out here
-	  response.on('end', function () {
-	    console.log(str);
-	  });
+function getQuestion(id, data){
+	for (var question in data.questions){
+		if (data.questions[question].id === id){
+			return data.questions[question].question;
+		}
 	}
+}
 
-	http.request(options, callback).end();
-	  
+function sqlDb(key,answer){
+	var fieldId = Number(getFieldId(key));
+	switch(fieldId){
+		case 25561789:
+			//name
+			break;
+		case 25562012:
+			//last name
+			break;
+		case 25562055 :
+			//email
+			break;
+     	case 25562418 :
+     	//school
+     		break;
+     	case 25860376 :
+     	//graduation date
+     		break;
+      	case 25860181 :
+      	//major
+      		break;
+     	case 25561791 :
+     	//gender
+     		break;
+     	case 25860662 : 
+     	//food
+     		break;
+     	case 25860615 :
+     	//shirt
+     		break;
+      	case 25561793 :
+      	//travel
+      		break;
+      	case 25860777 : 
+      	//github
+      		break;
+      	case 25860782 :
+      	//linkedin
+      		break;
+      	case 25945030 :
+      	//website
+      		break;
+      	case 27747401 :
+      	//resume
+      		break;
+      	case 25859652 :
+      	//race
+      		break;
+      	case 25561794 :
+      	//needs
+      		break;
+	}
+}
+
+function getFieldId(key){
+	var index = key.indexOf('_');
+	var indexLast = key.indexOf('_', index+1);
+	if (indexLast === -1){
+		return key.substring(index+1);
+	} else {
+		return key.substring(index+1, indexLast);
+	}
 }
 updateDB();
-process.exit();
