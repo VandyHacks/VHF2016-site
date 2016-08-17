@@ -1,6 +1,8 @@
-#! /app/.heroku/node/bin/node
+"use strict";
 var rp = require('request-promise');
 var pg = require('pg');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 function connectDB(query){
 	console.log(query);
@@ -28,7 +30,7 @@ function connectDB(query){
 	return client;
 }
 
-function updateDB() {
+var updateDB =  (function () {
 	rp('https://api.typeform.com/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead&completed=true')
     .then(function (htmlString) {
         // Process html...
@@ -36,15 +38,17 @@ function updateDB() {
         	var data = JSON.parse(htmlString);
 	        for (var i =0; i< data.responses.length; i++){
 	        	var res = data.responses[i];
-	        	var query = getQueryString(res);
-	        	connectDB(query);
+	        	getQueryString(res).then(function(val){
+	        		console.log(val);
+	        		connectDB(val);
+	        	});	        	
 	        }   	
     })
     .catch(function (err) {
         // Crawling failed...
         console.log(err);
     });	  
-}
+});
 
 function getQuestion(id, data){
 	for (var question in data.questions){
@@ -54,28 +58,64 @@ function getQuestion(id, data){
 	}
 }
 
-function getQueryString(res){
+var checkEmail = async (function(email){
+
+	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
+	console.log(query);
+	var client = new pg.Client({
+	  user: "nupylzhssvbiio",
+	  password: "RSX0NMMv8Z61RhlIk00NkglW_2",
+	  database: "dcuivgm09lcce0",
+	  port: 5432,
+	  host: "ec2-54-225-103-29.compute-1.amazonaws.com",
+	  ssl: true
+	});
+
+	client.connect();
+	let check;
+	var query = await(client.query(query, function(err, result){
+		if (err) {
+			console.log(err);
+		};
+		console.log(result.rows[0]);
+		client.end();
+		check =  result.rows[0].exists;
+	}));
+
+	return check;
+});
+
+var getQueryString = async( function (res){
 	var map = new Object();
 	var questions = "";
 	var answers = "";
 	for (var answer in res.answers){
 		if (res.answers[answer] !== ""){
-			var question  = getTableCol(answer);
+			var question  = getTableCol(answer);			
 			if (map.hasOwnProperty(question)){
 				map[question] += " " + res.answers[answer];
 			}
 			else {
 				map[question] = res.answers[answer];
-			}
+			}			
 		}
 	}
-
-	for (var prop in map){
-		questions += ", "+prop;
-		answers += ", '" + map[prop]+"'";
+	var check = await(checkEmail(map.email));
+	if (!check){
+		for (var prop in map){
+			questions += ", "+prop;
+			answers += ", '" + map[prop]+"'";
+		}
+		return new Promise(function(resolve){
+			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+")");
+		}) ; 
+	}else {
+		return new Promise(function(resolve){
+			resolve("select 'already inserted'")
+		});
 	}
-	return "INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+")"; 
-}
+	
+});
 
 function getTableCol(key){
 	
