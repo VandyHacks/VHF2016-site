@@ -6,13 +6,12 @@ var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 
 function connectDB(query){
-	console.log(query);
 	var client = new pg.Client({
-	  user: "nupylzhssvbiio",
-	  password: "RSX0NMMv8Z61RhlIk00NkglW_2",
-	  database: "dcuivgm09lcce0",
+	  user: process.env.DB_USER,
+	  password: process.env.DB_PASSWORD,
+	  database: process.env.DB,
 	  port: 5432,
-	  host: "ec2-54-225-103-29.compute-1.amazonaws.com",
+	  host: process.env.DB_HOST,
 	  ssl: true
 	});
 
@@ -32,7 +31,7 @@ function connectDB(query){
 }
 
 var updateDB =  (function () {
-	rp('https://api.typeform.com/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead&completed=true')
+	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true')
     .then(function (htmlString) {
         // Process html...
        
@@ -64,11 +63,11 @@ var checkEmail = async (function(email){
 	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
 	console.log(query);
 	var client = new pg.Client({
-	  user: "nupylzhssvbiio",
-	  password: "RSX0NMMv8Z61RhlIk00NkglW_2",
-	  database: "dcuivgm09lcce0",
+	  user: process.env.DB_USER,
+	  password: process.env.DB_PASSWORD,
+	  database: process.env.DB,
 	  port: 5432,
-	  host: "ec2-54-225-103-29.compute-1.amazonaws.com",
+	  host: process.env.DB_HOST,
 	  ssl: true
 	});
 
