@@ -1,29 +1,205 @@
 #! /app/.heroku/node/bin/node
-function updateDB() {
-	var http = require('http');
+"use strict";
+var rp = require('request-promise');
+var pg = require('pg');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
-	
-	var options = {
-	  host: 'https://api.typeform.com',
-	  path: '/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead'
-	};
+function connectDB(query){
+	console.log(query);
+	var client = new pg.Client({
+	  user: "nupylzhssvbiio",
+	  password: "RSX0NMMv8Z61RhlIk00NkglW_2",
+	  database: "dcuivgm09lcce0",
+	  port: 5432,
+	  host: "ec2-54-225-103-29.compute-1.amazonaws.com",
+	  ssl: true
+	});
 
-	callback = function(response) {
-	  var str = '';
+	client.connect();
 
-	  //another chunk of data has been recieved, so append it to `str`
-	  response.on('data', function (chunk) {
-	    str += chunk;
-	  });
+	var query = client.query(query, function(err, result){
+		if (err) {
+			console.log(err);
+		};
+		//console.log(result.rows[0]);
 
-	  //the whole response has been recieved, so we just print it out here
-	  response.on('end', function () {
-	    console.log(str);
-	  });
-	}
+		client.end();
 
-	http.request(options, callback).end();
-	  
+	});
+	//query.on('end', client.end.bind(client));
+	return client;
 }
-updateDB();
-process.exit();
+
+var updateDB =  (function () {
+	rp('https://api.typeform.com/v1/form/RqdpnL?key=6060f69c7adc86276a6b70d7ddf7cd0b1779aead&completed=true')
+    .then(function (htmlString) {
+        // Process html...
+       
+        	var data = JSON.parse(htmlString);
+	        for (var i =0; i< data.responses.length; i++){
+	        	var res = data.responses[i];
+	        	getQueryString(res).then(function(val){
+	        		console.log(val);
+	        		connectDB(val);
+	        	});	        	
+	        }   	
+    })
+    .catch(function (err) {
+        // Crawling failed...
+        console.log(err);
+    });	  
+});
+
+function getQuestion(id, data){
+	for (var question in data.questions){
+		if (data.questions[question].id === id){
+			return data.questions[question].question;
+		}
+	}
+}
+
+var checkEmail = async (function(email){
+
+	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
+	console.log(query);
+	var client = new pg.Client({
+	  user: "nupylzhssvbiio",
+	  password: "RSX0NMMv8Z61RhlIk00NkglW_2",
+	  database: "dcuivgm09lcce0",
+	  port: 5432,
+	  host: "ec2-54-225-103-29.compute-1.amazonaws.com",
+	  ssl: true
+	});
+
+	client.connect();
+	let check;
+	var query = await(client.query(query, function(err, result){
+		if (err) {
+			console.log(err);
+		};
+		console.log(result.rows[0]);
+		client.end();
+		check =  result.rows[0].exists;
+	}));
+
+	return check;
+});
+
+var getQueryString = async( function (res){
+	var map = new Object();
+	var questions = "";
+	var answers = "";
+	for (var answer in res.answers){
+		if (res.answers[answer] !== ""){
+			var question  = getTableCol(answer);			
+			if (map.hasOwnProperty(question)){
+				map[question] += " " + res.answers[answer];
+			}
+			else {
+				map[question] = res.answers[answer];
+			}			
+		}
+	}
+	var check = await(checkEmail(map.email));
+	if (!check){
+		for (var prop in map){
+			questions += ", "+prop;
+			answers += ", '" + map[prop]+"'";
+		}
+		return new Promise(function(resolve){
+			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+")");
+		}) ; 
+	}else {
+		return new Promise(function(resolve){
+			resolve("select 'already inserted'")
+		});
+	}
+	
+});
+
+function getTableCol(key){
+	
+	var fieldId = Number(getFieldId(key));
+	switch(fieldId){
+		case 25561789:
+			//name
+			return "first_name";
+			break;
+		case 25562012:
+			//last name
+			return "last_name";
+			break;
+		case 25562055 :
+			//email
+			return "email";
+			break;
+     	case 25562418 :
+     	//school
+     		return "school";
+     		break;
+     	case 25860376 :
+     	//graduation date
+     		return "grad_year";
+     		break;
+      	case 25860181 :
+      	//major
+      		return "major";
+      		break;
+     	case 25561791 :
+     	//gender
+     		return "gender";
+     		break;
+     	case 25860662 : 
+     	//food
+     		return "food_restriction";
+     		break;
+     	case 25860615 :
+     	//shirt
+     		return "shirt_size";
+     		break;
+      	case 25561793 :
+      	//travel
+      		return "money";
+      		break;
+      	case 25860777 : 
+      	//github
+      		return "github";
+      		break;
+      	case 25860782 :
+      	//linkedin
+      		return "linkedin";
+      		break;
+      	case 25945030 :
+      	//website
+      		return "website";
+      		break;
+      	case 27747401 :
+      	//resume
+      		return "resume";
+      		break;
+      	case 25859652 :
+      	//race
+      		return "race";
+      		break;
+      	case 25561794 :
+      	//needs
+      		return "special_needs";
+      		break;
+	}
+}
+
+function getFieldId(key){
+	var index = key.indexOf('_');
+	var indexLast = key.indexOf('_', index+1);
+	if (indexLast === -1){
+		return key.substring(index+1);
+	} else {
+		return key.substring(index+1, indexLast);
+	}
+}
+
+var exitPromise = new Promise(updateDB);
+exitPromise.then(function(){
+	process.exit();
+});
