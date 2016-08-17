@@ -101,6 +101,7 @@ var getQueryString = async( function (res){
 			}			
 		}
 	}
+
 	var check = await(checkEmail(map.email));
 	if (!check){
 		for (var prop in map){
@@ -108,6 +109,10 @@ var getQueryString = async( function (res){
 			answers += ", '" + map[prop]+"'";
 		}
 		return new Promise(function(resolve){
+			//add qr code
+			var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+map.email;
+			console.log("INSERT INTO HACKER (qr_code) values ("+url+")");
+			connectDB("INSERT INTO HACKER (qr_code) values ('"+url+"')");
 			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+")");
 		}) ; 
 	}else {
