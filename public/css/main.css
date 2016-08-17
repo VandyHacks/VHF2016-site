@@ -8,6 +8,7 @@
 
 html, body {
   overflow: hidden;
+  height: 100%;
 }
 
 @font-face {
@@ -46,11 +47,12 @@ p {
 }
 
 /* For horizontal scrolling */
-tr { 
+tr {
   vertical-align: top;
 }
 
-.page { 
+/* Fixed width for now... for best results, set to width of window/monitor */
+.page {
   width: 100vw;
 }
 
@@ -359,6 +361,86 @@ tr {
     width: 25%;
     height: auto;
 }
+
+.fa-arrow-circle-o-right, .fa-arrow-circle-o-left {
+  bottom: 1vw;
+  cursor: pointer;
+  position: absolute;
+}
+
+.fa-arrow-circle-o-left {
+  animation: bounce-left 2s infinite;
+  -webkit-animation: bounce-left 2s infinite;
+  -moz-animation: bounce-left 2s infinite;
+  -o-animation: bounce-left 2s infinite;
+}
+
+.fa-arrow-circle-o-right {
+  animation: bounce-right 2s infinite;
+  -webkit-animation: bounce-right 2s infinite;
+  -moz-animation: bounce-right 2s infinite;
+  -o-animation: bounce-right 2s infinite;
+}
+
+@-webkit-keyframes bounce-left {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateX(0);}
+ 40% {-webkit-transform: translateX(10px);}
+ 60% {-webkit-transform: translateX(5px);}
+}
+@-moz-keyframes bounce-left {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateX(0);}
+ 40% {-moz-transform: translateX(10px);}
+ 60% {-moz-transform: translateX(5px);}
+}
+@-o-keyframes bounce-left {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateX(0);}
+ 40% {-o-transform: translateX(10px);}
+ 60% {-o-transform: translateX(5px);}
+}
+@keyframes bounce-left {
+ 0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+ 40% {transform: translateX(10px);}
+ 60% {transform: translateX(5px);}
+}
+
+@-webkit-keyframes bounce-right {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateX(0);}
+ 40% {-webkit-transform: translateX(-10px);}
+ 60% {-webkit-transform: translateX(-5px);}
+}
+@-moz-keyframes bounce-right {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateX(0);}
+ 40% {-moz-transform: translateX(-10px);}
+ 60% {-moz-transform: translateX(-5px);}
+}
+@-o-keyframes bounce-right {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateX(0);}
+ 40% {-o-transform: translateX(-10px);}
+ 60% {-o-transform: translateX(-5px);}
+}
+@keyframes bounce-right {
+ 0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+ 40% {transform: translateX(-10px);}
+ 60% {transform: translateX(-5px);}
+}
+
+#page1-arrow-right {
+  right: 1vw;
+}
+
+#page2-arrow-left {
+  left: 101vw;
+}
+
+#page2-arrow-right {
+  left: 192vw;
+}
+
+#page3-arrow-left {
+  left: 201vw;
+}
+
+/* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
 
 @media(max-width: 1680px) {
     p {

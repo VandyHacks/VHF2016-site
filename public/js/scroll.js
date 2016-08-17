@@ -35,29 +35,72 @@ function throttle(func, wait, options) {
   };
 };
 
-const cb = (e) => {
-  const oldPage = currentPage;
+const scroll = {
+  init() {
+    currentPage = 0;
+    $(() => {
+      // 'html' only works on firefox.
+      let scrollLeft = $('body').scrollLeft() || $('html').scrollLeft();
 
-  if (e.deltaY > 0 || e.deltaX < 0) { // page left
-    currentPage = Math.max(currentPage - 1, 0);
-  } else if (e.deltaY < 0 || e.deltaX > 0) { // page right
-    currentPage = Math.min(currentPage + 1, NUM_PAGES - 1);
+      // Ensure we recognize the starting page. It's not always 0! (browser caches the scroll position)
+      currentPage = Math.round(scrollLeft / $(window).width())
+
+      // Bind the mouse events to scroll the pages
+      $('html, body').on(
+        'scroll touchmove mousewheel',
+        throttle(scroll.onScroll, ANIMATION_TIME * 2, {trailing: false})
+      );
+
+      // Bind the mouse events to scroll the pages
+      $(window).resize(
+        scroll.scroll
+      );
+    });
+  },
+
+  onScroll(e) {
+    const oldPage = currentPage;
+
+    if (e.deltaY > 0 || e.deltaX < 0) { // page left
+      currentPage = Math.max(currentPage - 1, 0);
+    } else if (e.deltaY < 0 || e.deltaX > 0) { // page right
+      currentPage = Math.min(currentPage + 1, NUM_PAGES - 1);
+    }
+
+    // exit early if on an edge of the window
+    if (oldPage === currentPage) {
+      return;
+    }
+
+    scroll.scroll();
+
+    e.preventDefault();
+    return false;
+  },
+
+  scroll(instant) {
+    const TIME = instant ? 0 : ANIMATION_TIME;
+
+    $('html, body').animate({
+      scrollLeft: currentPage * $(window).width(),
+    }, TIME, 'linear');
+  },
+
+  scrollLeft() {
+    if (currentPage === 0) {
+      return;
+    }
+    currentPage--;
+    scroll.scroll();
+  },
+
+  scrollRight() {
+    if (currentPage === NUM_PAGES - 1) {
+      return;
+    }
+    currentPage++;
+    scroll.scroll();
   }
+};
 
-  // exit early if on an edge of the window
-  if (oldPage === currentPage) {
-    return;
-  }
-
-  $('html, body').animate({
-    scrollLeft: currentPage * $(window).width(),
-  }, ANIMATION_TIME, 'linear');
-
-  e.preventDefault();
-  return false;
-}
-
-$('html, body').on(
-  'scroll touchmove mousewheel',
-  throttle(cb, ANIMATION_TIME * 2, {trailing: false})
-);
+export default scroll;
