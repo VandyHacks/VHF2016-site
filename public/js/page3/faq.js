@@ -19,6 +19,8 @@ export default class FAQ extends React.Component {
 	}
 }
 
+/*
 FAQ.propTypes = {
-  faqs: React.PropTypes.Array.isRequired,
+  faqs: React.PropTypes.Array
 }
+*/
