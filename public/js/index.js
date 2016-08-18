@@ -14,6 +14,8 @@ import Ground2 from './page2/ground.js';
 import FAQ from './page3/faq.js';
 import Sky3 from './page3/sky.js';
 import Ground3 from './page3/ground.js';
+// Page 4
+import Sponsors from './page4/sponsors.js';
 
 
 class Page1 extends React.Component {
@@ -52,8 +54,19 @@ class Page3 extends React.Component {
 	}
 }
 
+class Page4 extends React.Component {
+	render() {
+		return (
+			<div>
+			<Sponsors />
+			</div>
+		);
+	}
+}
+
 /* Is there a way to compress this to one render call? */
 ReactDOM.render(<Page1 />, document.getElementById('page1'));
 ReactDOM.render(<Page2 />, document.getElementById('page2'));
 ReactDOM.render(<Page3 />, document.getElementById('page3'));
+ReactDOM.render(<Page4 />, document.getElementById('page4'));
 

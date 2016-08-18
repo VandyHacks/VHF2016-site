@@ -46,9 +46,8 @@ tr {
   vertical-align: top;
 }
 
-/* Fixed width for now... for best results, set to width of window/monitor */
 .page { 
-  width: 100vs;
+  width: 100vw;
 }
 
 /* clouds */
@@ -98,7 +97,7 @@ tr {
 
 #grass {
     height: 12%;
-    width: 305%;
+    width: 405%;
     left: 0;
     bottom: 0;
     z-index: -2;
@@ -245,12 +244,12 @@ tr {
 
 .faq {
     font-size: 3em;
-    font-weight: bold;
     font-family: 'sofiaprocondblack';
     position: absolute;
     top: 3%;
     left: 205%;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .faqCloud1 {
@@ -320,7 +319,42 @@ tr {
     height: auto;
 }
 
-/* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
+/* Page 4 */
+
+.sponsors {
+    font-size: 3em;
+    font-family: 'sofiaprocondblack';
+    position: absolute;
+    top: 5%;
+    left: 308%;
+    width: 97%;
+    text-transform: uppercase;
+}
+
+.sponsorTrees1 {
+    position: absolute;
+    left: 307%;
+    bottom: 5%;
+    width: 22%;
+    height: auto;
+}
+
+
+.sponsorTrees2 {
+    position: absolute;
+    left: 377%;
+    bottom: 5%;
+    width: 22%;
+    height: auto;
+}
+
+.squirrelLaptop {
+    position: absolute;
+    left: 345%;
+    bottom: 5%;
+    width: 25%;
+    height: auto;
+}
 
 @media(max-width: 1680px) {
     p {
@@ -332,7 +366,6 @@ tr {
     }
 }
 
-/* A one row table might not be the right solution for mobile-friendly responsiveness... */
 @media(max-width: 769px) {
     h1 {
         text-align: center;

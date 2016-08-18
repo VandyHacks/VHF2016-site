@@ -13,7 +13,7 @@ export default class FAQ extends React.Component {
     // Render the questions in the return method
 		return(
 			<div>
-			<p className="faq">FREQUENTLY ASKED QUESTIONS:</p>
+			<p className="faq">Frequently Asked Questions:</p>
 			</div>
 		);
 	}
