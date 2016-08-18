@@ -111,9 +111,8 @@ var getQueryString = async( function (res){
 		return new Promise(function(resolve){
 			//add qr code
 			var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+map.email;
-			console.log("INSERT INTO HACKER (qr_code) values ("+url+")");
-			connectDB("INSERT INTO HACKER (qr_code) values ('"+url+"')");
-			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+")");
+			console.log("UPDATE HACKER SET qr_code ='"+url+"' WHERE email = "+map.email);
+			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+");"+" UPDATE HACKER SET qr_code ='"+url+"' WHERE email = '"+map.email+"'");
 		}) ; 
 	}else {
 		return new Promise(function(resolve){
