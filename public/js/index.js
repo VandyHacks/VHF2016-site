@@ -64,6 +64,9 @@ class Page3 extends React.Component {
       <i className="fa fa-fw fa-arrow-circle-o-left fa-5x"
         id="page3-arrow-left"
         onClick={scroll.scrollLeft}></i>
+      <i className="fa fa-fw fa-arrow-circle-o-right fa-5x"
+        id="page3-arrow-right"
+        onClick={scroll.scrollRight}></i>
 			</div>
 		);
 	}
@@ -74,6 +77,9 @@ class Page4 extends React.Component {
 		return (
 			<div>
 			<Sponsors />
+      <i className="fa fa-fw fa-arrow-circle-o-left fa-5x"
+        id="page4-arrow-left"
+        onClick={scroll.scrollLeft}></i>
 			</div>
 		);
 	}

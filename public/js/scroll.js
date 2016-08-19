@@ -1,4 +1,4 @@
-const NUM_PAGES = 3;
+const NUM_PAGES = 4;
 const ANIMATION_TIME = 700;
 let currentPage = 0;
 

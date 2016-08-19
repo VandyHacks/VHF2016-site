@@ -366,6 +366,7 @@ tr {
   bottom: 1vw;
   cursor: pointer;
   position: absolute;
+  width: 90px;
 }
 
 .fa-arrow-circle-o-left {
@@ -433,11 +434,19 @@ tr {
 }
 
 #page2-arrow-right {
-  left: 192vw;
+  left: calc(199vw - 90px);
 }
 
 #page3-arrow-left {
   left: 201vw;
+}
+
+#page3-arrow-right {
+  left: calc(299vw - 90px);
+}
+
+#page4-arrow-left {
+  left: 301vw;
 }
 
 /* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
