@@ -106,8 +106,10 @@ var getQueryString = async( function (res){
 	var check = await(checkEmail(map.email));
 	if (!check){
 		for (var prop in map){
-			questions += ", "+prop;
-			answers += ", '" + map[prop]+"'";
+			if (prop !== "money"){
+				questions += ", "+prop;
+				answers += ", '" + map[prop]+"'";
+			}
 		}
 		return new Promise(function(resolve){
 			//add qr code
