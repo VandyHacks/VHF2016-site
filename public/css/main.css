@@ -51,7 +51,6 @@ tr {
   vertical-align: top;
 }
 
-/* Fixed width for now... for best results, set to width of window/monitor */
 .page {
   width: 100vw;
 }
@@ -175,8 +174,6 @@ tr {
 }
 
 /* Page 2 */
-/* Why does left have to be increased by 100%? (width of page), I thought the tables took
-   care of that for us? */
 .description {
 	font-family: 'SofiaProCondLight';
 	font-size: 1.5em;
@@ -448,8 +445,6 @@ tr {
 #page4-arrow-left {
   left: 301vw;
 }
-
-/* NEED TO IMPLEMENT: RESPONSIVENESS...MEDIA QUERIES/BOOTSTRAP? */
 
 @media(max-width: 1680px) {
     p {
