@@ -1,6 +1,3 @@
-// Class names of the 3 different pages that overlap should be renamed in order to
-// avoid confusion and improve readability (Ex. 'Sky1' & 'Sky2')
-
 require('font-awesome/css/font-awesome.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -19,12 +16,14 @@ import Ground3 from './page3/ground.js';
 import Sponsors from './page4/sponsors.js';
 // Scrolling logic
 import scroll from './scroll.js';
-scroll.init();
+if ($(window).width() > 768) {
+	scroll.init();
+}
 
 class Navbar extends React.Component {
-  render () {
+  render() {
     return (
-      <div className="">
+      <div>
         <span className="navbar-logo navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 0)}>VH</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 1)}>About</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 2)}>FAQ</span>
@@ -43,9 +42,9 @@ class Page1 extends React.Component {
 			<Description />
 			<div id="grass"/>
 			<Ground />
-      <i className="fa fa-fw fa-arrow-circle-o-right fa-5x"
-        id="page1-arrow-right"
-        onClick={scroll.scrollRight}></i>
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+				id="page1-arrow-right"
+				onClick={scroll.scrollRight}></i>
 			</div>
 		);
 	}
@@ -57,12 +56,12 @@ class Page2 extends React.Component {
 			<div>
 			<Sky2 />
 			<Ground2 />
-      <i className="fa fa-fw fa-arrow-circle-o-left fa-5x"
-        id="page2-arrow-left"
-        onClick={scroll.scrollLeft}></i>
-      <i className="fa fa-fw fa-arrow-circle-o-right fa-5x"
-        id="page2-arrow-right"
-        onClick={scroll.scrollRight}></i>
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+				id="page2-arrow-left"
+				onClick={scroll.scrollLeft}></i>
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+				id="page2-arrow-right"
+				onClick={scroll.scrollRight}></i>
 			</div>
 		);
 	}
@@ -75,12 +74,12 @@ class Page3 extends React.Component {
 			<FAQ />
 			<Sky3 />
 			<Ground3 />
-      <i className="fa fa-fw fa-arrow-circle-o-left fa-5x"
-        id="page3-arrow-left"
-        onClick={scroll.scrollLeft}></i>
-      <i className="fa fa-fw fa-arrow-circle-o-right fa-5x"
-        id="page3-arrow-right"
-        onClick={scroll.scrollRight}></i>
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+				id="page3-arrow-left"
+        		onClick={scroll.scrollLeft}></i>
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+        		id="page3-arrow-right"
+        		onClick={scroll.scrollRight}></i>
 			</div>
 		);
 	}
@@ -91,15 +90,14 @@ class Page4 extends React.Component {
 		return (
 			<div>
 			<Sponsors />
-      <i className="fa fa-fw fa-arrow-circle-o-left fa-5x"
-        id="page4-arrow-left"
-        onClick={scroll.scrollLeft}></i>
+      		<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+        		id="page4-arrow-left"
+        		onClick={scroll.scrollLeft}></i>
 			</div>
 		);
 	}
 }
 
-/* Is there a way to compress this to one render call? */
 ReactDOM.render(<Navbar />, document.getElementById('navbar'));
 ReactDOM.render(<Page1 />, document.getElementById('page1'));
 ReactDOM.render(<Page2 />, document.getElementById('page2'));
