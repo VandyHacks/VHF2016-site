@@ -12,6 +12,7 @@ import Ground2 from './page2/ground.js';
 import FAQ from './page3/faq.js';
 import Sky3 from './page3/sky.js';
 import Ground3 from './page3/ground.js';
+import Constants from './constants.js';
 // Page 4
 import Sponsors from './page4/sponsors.js';
 // Scrolling logic
@@ -71,7 +72,7 @@ class Page3 extends React.Component {
 	render() {
 		return (
 			<div>
-			<FAQ />
+			<FAQ faqs={Constants.FAQ} />
 			<Sky3 />
 			<Ground3 />
 			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
