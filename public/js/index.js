@@ -24,11 +24,12 @@ scroll.init();
 class Navbar extends React.Component {
   render () {
     return (
-      <div className="col-md-5 col-md-offset-5 text-center">
-        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 0)}>Home</span>
+      <div className="">
+        <span className="navbar-logo navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 0)}>VH</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 1)}>About</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 2)}>FAQ</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 3)}>Sponsors</span>
+				<span className="navbar-apply">Apply</span>
       </div>
     );
   }
