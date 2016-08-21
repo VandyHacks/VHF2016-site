@@ -100,6 +100,11 @@ const scroll = {
     }
     currentPage++;
     scroll.scroll();
+  },
+
+  scrollToPage(page) {
+    currentPage = page;
+    scroll.scroll(true);
   }
 };
 
