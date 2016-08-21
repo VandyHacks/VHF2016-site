@@ -478,6 +478,9 @@ tr {
 }
 
 @media(max-width: 769px) {
+    html, body {
+    }
+
     h1 {
         text-align: center;
     }
@@ -489,4 +492,10 @@ tr {
     #grass {
         display: none;
     }
+
+    /*
+    .description, .treehouse, .squirrel {
+        position: relative;
+    }
+    */
 }
