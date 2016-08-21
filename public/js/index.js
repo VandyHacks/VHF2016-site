@@ -22,7 +22,7 @@ import scroll from './scroll.js';
 scroll.init();
 
 class Navbar extends React.Component {
-  render () {
+  render() {
     return (
       <div className="col-md-5 col-md-offset-5 text-center">
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 0)}>Home</span>
@@ -98,7 +98,6 @@ class Page4 extends React.Component {
 	}
 }
 
-/* Is there a way to compress this to one render call? */
 ReactDOM.render(<Navbar />, document.getElementById('navbar'));
 ReactDOM.render(<Page1 />, document.getElementById('page1'));
 ReactDOM.render(<Page2 />, document.getElementById('page2'));

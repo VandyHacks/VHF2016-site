@@ -1,6 +1,3 @@
-/* This contains the CSS for all three pages of the website. Thus, there may be some confusion/ambiguity
-   with the class names until this code is refactored and the CSS is split into 3 different files. */
-
 * {
  margin: 0;
  padding: 0;
@@ -55,6 +52,7 @@ tr {
   width: 100vw;
 }
 
+/* Page 1 */
 /* clouds */
 .cloud1  {
 	top: 5%;
@@ -249,7 +247,7 @@ tr {
     font-size: 3em;
     font-family: 'sofiaprocondblack';
     position: absolute;
-    top: 3%;
+    top: 5%;
     left: 205%;
     width: 100%;
     text-transform: uppercase;
@@ -294,7 +292,7 @@ tr {
 .city {
     position: absolute;
     width: 100%;
-    left: 205%;
+    left: 200%;
     bottom: 12%;
 }
 
@@ -359,6 +357,28 @@ tr {
     height: auto;
 }
 
+/* Navbar */
+#navbar {
+  position: fixed;
+  width: 420px;
+  z-index: 1000;
+}
+
+.navbar-btn {
+  border: 1px solid black;
+  width:80px;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.navbar-btn:hover {
+  cursor: pointer;
+  background-color: #bbbbbb;
+}
+
+/* Arrows */
 .fa-arrow-circle-o-right, .fa-arrow-circle-o-left {
   bottom: 1vw;
   cursor: pointer;
@@ -378,26 +398,6 @@ tr {
   -webkit-animation: bounce-right 2s infinite;
   -moz-animation: bounce-right 2s infinite;
   -o-animation: bounce-right 2s infinite;
-}
-
-#navbar {
-  position: fixed;
-  width: 420px;
-  z-index: 1000;
-}
-
-.navbar-btn {
-  border: 1px solid black;
-  width:80px;
-  border-radius: 2px;
-  padding: 8px;
-  margin: 5px;
-  margin-top: 10px;
-}
-
-.navbar-btn:hover {
-  cursor: pointer;
-  background-color: #bbbbbb;
 }
 
 @-webkit-keyframes bounce-left {
@@ -466,6 +466,7 @@ tr {
   left: 301vw;
 }
 
+/* Responsiveness */
 @media(max-width: 1680px) {
     p {
         font-size: 1.2em;
