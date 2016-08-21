@@ -479,6 +479,8 @@ tr {
 
 @media(max-width: 769px) {
     html, body {
+        height: 400vh;
+        overflow: visible;
     }
 
     h1 {
@@ -487,15 +489,47 @@ tr {
 
     p {
         text-align: center;
+        height: 100vh;
     }
 
     #grass {
         display: none;
     }
 
-    /*
-    .description, .treehouse, .squirrel {
-        position: relative;
+    .description, .treehouse, .squirrel, .faq, .sponsors, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop {
+        position: static;
     }
-    */
+
+    .treehouse {
+        height: auto;
+        width: 100%;
+    }
+
+    .description {
+        width: 95%;
+        top: 1.5%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2em;
+    }
+
+    .faq {
+        margin-top: 10%;
+        height: 80vh;
+        font-size: 2em;
+    }
+
+    .sponsors {
+        margin-top: 10%;
+        height: 80vh;
+        font-size: 2em;
+    }
+}
+
+@media(max-width: 350px) {
+    .description {
+        font-size: 1em;
+    }
 }

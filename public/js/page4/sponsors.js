@@ -5,9 +5,9 @@ export default class Sponsors extends React.Component {
 		return(
 			<div>
 			<p className="sponsors">Sponsors:</p>
-			<img src="img/trees3.svg" className="sponsorTrees1"/>
-			<img src="img/trees4.svg" className="sponsorTrees2"/>
-			<img src="img/squirrel_and_laptop.svg" className="squirrelLaptop"/>
+			<img src="img/trees3.svg" className="sponsorTrees1 hidden-xs hidden-sm"/>
+			<img src="img/trees4.svg" className="sponsorTrees2 hidden-xs hidden-sm"/>
+			<img src="img/squirrel_and_laptop.svg" className="squirrelLaptop hidden-xs hidden-sm"/>
 			</div>
 		);
 	}

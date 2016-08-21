@@ -16,7 +16,9 @@ import Ground3 from './page3/ground.js';
 import Sponsors from './page4/sponsors.js';
 // Scrolling logic
 import scroll from './scroll.js';
-scroll.init();
+if ($(window).width() > 768) {
+	scroll.init();
+}
 
 class Navbar extends React.Component {
   render() {
