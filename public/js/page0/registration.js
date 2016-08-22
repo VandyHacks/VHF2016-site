@@ -5,9 +5,7 @@ export default class Registration extends React.Component {
 	render() {
 		return(
 			<div className="hidden-xs hidden-sm">
-        <Image class="cloud0-1" path="img/cloud.svg"/>
         <Image class="logo" path="img/VHLogo.svg"/>
-        <Image class="cloud0-2" path="img/cloud.svg"/>
         <h1 className="vandy-heading">VANDY<span className="trademark">&reg;</span>HACKS III</h1>
         <h2 className="hackathon-date">November 11 - 13 | Vanderbilt University </h2><br />
         <div id = 'sub_text'></div>
@@ -24,7 +22,6 @@ export default class Registration extends React.Component {
           <li><a className="soc-facebook" href="https://www.facebook.com/vandyhacks" target="_blank"></a></li>
           <li><a className="soc-twitter" href="https://twitter.com/vandyhacks" target="_blank" ></a></li>
         </ul><br />
-        <Image class="cloud0-3" path="img/cloud.svg"/>
         <Image class="tree0-1" path ="img/Tree.svg"/>
         <Image class="tree0-2" path="img/tree2.svg"/>
         <Image class="tree0-3" path="img/Tree.svg"/>

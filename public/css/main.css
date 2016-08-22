@@ -34,6 +34,228 @@ h1 {
 	margin: 10% auto 0 auto;
 }
 
+/* moving clouds */
+@keyframes animate-cloud0-1 {
+  0% {left: -15%;}
+  50% {left: 245%;}
+  100% {left: 500%;}
+}
+
+.cloud0-1 {
+  position: absolute;
+  left: 5%;
+  width: 15%;
+  top: 3%;
+  z-index: -3;
+  animation-name: animate-cloud0-1;
+  animation-duration: 112s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud0-2 {
+  0% {right: 1%;}
+  50% {right: 245%;}
+  100% {right: 500%;}
+}
+
+.cloud0-2 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  position: absolute;
+  right: 1%;
+  width: 20%;
+  top: 15%;
+  z-index: -3;
+  animation-name: animate-cloud0-2;
+  animation-duration: 180s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud0-3 {
+  0% {left: 22%;}
+  50% {left: 300%;}
+  100% {left: 7%;}
+}
+
+.cloud0-3 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  position: absolute;
+  left: 22%;
+  width: 15%;
+  top: 35%;
+  z-index: -3;
+  animation-name: animate-cloud0-3;
+  animation-duration: 105s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud1 {
+  0% {right: 305%;}
+  50% {right: 55%;}
+  100% {right: 290%;}
+}
+
+.cloud1  {
+	top: 5%;
+	left: 195%;
+	max-height: 15%;
+	position: absolute;
+	z-index: -1;
+  animation-name: animate-cloud1;
+  animation-duration: 150s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud2 {
+  0% {right: 398%;}
+  50% {right: 148%;}
+  100% {right: 383%;}
+}
+
+.cloud2 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    top: 8%;
+    right: 398%;
+    max-height: 25%;
+    position: absolute;
+    z-index: -2;
+  animation-name: animate-cloud2;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud3 {
+  0% {left: 125%;}
+  50% {left: 375%;}
+  100% {left: 110%;}
+}
+
+.cloud3 {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+    -ms-filter: "FlipH";
+    left: 125%;
+    top: 30%;
+    max-height: 15%;
+    position: absolute;
+    z-index: -3;
+  animation-name: animate-cloud3;
+  animation-duration: 157s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-cloud2-0 {
+  0% {left: 230%;}
+  50% {left: 375%;}
+  100% {left: 215%;}
+}
+
+.cloud2-0 {
+	z-index: -1;
+	moz-transform: scaleX(-1);
+	o-transform: scaleX(-1);
+	webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	ms-filter: "FlipH";
+	position: absolute;
+	top: 7%;
+	left: 230%;
+  animation-name: animate-cloud2-0;
+  animation-duration: 134s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-faqCloud1 {
+  0% {left: 300%;}
+  50% {left: 50%;}
+  100% {left: 275%;}
+}
+
+.faqCloud1 {
+  position: absolute;
+  top: 7%;
+  width: 15%;
+  height: auto;
+  left: 300%;
+  animation-name: animate-faqCloud1;
+  animation-duration: 134s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-faqCloud2 {
+  0% {right: 170%;}
+  50% {left: 420%;}
+  100% {left: 155%;}
+}
+
+.faqCloud2 {
+    moz-transform: scaleX(-1);
+    o-transform: scaleX(-1);
+    webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    ms-filter: "FlipH";
+    position: absolute;
+    top: 38%;
+    width: 10%;
+    height: auto;
+    left: 330%;
+    animation-name: animate-faqCloud2;
+    animation-duration: 134s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes animate-faqCloud3 {
+  0% {right: 120%;}
+  50% {right: 350%;}
+  100% {right: 100%;}
+}
+
+.faqCloud3 {
+    moz-transform: scaleX(-1);
+    o-transform: scaleX(-1);
+    webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    ms-filter: "FlipH";
+    position: absolute;
+    top: 11%;
+    width: 20%;
+    height: auto;
+    left: 380%;
+    animation-name: animate-faqCloud3;
+    animation-duration: 134s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 /* Page 0 */
 .vandy-heading {
   font-family: 'sofiaprocondblack';
@@ -81,54 +303,6 @@ p {
 	font-weight: bold;
 	margin: 0 auto 0 auto;
 	line-height: 30px;
-}
-
-.cloud0-1 {
-  position: absolute;
-  left: 5%;
-  width: 15%;
-  top: 3%;
-  z-index: -3;
-  animation-name: animateCloud1;
-  animation-duration: 120s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.cloud0-2 {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  position: absolute;
-  right: 1%;
-  width: 20%;
-  top: 15%;
-  z-index: -3;
-  animation-name: animateCloud2;
-  animation-duration: 180s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.cloud0-3 {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  position: absolute;
-  left: 22%;
-  width: 15%;
-  top: 35%;
-  z-index: -3;
-  animation-name: animateCloud3;
-  animation-duration: 90s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .squirrel0 {
@@ -185,42 +359,6 @@ tr {
 
 /* Page 1 */
 /* clouds */
-.cloud1  {
-	top: 5%;
-	left: 195%;
-	max-height: 15%;
-	position: absolute;
-	z-index: -1;
-}
-
-.cloud2 {
-	-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-	filter: FlipH;
-    -ms-filter: "FlipH";
-    top: 8%;
-    right: 198%;
-    max-height: 25%;
-    position: absolute;
-    z-index: -2;
-}
-
-.cloud3 {
-	-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-	filter: FlipH;
-    -ms-filter: "FlipH";
-    left: 125%;
-    top: 30%;
-    max-height: 15%;
-    position: absolute;
-    z-index: -3;
-}
-
 #vh-description {
 	color: #1A3244;
 	position: absolute;
@@ -328,18 +466,6 @@ tr {
 	width: 25%;
 }
 
-.cloud {
-	z-index: -1;
-	moz-transform: scaleX(-1);
-	o-transform: scaleX(-1);
-	webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	ms-filter: "FlipH";
-	position: absolute;
-	top: 7%;
-	left: 230%;
-}
 
 .trademark {
   font-size: .3em;
@@ -498,42 +624,6 @@ tr {
   top: 5%;
   width: 100%;
   left: 305%;
-}
-
-.faqCloud1 {
-    position: absolute;
-    top: 7%;
-    width: 15%;
-    height: auto;
-    left: 300%;
-}
-
-.faqCloud2 {
-    moz-transform: scaleX(-1);
-    o-transform: scaleX(-1);
-    webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    ms-filter: "FlipH";
-    position: absolute;
-    top: 38%;
-    width: 10%;
-    height: auto;
-    left: 330%;
-}
-
-.faqCloud3 {
-    moz-transform: scaleX(-1);
-    o-transform: scaleX(-1);
-    webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    ms-filter: "FlipH";
-    position: absolute;
-    top: 11%;
-    width: 20%;
-    height: auto;
-    left: 380%;
 }
 
 .city {
