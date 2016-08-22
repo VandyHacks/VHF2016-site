@@ -6,7 +6,7 @@ export default class Sky2 extends React.Component {
 		return(
 			<div>
 			<Image path="img/cloud.svg" class="cloud hidden-xs hidden-sm"/>
-			<div className="description">
+			<div className="mentor-description">
 				Founded in the spring of 2015, VandyHacks was the first collegiate
 	          	hackathon to call the rockin' city of Nashville, Tennessee home.  Now, we're
 	          	proud to bring you VandyHacks II- and it's gonna be even bigger and better. From
