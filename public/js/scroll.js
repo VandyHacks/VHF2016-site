@@ -104,7 +104,7 @@ const scroll = {
 
   scrollToPage(page) {
     currentPage = page;
-    scroll.scroll(true);
+    scroll.scroll(false);
   }
 };
 
