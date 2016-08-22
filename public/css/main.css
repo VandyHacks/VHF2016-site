@@ -639,6 +639,16 @@ tr {
   color: orange;
 }
 
+.nav-link{
+  color: black;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: orange;
+  text-decoration: none;
+}
+
 /* Arrows */
 .fa-arrow-circle-o-right, .fa-arrow-circle-o-left {
   bottom: 1vw;
@@ -748,7 +758,7 @@ tr {
 
 @media(max-width: 769px) {
     html, body {
-        height: 400vh;
+        height: 500vh;
         overflow: visible;
     }
 
@@ -762,6 +772,10 @@ tr {
     }
 
     #grass {
+        display: none;
+    }
+
+    .navbar {
         display: none;
     }
 
