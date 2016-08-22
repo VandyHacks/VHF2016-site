@@ -34,6 +34,46 @@ h1 {
 	margin: 10% auto 0 auto;
 }
 
+/* Page 0 */
+.vandy-heading {
+  font-family: 'sofiaprocondblack';
+  font-size: 5vw;
+  color: #1A3244;
+  text-align: center;
+  display: table;
+  margin: auto;
+}
+
+.hackathon-date {
+  font-family: 'sofiaprocondlight';
+  font-size: 2vw;
+  color: #1A3244;
+  text-align: center;
+  display: table;
+  margin: auto;
+}
+
+.register-button-container {
+  text-align: center;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  left: 35%
+}
+
+.register-btn {
+  margin-right: 10px;
+}
+
+.logo {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  max-height: 25%;
+  margin-top: 3%;
+}
+
 p {
 	font-family: 'sofiaprocondlight';
 	color: #1C3144;
@@ -41,6 +81,89 @@ p {
 	font-weight: bold;
 	margin: 0 auto 0 auto;
 	line-height: 30px;
+}
+
+.cloud0-1 {
+  position: absolute;
+  left: 5%;
+  width: 15%;
+  top: 3%;
+  z-index: -3;
+  animation-name: animateCloud1;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cloud0-2 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  position: absolute;
+  right: 1%;
+  width: 20%;
+  top: 15%;
+  z-index: -3;
+  animation-name: animateCloud2;
+  animation-duration: 180s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cloud0-3 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  position: absolute;
+  left: 22%;
+  width: 15%;
+  top: 35%;
+  z-index: -3;
+  animation-name: animateCloud3;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.tree0-1 {
+  max-height: 80%;
+  bottom: 12%;
+  left: -3%;
+  position: absolute;
+  transform: translateY(2%);
+  z-index: -2;
+}
+
+.tree0-2 {
+  max-height: 72%;
+  bottom: 13%;
+  left: 11%;
+  position: absolute;
+  transform: translateY(2%);
+  z-index: -1;
+}
+
+.tree0-3 {
+  max-height: 75%;
+  bottom: 12%;
+  right: 3%;
+  position: absolute;
+  z-index: -2;
+  transform: translateY(2%);
+}
+
+.tree0-4 {
+  max-height: 62%;
+  bottom: 12%;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 /* For horizontal scrolling */
@@ -56,7 +179,7 @@ tr {
 /* clouds */
 .cloud1  {
 	top: 5%;
-	left: -5%;
+	left: 195%;
 	max-height: 15%;
 	position: absolute;
 	z-index: -1;
@@ -70,7 +193,7 @@ tr {
 	filter: FlipH;
     -ms-filter: "FlipH";
     top: 8%;
-    right: 2%;
+    right: 198%;
     max-height: 25%;
     position: absolute;
     z-index: -2;
@@ -83,7 +206,7 @@ tr {
     transform: scaleX(-1);
 	filter: FlipH;
     -ms-filter: "FlipH";
-    left: 25%;
+    left: 125%;
     top: 30%;
     max-height: 15%;
     position: absolute;
@@ -92,7 +215,7 @@ tr {
 
 .kirkland {
     bottom: 0;
-    left: 10%;
+    left: 110%;
     height: 95%;
     position: absolute;
     z-index: -1;
@@ -100,7 +223,7 @@ tr {
 
 #grass {
     height: 12%;
-    width: 405%;
+    width: 505%;
     left: 0;
     bottom: 0;
     z-index: -2;
@@ -111,7 +234,7 @@ tr {
 /* trees */
 .tree1 {
     bottom: 5%;
-    left: 3%;
+    left: 103%;
     height: 35%;
     position: absolute;
     z-index: -2;
@@ -119,7 +242,7 @@ tr {
 
 .tree2 {
     bottom:3%;
-    left: 10%;
+    left: 110%;
     height: 23%;
     position: absolute;
     z-index: 1;
@@ -127,14 +250,14 @@ tr {
 
 .tree3 {
     bottom: 5%;
-    left: 12%;
+    left: 112%;
     height: 20%;
     position: absolute;
 }
 
 .tree4 {
     bottom: 3%;
-    left: 18%;
+    left: 118%;
     height: 20%;
     position: absolute;
     z-index: 1;
@@ -142,7 +265,7 @@ tr {
 
 .tree5 {
     bottom: 2%;
-    left: 24%;
+    left: 124%;
     height: 20%;
     position: absolute;
     z-index: 2;
@@ -150,7 +273,7 @@ tr {
 
 .tree6 {
     bottom: 3%;
-    left: 34%;
+    left: 134%;
     height: 17%;
     position: absolute;
     z-index: 1;
@@ -158,14 +281,14 @@ tr {
 
 .tree7 {
     bottom: 2%;
-    left: 36%;
+    left: 136%;
     height: 25%;
     position: absolute;
 }
 
 .tree8 {
     bottom: 4%;
-    right: 23%;
+    right: 123%;
     height: 40%;
     position: absolute;
     z-index: -1;
@@ -179,7 +302,7 @@ tr {
 	color: #1A3244;
 	position: absolute;
 	top: calc(5% + 60px);
-	left: 105%;
+	left: 205%;
 	text-align: center;
 	z-index: 1;
 	width: 25%;
@@ -195,7 +318,79 @@ tr {
 	ms-filter: "FlipH";
 	position: absolute;
 	top: 7%;
-	left: 130%;
+	left: 230%;
+}
+
+.trademark {
+  font-size: .3em;
+  vertical-align: top;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.soc {
+  overflow:hidden;
+  margin:0; padding:0;
+  list-style:none;
+  text-align: center;
+}
+
+.soc li {
+  display:inline-block;
+  *display:inline;
+  zoom:1;
+}
+
+.soc li a {
+  font-family:si!important;
+  font-style:normal;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -o-box-sizing:border-box;
+  box-sizing:border-box;
+
+  -o-transition:.1s;
+  -ms-transition:.1s;
+  -moz-transition:.1s;
+  -webkit-transition:.1s;
+  transition:.1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  overflow:hidden;
+  text-decoration:none;
+  text-align:center;
+  display:block;
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: #FFFFFF;
+  background-color: #1C3144;
+}
+
+.soc-icon-last{
+  margin:0 !important;
+}
+
+.soc-twitter:before {
+  content:'a';
+}
+
+.soc-facebook:before {
+  content:'b';
 }
 
 .p2tree1 {
@@ -203,7 +398,7 @@ tr {
 	bottom: 10.5%;
 	width: 15%;
 	height: auto;
-	left: 100%;
+	left: 200%;
 }
 
 .p2tree2 {
@@ -211,7 +406,7 @@ tr {
 	bottom: 3%;
 	width: 4%;
 	height: auto;
-	left: 115%;
+	left: 215%;
 }
 
 .p2tree3 {
@@ -219,7 +414,7 @@ tr {
 	bottom: 11%;
 	width: 8%;
 	height: auto;
-	left: 118.5%;
+	left: 218.5%;
 }
 
 .treehouse {
@@ -228,7 +423,7 @@ tr {
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
-	left: 125%;
+	left: 225%;
 	right: 0;
 	bottom: -1%;
 }
@@ -238,23 +433,24 @@ tr {
 	bottom: 3%;
 	width: 10%;
 	height: auto;
-	left: 175%;
+	left: 275%;
 }
 
 /* Page 3 */
 
 .faq {
-    font-size: 3em;
-    font-family: 'sofiaprocondblack';
-    position: absolute;
-    top: calc(5% + 60px);
-    left: 205%;
-    width: 100%;
-    text-transform: uppercase;
-    z-index: 10;
+  font-size: 3em;
+  font-family: 'sofiaprocondblack';
+  position: absolute;
+  top: calc(5% + 60px);
+  left: 305%;
+  width: 100%;
+  text-transform: uppercase;
+  z-index: 10;
 }
 
 .faqQuestions {
+  left: 305%;
   display: flex;
   height: 90%;
   width: 100%;
@@ -265,16 +461,18 @@ tr {
   font-size: 20px;
   display: inline-block;
   color: white;
-  position: relative;
+  position: absolute;
   top: 5%;
   width: 100%;
+  left: 305%;
 }
 
 .faqAnswer {
   color: white;
-  position: relative;
+  position: absolute;
   top: 5%;
   width: 100%;
+  left: 305%;
 }
 
 .faqCloud1 {
@@ -282,7 +480,7 @@ tr {
     top: 7%;
     width: 15%;
     height: auto;
-    left: 200%;
+    left: 300%;
 }
 
 .faqCloud2 {
@@ -296,7 +494,7 @@ tr {
     top: 38%;
     width: 10%;
     height: auto;
-    left: 230%;
+    left: 330%;
 }
 
 .faqCloud3 {
@@ -310,27 +508,27 @@ tr {
     top: 11%;
     width: 20%;
     height: auto;
-    left: 280%;
+    left: 380%;
 }
 
 .city {
     position: absolute;
     width: 100%;
-    left: 200%;
+    left: 300%;
     bottom: 12%;
 }
 
 .faqSquirrel {
     position: absolute;
     bottom: 5%;
-    left: 243%;
+    left: 343%;
     width: 18%;
     height: auto;
 }
 
 .trees1 {
     position: absolute;
-    left: 210%;
+    left: 310%;
     bottom: 5%;
     width: 17%;
     height: auto;
@@ -338,7 +536,7 @@ tr {
 
 .trees2 {
     position: absolute;
-    left: 270%;
+    left: 370%;
     bottom: 5%;
     width: 17%;
     height: auto;
@@ -351,7 +549,7 @@ tr {
     font-family: 'sofiaprocondblack';
     position: absolute;
     top: calc(5% + 60px);
-    left: 308%;
+    left: 408%;
     width: 97%;
     text-transform: uppercase;
     z-index: 10;
@@ -359,7 +557,7 @@ tr {
 
 .sponsorTrees1 {
     position: absolute;
-    left: 307%;
+    left: 407%;
     bottom: 5%;
     width: 22%;
     height: auto;
@@ -368,7 +566,7 @@ tr {
 
 .sponsorTrees2 {
     position: absolute;
-    left: 377%;
+    left: 477%;
     bottom: 5%;
     width: 22%;
     height: auto;
@@ -376,7 +574,7 @@ tr {
 
 .squirrelLaptop {
     position: absolute;
-    left: 345%;
+    left: 445%;
     bottom: 5%;
     width: 25%;
     height: auto;
@@ -500,28 +698,36 @@ tr {
  60% {transform: translateX(-5px);}
 }
 
-#page1-arrow-right {
+#page0-arrow-right {
   right: 1vw;
 }
 
-#page2-arrow-left {
+#page1-arrow-left {
   left: 101vw;
 }
 
-#page2-arrow-right {
+#page1-arrow-right {
   left: calc(199vw - 90px);
 }
 
-#page3-arrow-left {
+#page2-arrow-left {
   left: 201vw;
 }
 
-#page3-arrow-right {
+#page2-arrow-right {
   left: calc(299vw - 90px);
 }
 
-#page4-arrow-left {
+#page3-arrow-left {
   left: 301vw;
+}
+
+#page3-arrow-right {
+  left: calc(399vw - 90px);
+}
+
+#page4-arrow-left {
+  left: 401vw;
 }
 
 /* Responsiveness */

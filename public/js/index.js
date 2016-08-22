@@ -1,6 +1,8 @@
 require('font-awesome/css/font-awesome.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Page 0
+import Registration from './page0/registration.js';
 // Page 1
 import Description from './page1/description.js';
 import Sky from './page1/sky.js';
@@ -35,6 +37,19 @@ class Navbar extends React.Component {
   }
 }
 
+class Page0 extends React.Component {
+  render() {
+    return (
+      <div>
+      <Registration />
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+				id="page0-arrow-right"
+				onClick={scroll.scrollRight}></i>
+      </div>
+    );
+  }
+}
+
 class Page1 extends React.Component {
 	render() {
 		return (
@@ -43,6 +58,9 @@ class Page1 extends React.Component {
 			<Description />
 			<div id="grass"/>
 			<Ground />
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+				id="page1-arrow-left"
+				onClick={scroll.scrollLeft}></i>
 			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
 				id="page1-arrow-right"
 				onClick={scroll.scrollRight}></i>
@@ -100,6 +118,7 @@ class Page4 extends React.Component {
 }
 
 ReactDOM.render(<Navbar />, document.getElementById('navbar'));
+ReactDOM.render(<Page0 />, document.getElementById('page0'));
 ReactDOM.render(<Page1 />, document.getElementById('page1'));
 ReactDOM.render(<Page2 />, document.getElementById('page2'));
 ReactDOM.render(<Page3 />, document.getElementById('page3'));
