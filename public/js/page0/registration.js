@@ -29,7 +29,7 @@ export default class Registration extends React.Component {
         <Image class="tree0-2" path="img/Tree2.svg"/>
         <Image class="tree0-3" path="img/Tree.svg"/>
         <Image class="tree0-4" path="img/Tree3.svg"/>
-        <Image class="squirrel" path="img/Squirrel.svg"/>
+        <Image class="squirrel0" path="img/Squirrel.svg"/>
 			</div>
 		);
 	}

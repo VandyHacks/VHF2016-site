@@ -29,9 +29,10 @@ class Navbar extends React.Component {
       <div>
         <span className="navbar-logo navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 0)}>VH</span>
         <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 1)}>About</span>
-        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 2)}>FAQ</span>
-        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 3)}>Sponsors</span>
-				<span className="navbar-apply">Apply</span>
+        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 2)}>Mentors</span>
+        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 3)}>FAQ</span>
+        <span className="navbar-btn" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
+				<span className="navbar-apply"><a href="https://vandyhacks.typeform.com/to/RqdpnL">Apply</a></span>
       </div>
     );
   }

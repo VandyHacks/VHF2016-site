@@ -5,9 +5,9 @@ export default class FAQQuestion extends React.Component {
   render() {
 
 		return (
-      <div className="faq">
-        <h4 className="faqQuestion">{this.props.question}</h4>
-        <div className="faqAnswer">{this.props.answer}</div>
+      <div>
+        <h4>{this.props.question}</h4>
+        <div>{this.props.answer}</div>
       </div>
 		);
 	}
