@@ -46,7 +46,7 @@ h1 {
   left: 5%;
   width: 15%;
   top: 3%;
-  z-index: -3;
+  z-index: -5;
   animation-name: animate-cloud0-1;
   animation-duration: 167s;
   animation-iteration-count: infinite;
@@ -70,7 +70,7 @@ h1 {
   right: 1%;
   width: 20%;
   top: 15%;
-  z-index: -3;
+  z-index: -5;
   animation-name: animate-cloud0-2;
   animation-duration: 212s;
   animation-iteration-count: infinite;
@@ -94,7 +94,7 @@ h1 {
   left: 22%;
   width: 15%;
   top: 35%;
-  z-index: -3;
+  z-index: -5;
   animation-name: animate-cloud0-3;
   animation-duration: 144s;
   animation-iteration-count: infinite;
@@ -112,7 +112,7 @@ h1 {
   left: 195%;
   max-height: 15%;
   position: absolute;
-  z-index: -1;
+  z-index: -5;
   animation-name: animate-cloud1;
   animation-duration: 150s;
   animation-iteration-count: infinite;
@@ -136,7 +136,7 @@ h1 {
  right: 398%;
  max-height: 25%;
  position: absolute;
- z-index: -2;
+ z-index: -5;
   animation-name: animate-cloud2;
   animation-duration: 60s;
   animation-iteration-count: infinite;
@@ -160,7 +160,7 @@ h1 {
   top: 30%;
   max-height: 15%;
   position: absolute;
-  z-index: -3;
+  z-index: -5;
   animation-name: animate-cloud3;
   animation-duration: 157s;
   animation-iteration-count: infinite;
@@ -174,7 +174,7 @@ h1 {
 }
 
 .cloud2-0 {
-  z-index: -1;
+  z-index: -5;
   moz-transform: scaleX(-1);
   o-transform: scaleX(-1);
   webkit-transform: scaleX(-1);
@@ -206,6 +206,7 @@ h1 {
   animation-duration: 134s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  z-index: -5;
 }
 
 @keyframes animate-faqCloud2 {
@@ -230,6 +231,7 @@ h1 {
     animation-duration: 134s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    z-index: -5;
 }
 
 @keyframes animate-faqCloud3 {
@@ -254,6 +256,7 @@ h1 {
     animation-duration: 134s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    z-index: -5;
 }
 
 /* Page 0 */
