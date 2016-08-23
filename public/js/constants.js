@@ -29,7 +29,7 @@ module.exports = {
       'answer': "Even more of a reason for you to come! In fact, we'll have beginners' workshops for you to get started, and our mentors can always help you out along the way.",
     },
     {
-      'question': "My question wasn't addresses here. What should I do?",
+      'question': "My question wasn't addressed here. What should I do?",
       'answer': 'Shoot us an email at info@vandyhacks.org!',
     },
   ]

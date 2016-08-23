@@ -19,7 +19,7 @@ html, body {
 }
 
 body {
-	background: #99D6D3;
+	  background: #99D6D3;
     background: -webkit-linear-gradient(#90DBDB, #99D6D3);
     background: -o-linear-gradient(#90DBDB, #99D6D3);
     background: -moz-linear-gradient(#90DBDB, #99D6D3);
@@ -38,7 +38,7 @@ h1 {
 @keyframes animate-cloud0-1 {
   0% {left: -15%;}
   50% {left: 245%;}
-  100% {left: 500%;}
+  100% {left: -15%;}
 }
 
 .cloud0-1 {
@@ -48,7 +48,7 @@ h1 {
   top: 3%;
   z-index: -3;
   animation-name: animate-cloud0-1;
-  animation-duration: 112s;
+  animation-duration: 167s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -56,7 +56,7 @@ h1 {
 @keyframes animate-cloud0-2 {
   0% {right: 1%;}
   50% {right: 245%;}
-  100% {right: 500%;}
+  100% {right: 1%;}
 }
 
 .cloud0-2 {
@@ -72,7 +72,7 @@ h1 {
   top: 15%;
   z-index: -3;
   animation-name: animate-cloud0-2;
-  animation-duration: 180s;
+  animation-duration: 212s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -80,7 +80,7 @@ h1 {
 @keyframes animate-cloud0-3 {
   0% {left: 22%;}
   50% {left: 300%;}
-  100% {left: 7%;}
+  100% {left: 22%;}
 }
 
 .cloud0-3 {
@@ -96,23 +96,23 @@ h1 {
   top: 35%;
   z-index: -3;
   animation-name: animate-cloud0-3;
-  animation-duration: 105s;
+  animation-duration: 144s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud1 {
-  0% {right: 305%;}
-  50% {right: 55%;}
-  100% {right: 290%;}
+  0% {left: 195%;}
+  50% {left: 105%;}
+  100% {left: 195%;}
 }
 
 .cloud1  {
-	top: 5%;
-	left: 195%;
-	max-height: 15%;
-	position: absolute;
-	z-index: -1;
+  top: 5%;
+  left: 195%;
+  max-height: 15%;
+  position: absolute;
+  z-index: -1;
   animation-name: animate-cloud1;
   animation-duration: 150s;
   animation-iteration-count: infinite;
@@ -122,21 +122,21 @@ h1 {
 @keyframes animate-cloud2 {
   0% {right: 398%;}
   50% {right: 148%;}
-  100% {right: 383%;}
+  100% {right: 398%;}
 }
 
 .cloud2 {
-	-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-	filter: FlipH;
-    -ms-filter: "FlipH";
-    top: 8%;
-    right: 398%;
-    max-height: 25%;
-    position: absolute;
-    z-index: -2;
+ -moz-transform: scaleX(-1);
+ -o-transform: scaleX(-1);
+ -webkit-transform: scaleX(-1);
+ transform: scaleX(-1);
+ filter: FlipH;
+ -ms-filter: "FlipH";
+ top: 8%;
+ right: 398%;
+ max-height: 25%;
+ position: absolute;
+ z-index: -2;
   animation-name: animate-cloud2;
   animation-duration: 60s;
   animation-iteration-count: infinite;
@@ -146,21 +146,21 @@ h1 {
 @keyframes animate-cloud3 {
   0% {left: 125%;}
   50% {left: 375%;}
-  100% {left: 110%;}
+  100% {left: 125%;}
 }
 
 .cloud3 {
-	-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-	filter: FlipH;
-    -ms-filter: "FlipH";
-    left: 125%;
-    top: 30%;
-    max-height: 15%;
-    position: absolute;
-    z-index: -3;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  left: 125%;
+  top: 30%;
+  max-height: 15%;
+  position: absolute;
+  z-index: -3;
   animation-name: animate-cloud3;
   animation-duration: 157s;
   animation-iteration-count: infinite;
@@ -170,20 +170,20 @@ h1 {
 @keyframes animate-cloud2-0 {
   0% {left: 230%;}
   50% {left: 375%;}
-  100% {left: 215%;}
+  100% {left: 230%;}
 }
 
 .cloud2-0 {
-	z-index: -1;
-	moz-transform: scaleX(-1);
-	o-transform: scaleX(-1);
-	webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	ms-filter: "FlipH";
-	position: absolute;
-	top: 7%;
-	left: 230%;
+  z-index: -1;
+  moz-transform: scaleX(-1);
+  o-transform: scaleX(-1);
+  webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  ms-filter: "FlipH";
+  position: absolute;
+  top: 7%;
+  left: 230%;
   animation-name: animate-cloud2-0;
   animation-duration: 134s;
   animation-iteration-count: infinite;
@@ -193,7 +193,7 @@ h1 {
 @keyframes animate-faqCloud1 {
   0% {left: 300%;}
   50% {left: 50%;}
-  100% {left: 275%;}
+  100% {left: 300%;}
 }
 
 .faqCloud1 {
@@ -209,9 +209,9 @@ h1 {
 }
 
 @keyframes animate-faqCloud2 {
-  0% {right: 170%;}
-  50% {left: 420%;}
-  100% {left: 155%;}
+  0% {left: 330%;}
+  50% {left: 220%;}
+  100% {left: 330%;}
 }
 
 .faqCloud2 {
@@ -233,9 +233,9 @@ h1 {
 }
 
 @keyframes animate-faqCloud3 {
-  0% {right: 120%;}
-  50% {right: 350%;}
-  100% {right: 100%;}
+  0% {left: 380%;}
+  50% {left: 450%;}
+  100% {left: 380%;}
 }
 
 .faqCloud3 {
@@ -423,7 +423,7 @@ tr {
 
 .tree5 {
     bottom: 2%;
-    left: 124%;
+    left: 123%;
     height: 20%;
     position: absolute;
     z-index: 2;
@@ -446,7 +446,7 @@ tr {
 
 .tree8 {
     bottom: 4%;
-    right: 123%;
+    left: 166%;
     height: 40%;
     position: absolute;
     z-index: -1;
@@ -466,12 +466,29 @@ tr {
 	width: 25%;
 }
 
-
 .trademark {
   font-size: .3em;
   vertical-align: top;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+@font-face {
+  font-family: 'si';
+  src: url('socicon.eot');
+  src: url('socicon.eot?#iefix') format('embedded-opentype'),
+  url('socicon.woff') format('woff'),
+  url('socicon.ttf') format('truetype'),
+  url('socicon.svg#icomoonregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family:si;
+    src: url('socicon.svg') format(svg);
+  }
 }
 
 .soc {
@@ -597,21 +614,22 @@ tr {
 
 .faqQuestions {
   position: absolute;
+  font-family: 'sofiaprocondlight';
   width: 100%;
-  padding-left: 3%;
+  padding-left: 5%;
   padding-right: 3%;
   margin-bottom: 3%;
-  margin-top: -10%;
+  top: calc(5% + 90px);
   z-index: 15;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #1A3244;
+  font-weight: bold;
 }
 
 .faqQuestion {
-  font-family: 'Francois One', sans-serif;
-  font-size: 20px;
+  font-family: 'sofiaprocondlight';
+  font-size: 1em;
   display: inline-block;
-  color: white;
+  color: black;
   position: absolute;
   top: 5%;
   width: 100%;
@@ -619,7 +637,7 @@ tr {
 }
 
 .faqAnswer {
-  color: white;
+  color: black;
   position: absolute;
   top: 5%;
   width: 100%;

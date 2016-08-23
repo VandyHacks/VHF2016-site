@@ -22,10 +22,10 @@ export default class Registration extends React.Component {
           <li><a className="soc-facebook" href="https://www.facebook.com/vandyhacks" target="_blank"></a></li>
           <li><a className="soc-twitter" href="https://twitter.com/vandyhacks" target="_blank" ></a></li>
         </ul><br />
-        <Image class="tree0-1" path ="img/Tree.svg"/>
-        <Image class="tree0-2" path="img/tree2.svg"/>
-        <Image class="tree0-3" path="img/Tree.svg"/>
-        <Image class="tree0-4" path="img/tree3.svg"/>
+        <Image class="tree0-1" path ="img/Tree01.svg"/>
+        <Image class="tree0-2" path="img/tree02.svg"/>
+        <Image class="tree0-3" path="img/Tree01.svg"/>
+        <Image class="tree0-4" path="img/tree03.svg"/>
         <Image class="squirrel0" path="img/squirrel.svg"/>
 			</div>
 		);

@@ -21,6 +21,12 @@
 	<g>
 		<defs>
 			<rect id="SVGID_1_" x="-12.188" y="-8.113" width="179.287" height="179.287"/>
+			<style type="text/css">
+				@font-face {
+     				font-family: 'sofiaprocondblack';
+     				src: url('../css/SofiaProCondBlack.ttf');
+				}
+			</style>
 		</defs>
 		<clipPath id="SVGID_2_">
 			<use xlink:href="#SVGID_1_"  overflow="visible"/>
@@ -99,5 +105,5 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 202.6908 82.1377)" fill="#1D3144" font-family="'SofiaProCondensedSemiBold'" font-size="38.0212">THANKS!</text>
+<text transform="matrix(1 0 0 1 202.6908 82.1377)" fill="#1D3144" font-family="sofiaprocondblack" font-size="38.0212">THANKS!</text>
 </svg>
