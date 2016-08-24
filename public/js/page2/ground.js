@@ -10,9 +10,9 @@ export default class Ground2 extends React.Component {
 			<Treehouse />
 			<div className="hidden-xs hidden-sm">
 			<Squirrel />
-			<Tree path="img/p2tree1.svg" class="p2tree1"/>
-			<Tree path="img/p2tree2.svg" class="p2tree2"/>
-			<Tree path="img/p2tree3.svg" class="p2tree3"/>
+			<Tree path="img/page2/tree1.svg" class="p2tree1"/>
+			<Tree path="img/page2/tree2.svg" class="p2tree2"/>
+			<Tree path="img/page2/tree3.svg" class="p2tree3"/>
 			</div>
 			</div>
 		);
