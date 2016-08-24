@@ -609,7 +609,7 @@ tr {
   font-size: 3em;
   font-family: 'sofiaprocondblack';
   position: absolute;
-  top: calc(5% + 60px);
+  top: calc(5% + 40px);
   left: 305%;
   width: 100%;
   text-transform: uppercase;
@@ -618,34 +618,27 @@ tr {
 
 .faqQuestions {
   position: absolute;
-  font-family: 'sofiaprocondlight';
   width: 100%;
   padding-left: 5%;
   padding-right: 3%;
   margin-bottom: 3%;
-  top: calc(5% + 90px);
+  top: calc(5% + 70px);
   z-index: 15;
-  color: #1A3244;
-  font-weight: bold;
-}
-
-.faqQuestion {
-  font-family: 'sofiaprocondlight';
-  font-size: 1em;
-  display: inline-block;
-  color: black;
-  position: absolute;
-  top: 5%;
-  width: 100%;
-  left: 305%;
 }
 
 .faqAnswer {
-  color: black;
   position: absolute;
   top: 5%;
   width: 100%;
   left: 305%;
+}
+
+.arrow {
+    margin-left: 4px;
+}
+
+.gold {
+  color: @orange;
 }
 
 .city {
@@ -653,11 +646,12 @@ tr {
     width: 100%;
     left: 300%;
     bottom: 12%;
+    opacity: .35;
 }
 
 .faqSquirrel {
     position: absolute;
-    bottom: 5%;
+    bottom: 3%;
     left: 343%;
     width: 18%;
     height: auto;
