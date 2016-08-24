@@ -6,8 +6,8 @@ export default class FAQQuestion extends React.Component {
 
 		return (
       <div>
-        <h4>{this.props.question}</h4>
-        <div>{this.props.answer}</div>
+        <h4 className="faqQuestion">{this.props.question}</h4>
+        <div id={`faq-${this.props.index}-answer`}>{this.props.answer}</div>
       </div>
 		);
 	}
