@@ -626,10 +626,6 @@ tr {
   z-index: 15;
 }
 
-.faqQuestion:hover {
-  color: orange;
-}
-
 .faqAnswer {
   position: absolute;
   top: 5%;
