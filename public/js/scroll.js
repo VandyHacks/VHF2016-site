@@ -43,7 +43,9 @@ const scroll = {
       let scrollLeft = $('body').scrollLeft() || $('html').scrollLeft();
 
       // Ensure we recognize the starting page. It's not always 0! (browser caches the scroll position)
-      currentPage = Math.round(scrollLeft / $(window).width())
+      currentPage = Math.round(scrollLeft / $(window).width());
+
+      $(`span#nav${currentPage}`).addClass('orange'); // set current tab
 
       // Bind the mouse events to scroll the pages
       $('html, body').on(
@@ -80,6 +82,9 @@ const scroll = {
 
   scroll(instant) {
     const TIME = instant ? 0 : ANIMATION_TIME;
+
+    $(`span[id^=nav]`).removeClass('orange'); // clear all tabs
+    $(`span#nav${currentPage}`).addClass('orange'); // set current tab
 
     $('html, body').animate({
       scrollLeft: currentPage * $(window).width(),
