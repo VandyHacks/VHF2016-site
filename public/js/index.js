@@ -76,8 +76,8 @@ class Page2 extends React.Component {
 	render() {
 		return (
 			<div>
-			<Sky2 />
 			<Ground2 />
+			<Sky2 />
 			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
 				id="page2-arrow-left"
 				onClick={scroll.scrollLeft}></i>

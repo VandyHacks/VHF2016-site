@@ -894,8 +894,9 @@ tr {
 
 @media(max-width: 769px) {
     html, body {
-        height: 500vh;
+        height: 100%;
         overflow: visible;
+        background: #99D6D3;
     }
 
     h1 {
@@ -904,19 +905,57 @@ tr {
 
     p {
         text-align: center;
-        height: 100vh;
+        height: 100%;
     }
 
-    #grass {
+    #grass, #navbar {
         display: none;
     }
 
-    #navbar {
-        display: none;
+    #pages-table {
+      margin-top: 0;
+      background: #99D6D3;
     }
 
-    .description, .treehouse, .squirrel, .faq, .sponsors, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop {
+    .mobileCloud1 {
+      width: 30%;
+      position: absolute;
+      top: 1%;
+      left: 5%;
+      background: #99D6D3;
+    }
+
+    .mobileCloud2 {
+      width: 30%;
+      position: absolute;
+      top: 6%;
+      right: 3%;
+      background: #99D6D3;
+    }
+
+    .registration {
+      height: 100vh;
+    }
+
+    .vandy-heading {
+      font-size: 8vw;
+    }
+
+    .hackathon-date {
+      font-size: 6vw;
+    }
+
+    #vh-description, .squirrel0, .treehouse, .squirrel, .faq, .sponsors, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop, .mentor-description {
         position: static;
+    }
+
+    .squirrel0 {
+      width: 25%;
+      height: auto;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10%;
     }
 
     .treehouse {
@@ -924,31 +963,50 @@ tr {
         width: 100%;
     }
 
-    .description {
-        width: 95%;
+    #vh-description {
+        width: 100%;
         top: 1.5%;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        font-size: 1.2em;
+        font-size: 1.1em;
+    }
+
+    .mentor-description {
+      margin-top: 10%;
+      width: 95%;
     }
 
     .faq {
         margin-top: 10%;
-        height: 5vh;
         font-size: 2em;
+    }
+
+    .faq-question {
+      font-family: 'sofiaprocondblack';
+      font-size: 1.3em;
+      font-weight: bold;
+      font-style: italic;
+      color: #1C3144;
+      width: 90%;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq-answer {
+      font-family: 'sofiaprocondlight';
+      color: #1C3144;
+      font-size: 1.2em;
+      width: 90%;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .sponsors {
-        margin-top: 10%;
-        height: 80vh;
-        font-size: 2em;
-    }
-}
-
-@media(max-width: 350px) {
-    .description {
-        font-size: 1em;
+      margin-top: 10%;
+      font-size: 2em;
     }
 }

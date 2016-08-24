@@ -12,7 +12,7 @@ export default class Description extends React.Component {
           proud to bring you VandyHacks III- and it's gonna be even bigger and better. From
           November 11-13, 350+ students from universities all over the nation will meet at
           Vanderbilt University for a weekend of collaboration, innovation, and great food
-          <span id="description-hashtag"> (#southernhospitality)</span>.
+          <span id="description-hashtag"> (#southernhospitality)</span>.<br />
           We hope to see y'all there!
         </p>
       </div>
