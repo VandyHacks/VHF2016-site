@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
 	entry: './public/js/index.js',
 	output: {
 		path: './',
@@ -39,4 +39,5 @@ module.exports = {
       }
 		]
 	}
-}
+};
+module.exports = config;

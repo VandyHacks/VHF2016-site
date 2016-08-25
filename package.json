@@ -5,7 +5,7 @@
   "main": "public/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
+    "postinstall": "webpack -p --config ./webpack.config.js --progress --colors",
     "dev": "webpack-dev-server --content-base public/",
     "build": "webpack --config ./webpack.config.js --progress --colors",
     "start": "node public/app.js"
@@ -41,5 +41,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+    "webpack-uglify-js-plugin": "^1.1.9"
   }
 }
