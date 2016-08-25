@@ -45,7 +45,7 @@ class Page0 extends React.Component {
     return (
       <div>
       <Registration />
-			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
 				id="page0-arrow-right"
 				onClick={scroll.scrollRight}></i>
       </div>
@@ -61,10 +61,10 @@ class Page1 extends React.Component {
 			<Description />
 			<div id="grass"/>
 			<Ground />
-			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
 				id="page1-arrow-left"
 				onClick={scroll.scrollLeft}></i>
-			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
 				id="page1-arrow-right"
 				onClick={scroll.scrollRight}></i>
 			</div>
@@ -78,10 +78,10 @@ class Page2 extends React.Component {
 			<div>
 			<Ground2 />
 			<Sky2 />
-			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
 				id="page2-arrow-left"
 				onClick={scroll.scrollLeft}></i>
-			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
 				id="page2-arrow-right"
 				onClick={scroll.scrollRight}></i>
 			</div>
@@ -96,10 +96,10 @@ class Page3 extends React.Component {
 			<FAQ faqs={Constants.FAQ} />
 			<Sky3 />
 			<Ground3 />
-			<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
 				id="page3-arrow-left"
         		onClick={scroll.scrollLeft}></i>
-			<i className="fa fa-fw fa-arrow-circle-o-right fa-5x hidden-xs hidden-sm"
+			<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
         		id="page3-arrow-right"
         		onClick={scroll.scrollRight}></i>
 			</div>
@@ -108,16 +108,18 @@ class Page3 extends React.Component {
 }
 
 class Page4 extends React.Component {
-	render() {
-		return (
-			<div>
-			<Sponsors />
-      		<i className="fa fa-fw fa-arrow-circle-o-left fa-5x hidden-xs hidden-sm"
-        		id="page4-arrow-left"
-        		onClick={scroll.scrollLeft}></i>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <Sponsors />
+        <i
+          className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
+          id="page4-arrow-left"
+          onClick={scroll.scrollLeft}>
+        </i>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(<Navbar />, document.getElementById('navbar'));
