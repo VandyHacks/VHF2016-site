@@ -13,9 +13,9 @@ export default class Registration extends React.Component {
           <a
             href="https://vandyhacks.typeform.com/to/RqdpnL"
             target="_blank"
-            className="btn btn-primary btn-primary register-btn"
+            className="register-btn btn btn-primary btn-primary"
           >
-          Register
+          <span className="register-btn-text">Apply</span>
           </a>
         </div>
         <ul className="soc">
