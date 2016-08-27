@@ -706,7 +706,6 @@ tr {
     height: auto;
 }
 
-
 .sponsorTrees2 {
     position: absolute;
     left: 477%;
@@ -721,6 +720,55 @@ tr {
     bottom: 5%;
     width: 25%;
     height: auto;
+}
+
+.logo1 {
+  position: absolute;
+  left: 408%;
+  top: calc(5% + 120px);
+  width: 25%;
+}
+
+.logo2 {
+  position: absolute;
+  left: 440%;
+  top: calc(5% + 115px);
+  width: 20%;
+}
+
+.logo3 {
+  position: absolute;
+  left: 470%;
+  top: calc(5% + 90px);
+  width: 10%;
+}
+
+.logo4 {
+  position: absolute;
+  left: 485%;
+  top: calc(5% + 120px);
+  width: 10%;
+}
+
+.logo5 {
+  position: absolute;
+  left: 408%;
+  top: calc(5% + 260px);
+  width: 30%;
+}
+
+.logo6 {
+  position: absolute;
+  left: 440%;
+  top: calc(5% + 315px);
+  width: 20%;
+}
+
+.logo7 {
+  position: absolute;
+  left: 475%;
+  top: calc(5% + 330px);
+  width: 15%;
 }
 
 /* Navbar */
@@ -1014,5 +1062,33 @@ tr {
     .sponsors {
       margin-top: 10%;
       font-size: 2em;
+    }
+
+    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7 {
+      position: static;
+      margin-top: 10%;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .logo1 {
+      width: 95%
+    }
+
+    .logo2 {
+      width: 90%;
+    }
+
+    .logo3 {
+      width: 35%;
+    }
+
+    .logo4 {
+      width: 50%;
+    }
+
+    .logo5, .logo6, .logo7 {
+      width: 75%;
     }
 }
