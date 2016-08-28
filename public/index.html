@@ -15,10 +15,10 @@
 		$(function() {
 			if (screen.width < 769) { // max mobile size--(iPad screen width)
 				$('td').wrap('<tr></tr>'); // go mobile!
-        $('.page').css('height':'100%');
+        $('.page').css({height:'100%'});
 			} else {
 				$('td').unwrap(); // go desktop!	
-        $('.page').css('height':'100vw');
+        $('.page').css({height:'100vw'});
 			}
 		});
 	</script>
