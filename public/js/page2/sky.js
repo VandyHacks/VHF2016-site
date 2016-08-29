@@ -6,8 +6,19 @@ export default class Sky2 extends React.Component {
 		return(
 			<div>
 			<div className="mentor-description">
-        Interested in participating as a mentor?
-        Reach out to us <a href="mailto:info@vandyhacks.org">here</a>!
+        Don't miss out on the opportunity to contribute to the hacking community by providing
+        students with valuable guidance. Our mentors are an integral part of the VandyHacks
+        experience. Not only will you be able to share your experience with creative and driven
+        young hackers, but you'll also get free food and swag and FUN! What better way to spend a
+        weekend?
+        <br></br>
+        <a
+          className="mentor-btn btn btn-primary btn-primary"
+          href="https://goo.gl/forms/ZxxnP9bGZj7Tliet1"
+          target="_blank"
+        >
+          Mentor
+        </a>
 			</div>
 			</div>
 		);
