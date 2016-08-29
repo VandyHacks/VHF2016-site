@@ -731,7 +731,7 @@ tr {
 .logo1 {
   position: absolute;
   left: 408%;
-  top: calc(5% + 330px);
+  top: calc(35% + 100px);
   width: 25%;
 }
 
@@ -745,14 +745,14 @@ tr {
 .logo3 {
   position: absolute;
   left: 440%;
-  top: calc(5% + 330px);
+  top: calc(35% + 100px);
   width: 10%;
 }
 
 .logo4 {
   position: absolute;
   left: 458%;
-  top: calc(5% + 330px);
+  top: calc(35% + 100px);
   width: 10%;
 }
 
@@ -774,7 +774,7 @@ tr {
 .logo7 {
   position: absolute;
   left: 475%;
-  top: calc(5% + 330px);
+  top: calc(35% + 100px);
   width: 15%;
 }
 
