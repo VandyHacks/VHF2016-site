@@ -9,7 +9,7 @@ export default class Sky2 extends React.Component {
         Don't miss out on the opportunity to contribute to the hacking community by providing
         students with valuable guidance. Our mentors are an integral part of the VandyHacks
         experience. Not only will you be able to share your experience with creative and driven
-        young hackers, but you'll also get free food and swag and FUN! What better way to spend a
+        young hackers, but you'll also get free food and swag and FUN!<br />What better way to spend a
         weekend?
         <br></br>
         <a
