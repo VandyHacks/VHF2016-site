@@ -726,43 +726,43 @@ tr {
 .logo1 {
   position: absolute;
   left: 408%;
-  top: calc(5% + 120px);
+  top: calc(5% + 330px);
   width: 25%;
 }
 
 .logo2 {
   position: absolute;
-  left: 440%;
+  left: 443%;
   top: calc(5% + 115px);
   width: 20%;
 }
 
 .logo3 {
   position: absolute;
-  left: 468%;
-  top: calc(5% + 90px);
+  left: 440%;
+  top: calc(5% + 330px);
   width: 10%;
 }
 
 .logo4 {
   position: absolute;
-  left: 485%;
-  top: calc(5% + 120px);
+  left: 458%;
+  top: calc(5% + 330px);
   width: 10%;
 }
 
 .logo5 {
   position: absolute;
   left: 408%;
-  top: calc(5% + 260px);
+  top: calc(5% + 100px);
   width: 30%;
   z-index: 1;
 }
 
 .logo6 {
   position: absolute;
-  left: 445%;
-  top: calc(5% + 315px);
+  left: 470%;
+  top: calc(5% + 115px);
   width: 20%;
 }
 
