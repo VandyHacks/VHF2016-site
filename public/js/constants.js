@@ -2,7 +2,7 @@ module.exports = {
   FAQ : [
     {
       'question': 'How does registration work?',
-      'answer': "Registration will open soon on VandyHacks.org. Admission is determined by a variety of different factors, but ultimately comes down to a few lotteries (grouped by geographic region.) If you're curious, email us for more info!",
+      'answer': "Registration will open soon on VandyHacks.org. Admission is determined by a variety of different factors, and applications will be reviewed by our board mid october. If you're curious, email us for more info!",
     },
     {
       'question': 'What should I bring?',
