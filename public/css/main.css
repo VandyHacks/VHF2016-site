@@ -969,6 +969,12 @@ tr {
 
 }
 
+@media (max-height: 590px) {
+  .squirrel0 {
+    display: none !important;
+  }
+}
+
 @media(max-width: 769px) {
     html, body {
         height: 100%;
