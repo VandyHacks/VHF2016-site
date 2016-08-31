@@ -665,6 +665,7 @@ tr {
     left: 300%;
     bottom: 12%;
     opacity: .35;
+    z-index: -10;
 }
 
 .faqSquirrel {
