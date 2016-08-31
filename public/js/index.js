@@ -35,7 +35,7 @@ class Navbar extends React.Component {
 				<span className="navbar-apply">
           <a
             className="nav-link"
-            target="_apply"
+            target="_blank"
             href="https://vandyhacks.typeform.com/to/RqdpnL">
             Apply
           </a>
