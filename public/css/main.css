@@ -39,7 +39,7 @@ h1 {
 /* moving clouds */
 @keyframes animate-cloud0-1 {
   0% {left: -15%;}
-  50% {left: 245%;}
+  50% {left: 500%;}
   100% {left: -15%;}
 }
 
@@ -50,15 +50,15 @@ h1 {
   top: 3%;
   z-index: -5;
   animation-name: animate-cloud0-1;
-  animation-duration: 167s;
+  animation-duration: 280s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud0-2 {
-  0% {right: 1%;}
-  50% {right: 245%;}
-  100% {right: 1%;}
+  0% {left: 98%;}
+  50% {left: 500%;}
+  100% {left: 98%;}
 }
 
 .cloud0-2 {
@@ -69,19 +69,19 @@ h1 {
   filter: FlipH;
   -ms-filter: "FlipH";
   position: absolute;
-  right: 1%;
+  left: 98%;
   width: 20%;
   top: 15%;
   z-index: -5;
   animation-name: animate-cloud0-2;
-  animation-duration: 212s;
+  animation-duration: 250s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud0-3 {
   0% {left: 22%;}
-  50% {left: 300%;}
+  50% {left: 500%;}
   100% {left: 22%;}
 }
 
@@ -98,14 +98,14 @@ h1 {
   top: 35%;
   z-index: -5;
   animation-name: animate-cloud0-3;
-  animation-duration: 144s;
+  animation-duration: 220s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud1 {
   0% {left: 195%;}
-  50% {left: 105%;}
+  50% {left: 500%;}
   100% {left: 195%;}
 }
 
@@ -116,15 +116,15 @@ h1 {
   position: absolute;
   z-index: -5;
   animation-name: animate-cloud1;
-  animation-duration: 150s;
+  animation-duration: 190s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud2 {
-  0% {right: 398%;}
-  50% {right: 148%;}
-  100% {right: 398%;}
+  0% {left: 298%;}
+  50% {left: 500%;}
+  100% {left: 298%;}
 }
 
 .cloud2 {
@@ -135,19 +135,19 @@ h1 {
  filter: FlipH;
  -ms-filter: "FlipH";
  top: 8%;
- right: 398%;
+ left: 298%;
  max-height: 25%;
  position: absolute;
  z-index: -5;
-  animation-name: animate-cloud2;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+ animation-name: animate-cloud2;
+ animation-duration: 170s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
 }
 
 @keyframes animate-cloud3 {
   0% {left: 125%;}
-  50% {left: 375%;}
+  50% {left: 500%;}
   100% {left: 125%;}
 }
 
@@ -164,14 +164,14 @@ h1 {
   position: absolute;
   z-index: -5;
   animation-name: animate-cloud3;
-  animation-duration: 157s;
+  animation-duration: 150s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud2-0 {
   0% {left: 230%;}
-  50% {left: 375%;}
+  50% {left: 500%;}
   100% {left: 230%;}
 }
 
@@ -187,14 +187,14 @@ h1 {
   top: 7%;
   left: 230%;
   animation-name: animate-cloud2-0;
-  animation-duration: 134s;
+  animation-duration: 130s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-faqCloud1 {
   0% {left: 300%;}
-  50% {left: 50%;}
+  50% {left: 500%;}
   100% {left: 300%;}
 }
 
@@ -205,7 +205,7 @@ h1 {
   height: auto;
   left: 300%;
   animation-name: animate-faqCloud1;
-  animation-duration: 134s;
+  animation-duration: 110s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   z-index: -5;
@@ -213,7 +213,7 @@ h1 {
 
 @keyframes animate-faqCloud2 {
   0% {left: 330%;}
-  50% {left: 220%;}
+  50% {left: 500%;}
   100% {left: 330%;}
 }
 
@@ -230,7 +230,7 @@ h1 {
     height: auto;
     left: 330%;
     animation-name: animate-faqCloud2;
-    animation-duration: 134s;
+    animation-duration: 90s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
@@ -238,7 +238,7 @@ h1 {
 
 @keyframes animate-faqCloud3 {
   0% {left: 380%;}
-  50% {left: 450%;}
+  50% {left: 500%;}
   100% {left: 380%;}
 }
 
@@ -255,7 +255,7 @@ h1 {
     height: auto;
     left: 380%;
     animation-name: animate-faqCloud3;
-    animation-duration: 134s;
+    animation-duration: 70s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
