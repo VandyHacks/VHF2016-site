@@ -39,8 +39,7 @@ h1 {
 /* moving clouds */
 @keyframes animate-cloud0-1 {
   0% {left: -15%;}
-  50% {left: 500%;}
-  100% {left: -15%;}
+  100% {left: 500%;}
 }
 
 .cloud0-1 {
@@ -57,7 +56,8 @@ h1 {
 
 @keyframes animate-cloud0-2 {
   0% {left: 98%;}
-  50% {left: 500%;}
+  40% {left: 500%;}
+  90% {left: -15%;}
   100% {left: 98%;}
 }
 
@@ -81,7 +81,8 @@ h1 {
 
 @keyframes animate-cloud0-3 {
   0% {left: 22%;}
-  50% {left: 500%;}
+  40% {left: 500%;}
+  95% {left: -15%;}
   100% {left: 22%;}
 }
 
@@ -105,7 +106,8 @@ h1 {
 
 @keyframes animate-cloud1 {
   0% {left: 195%;}
-  50% {left: 500%;}
+  40% {left: 500%;}
+  80% {left: -15%;}
   100% {left: 195%;}
 }
 
@@ -123,7 +125,8 @@ h1 {
 
 @keyframes animate-cloud2 {
   0% {left: 298%;}
-  50% {left: 500%;}
+  20% {left: 500%;}
+  70% {left: -15%;}
   100% {left: 298%;}
 }
 
@@ -147,7 +150,8 @@ h1 {
 
 @keyframes animate-cloud3 {
   0% {left: 125%;}
-  50% {left: 500%;}
+  40% {left: 500%;}
+  85% {left: -15%;}
   100% {left: 125%;}
 }
 
@@ -171,7 +175,8 @@ h1 {
 
 @keyframes animate-cloud2-0 {
   0% {left: 230%;}
-  50% {left: 500%;}
+  30% {left: 500%;}
+  75% {left: -15%;}
   100% {left: 230%;}
 }
 
@@ -194,7 +199,8 @@ h1 {
 
 @keyframes animate-faqCloud1 {
   0% {left: 300%;}
-  50% {left: 500%;}
+  20% {left: 500%;}
+  70% {left: -15%;}
   100% {left: 300%;}
 }
 
@@ -213,7 +219,8 @@ h1 {
 
 @keyframes animate-faqCloud2 {
   0% {left: 330%;}
-  50% {left: 500%;}
+  20% {left: 500%;}
+  70% {left: -15%;}
   100% {left: 330%;}
 }
 
@@ -230,7 +237,7 @@ h1 {
     height: auto;
     left: 330%;
     animation-name: animate-faqCloud2;
-    animation-duration: 90s;
+    animation-duration: 120s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
@@ -238,7 +245,8 @@ h1 {
 
 @keyframes animate-faqCloud3 {
   0% {left: 380%;}
-  50% {left: 500%;}
+  15% {left: 500%;}
+  65% {left: -15%;}
   100% {left: 380%;}
 }
 
@@ -255,7 +263,7 @@ h1 {
     height: auto;
     left: 380%;
     animation-name: animate-faqCloud3;
-    animation-duration: 70s;
+    animation-duration: 140s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
