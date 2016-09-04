@@ -21,7 +21,7 @@ html, body {
 }
 
 body {
-	  background: #99D6D3;
+	background: #99D6D3;
     background: -webkit-linear-gradient(#90DBDB, #99D6D3);
     background: -o-linear-gradient(#90DBDB, #99D6D3);
     background: -moz-linear-gradient(#90DBDB, #99D6D3);
@@ -707,7 +707,7 @@ tr {
     font-family: 'sofiaprocondblack';
     position: absolute;
     top: calc(5% + 60px);
-    left: 408%;
+    left: 405%;
     width: 97%;
     text-transform: uppercase;
     z-index: 10;
@@ -739,35 +739,35 @@ tr {
 
 .logo1 {
   position: absolute;
-  left: 408%;
+  left: 405%;
   top: calc(35% + 100px);
   width: 25%;
 }
 
 .logo2 {
   position: absolute;
-  left: 443%;
+  left: 437%;
   top: calc(5% + 160px);
   width: 20%;
 }
 
 .logo3 {
   position: absolute;
-  left: 440%;
+  left: 436%;
   top: calc(30% + 100px);
   width: 10%;
 }
 
 .logo4 {
   position: absolute;
-  left: 458%;
+  left: 450%;
   top: calc(33% + 100px);
   width: 10%;
 }
 
 .logo5 {
   position: absolute;
-  left: 407%;
+  left: 404%;
   top: calc(5% + 130px);
   width: 30%;
   z-index: 1;
@@ -775,16 +775,30 @@ tr {
 
 .logo6 {
   position: absolute;
-  left: 470%;
+  left: 459%;
   top: calc(5% + 150px);
   width: 20%;
 }
 
 .logo7 {
   position: absolute;
-  left: 475%;
+  left: 462%;
   top: calc(35% + 100px);
   width: 15%;
+}
+
+.logo8 {
+  position: absolute;
+  left: 481%;
+  top: calc(5% + 175px);
+  width: 18%;
+}
+
+.logo9 {
+  position: absolute;
+  left: 476%;
+  top: calc(35% + 75px);
+  width: 25%;
 }
 
 /* Navbar */
@@ -1105,7 +1119,7 @@ tr {
       font-size: 2em;
     }
 
-    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7 {
+    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9 {
       position: static;
       margin-top: 10%;
       display: table;
@@ -1122,7 +1136,7 @@ tr {
     }
 
     .logo3 {
-      width: 15%;
+      width: 25%;
     }
 
     .logo4 {
@@ -1131,6 +1145,15 @@ tr {
 
     .logo5, .logo6, .logo7 {
       width: 55%;
+    }
+
+    .logo8 {
+    	width: 65%;
+    }
+
+    .logo9 {
+    	margin-top: 5%;
+    	width: 100%;
     }
 }
 
@@ -1155,7 +1178,7 @@ tr {
     .logo5, .logo6, .logo7 {
       width: 75%;
     }
-
+    
 }
 
 @media(min-width: 420px) and (max-height: 554px) {
