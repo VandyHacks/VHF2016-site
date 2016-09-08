@@ -9,7 +9,7 @@ export default class Sponsors extends React.Component {
         <img src="img/page4/bny.svg" className="logo5" />
       </a>
       <a href="http://www.centene.com/">
-        <img src="img/page4/centene_logo.jpg" className="centene_logo" />
+        <img src="img/page4/centene_logo.jpg" className="centene-logo" />
       </a>
 			<a href="http://www.digitalreasoning.com/">
 	    	<img src="img/page4/digital_reasoning.png" className="logo2"/>
