@@ -723,7 +723,7 @@ tr {
     font-family: 'sofiaprocondblack';
     position: absolute;
     top: calc(5% + 60px);
-    left: 405%;
+    left: 445.75%;
     width: 97%;
     text-transform: uppercase;
     z-index: 10;
@@ -762,15 +762,15 @@ tr {
 
 .logo2 {
   position: absolute;
-  left: 410%;
-  top: calc(15% + 100px);
+  left: 412%;
+  top: calc(15% + 130px);
   width: 16%;
 }
 
 .logo3 {
   position: absolute;
   left: 412%;
-  top: calc(30% + 100px);
+  top: calc(30% + 125px);
   width: 8%;
 }
 
@@ -783,46 +783,46 @@ tr {
 
 .logo5 {
   position: absolute;
-  left: 414%;
+  left: 411%;
   top: calc(5% + 30px);
-  width: 25%;
+  width: 23%;
   z-index: 1;
 }
 
 .centene-logo {
-  left: 454%;
+  left: 469%;
   opacity: .85;
   position: absolute;
-  top: calc(5% + 30px);
-  width: 25%;
+  top: calc(5% + 70px);
+  width: 23%;
   z-index: 1;
 }
 
 .logo6 {
   position: absolute;
-  left: 440%;
-  top: calc(15% + 100px);
+  left: 443%;
+  top: calc(15% + 125px);
   width: 16%;
 }
 
 .logo7 {
   position: absolute;
   left: 455%;
-  top: calc(35% + 100px);
+  top: calc(35% + 105px);
   width: 15%;
 }
 
 .logo8 {
   position: absolute;
-  left: 471%;
-  top: calc(15% + 115px);
+  left: 476%;
+  top: calc(15% + 150px);
   width: 16%;
 }
 
 .logo9 {
   position: absolute;
-  left: 474%;
-  top: calc(35% + 75px);
+  left: 476%;
+  top: calc(35% + 90px);
   width: 18%;
 }
 

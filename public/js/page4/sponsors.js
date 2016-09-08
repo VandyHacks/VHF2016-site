@@ -4,12 +4,13 @@ export default class Sponsors extends React.Component {
 	render() {
 		return(
 			<div>
+			<p className="sponsors">Sponsors</p>
 			{/* Logos */}
       <a target="_blank" rel="noopener" href="https://www.bnymellon.com">
         <img src="img/page4/bny.svg" className="logo5" />
       </a>
       <a target="_blank" rel="noopener" href="http://www.centene.com/">
-        <img src="img/page4/centene_logo.jpg" className="centene-logo" />
+        <img src="img/page4/centene_logo.png" className="centene-logo" />
       </a>
 			<a target="_blank" rel="noopener" href="http://www.digitalreasoning.com/">
 	    	<img src="img/page4/digital_reasoning.png" className="logo2"/>
