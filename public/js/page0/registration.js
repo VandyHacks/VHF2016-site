@@ -21,6 +21,7 @@ export default class Registration extends React.Component {
         <ul className="soc">
           <li><a className="soc-facebook" href="https://www.facebook.com/vandyhacks" target="_blank"></a></li>
           <li><a className="soc-twitter" href="https://twitter.com/vandyhacks" target="_blank" ></a></li>
+          <li><a className="soc-instagram" href="https://www.instagram.com/vandyhacks/" target="_blank" ></a></li>
         </ul><br />
         <Image class="tree0-1 hidden-xs hidden-sm" path ="img/page0/tree1.svg"/>
         <Image class="tree0-2 hidden-xs hidden-sm" path="img/page0/tree2.svg"/>

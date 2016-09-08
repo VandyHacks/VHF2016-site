@@ -591,6 +591,10 @@ tr {
   content:'b';
 }
 
+.soc-instagram:before {
+  content:'x';
+}
+
 .p2tree1 {
 	position: absolute;
 	bottom: 10.5%;
