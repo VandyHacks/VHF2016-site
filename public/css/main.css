@@ -390,6 +390,22 @@ tr {
   color: #ff9100;
 }
 
+.description-link:link {
+  text-decoration: none;
+}
+
+.description-link:visited {
+  text-decoration: none;
+}
+
+.description-link:hover {
+  text-decoration: underline;
+}
+
+.description-link:active {
+  text-decoration: underline;
+}
+
 .kirkland {
     bottom: 0;
     left: 110%;
