@@ -787,9 +787,9 @@ tr {
 
 .logo5 {
   position: absolute;
-  left: 411%;
-  top: calc(5% + 40px);
-  width: 23%;
+  left: 409%;
+  top: calc(5% + 60px);
+  width: 25%;
   z-index: 1;
 }
 
@@ -1176,7 +1176,7 @@ tr {
     }
 
     .logo2 {
-      width: 70%;
+      width: 60%;
     }
 
     .logo3 {
@@ -1187,7 +1187,11 @@ tr {
       width: 30%;
     }
 
-    .logo5, .logo6, .logo7, centene-logo {
+    .logo5 {
+    	width: 80%;
+    }
+
+    .logo6, .logo7, centene-logo {
       width: 55%;
     }
 
@@ -1209,7 +1213,7 @@ tr {
     }
 
     .logo2 {
-      width: 90%;
+      width: 80%;
     }
 
     .logo3 {
@@ -1220,7 +1224,11 @@ tr {
       width: 50%;
     }
 
-    .logo5, .logo6, .logo7, centene-logo, .micro-logo {
+    .logo5 {
+    	width: 85%;
+    }
+
+    .logo6, .logo7, centene-logo, .micro-logo {
       width: 75%;
     }
     
