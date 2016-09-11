@@ -830,6 +830,13 @@ tr {
   width: 18%;
 }
 
+.micro-logo {
+  position: absolute;
+  left: 436.5%;
+  top: calc(5% + 60px);
+  width: 30%;
+}
+
 /* Navbar */
 
 #navbar {
