@@ -760,35 +760,35 @@ tr {
 .logo1 {
   position: absolute;
   left: 405%;
-  top: calc(35% + 100px);
+  top: calc(35% + 110px);
   width: 25%;
 }
 
 .logo2 {
   position: absolute;
   left: 412%;
-  top: calc(15% + 130px);
+  top: calc(15% + 140px);
   width: 16%;
 }
 
 .logo3 {
   position: absolute;
   left: 412%;
-  top: calc(30% + 125px);
+  top: calc(30% + 135px);
   width: 8%;
 }
 
 .logo4 {
   position: absolute;
   left: 434%;
-  top: calc(33% + 100px);
+  top: calc(33% + 110px);
   width: 10%;
 }
 
 .logo5 {
   position: absolute;
   left: 411%;
-  top: calc(5% + 30px);
+  top: calc(5% + 40px);
   width: 23%;
   z-index: 1;
 }
@@ -797,7 +797,7 @@ tr {
   left: 469%;
   opacity: .85;
   position: absolute;
-  top: calc(5% + 70px);
+  top: calc(5% + 90px);
   width: 23%;
   z-index: 1;
 }
@@ -805,35 +805,35 @@ tr {
 .logo6 {
   position: absolute;
   left: 443%;
-  top: calc(15% + 125px);
+  top: calc(15% + 135px);
   width: 16%;
 }
 
 .logo7 {
   position: absolute;
   left: 455%;
-  top: calc(35% + 105px);
+  top: calc(35% + 120px);
   width: 15%;
 }
 
 .logo8 {
   position: absolute;
   left: 476%;
-  top: calc(15% + 150px);
+  top: calc(15% + 160px);
   width: 16%;
 }
 
 .logo9 {
   position: absolute;
   left: 476%;
-  top: calc(35% + 90px);
+  top: calc(35% + 100px);
   width: 18%;
 }
 
 .micro-logo {
   position: absolute;
   left: 436.5%;
-  top: calc(5% + 60px);
+  top: calc(5% + 40px);
   width: 30%;
 }
 
@@ -1155,12 +1155,16 @@ tr {
       font-size: 2em;
     }
 
-    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9, .centene-logo {
+    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9, .centene-logo, .micro-logo {
       position: static;
       margin-top: 10%;
       display: table;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .micro-logo {
+      width: 75%;
     }
 
     .centene-logo {
@@ -1195,6 +1199,7 @@ tr {
     	margin-top: 5%;
     	width: 100%;
     }
+
 }
 
 @media(max-width: 560px) {
@@ -1215,7 +1220,7 @@ tr {
       width: 50%;
     }
 
-    .logo5, .logo6, .logo7, centene-logo {
+    .logo5, .logo6, .logo7, centene-logo, .micro-logo {
       width: 75%;
     }
     
