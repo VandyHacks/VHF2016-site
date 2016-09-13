@@ -5,12 +5,12 @@ const config = require('../webpack.config.js');
 
 const app = express(); 
 
+const oneDay = 86400000;
 const publicPath = path.resolve(__dirname);
 console.log(publicPath)
-app.use(express.static(__dirname)); 
+app.use(express.static(__dirname, { maxAge: oneDay }));
 app.get('/', function response(req, res) {  
   res.sendFile(path.join(__dirname, '../index.html'));
 });
-
 
 app.listen(process.env.PORT || 3000);
