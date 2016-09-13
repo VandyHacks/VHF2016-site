@@ -723,14 +723,16 @@ tr {
 /* Page 4 */
 
 .sponsors {
-    font-size: 3em;
+    font-size: 1em;
     font-family: 'sofiaprocondblack';
     position: absolute;
-    top: calc(5% + 60px);
-    left: 445.75%;
-    width: 97%;
+    bottom: 31%;
+    left: 442.5%;
+    width: 20%;
     text-transform: uppercase;
     z-index: 10;
+    line-height: 15px;
+    text-align: center;
 }
 
 .sponsorTrees1 {
@@ -1036,6 +1038,16 @@ tr {
     width: 100px;
   }
 
+ .sponsors {
+    position: static;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 2em;
+    line-height: 30px;
+  }
+
 }
 
 @media (max-height: 597px) {
@@ -1108,6 +1120,11 @@ tr {
         width: 100%;
     }
 
+    .sponsors {
+      font-size: 1.2em;
+      line-height: 20px;
+    }
+
     #vh-description {
         width: 100%;
         top: 1.5%;
@@ -1148,11 +1165,6 @@ tr {
       display: table;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .sponsors {
-      margin-top: 10%;
-      font-size: 2em;
     }
 
     .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9, .centene-logo, .micro-logo {

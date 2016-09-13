@@ -35,6 +35,7 @@ export default class Sponsors extends React.Component {
       		<a target="_blank" rel="noopener" href="https://www.stickermule.com/">
     			<img src="img/page4/sticker_mule.png" className="logo9"/>
       		</a>
+      		<p className="sponsors">Interested in sponsoring VandyHacks?<br />Reach out to us at sponsors@vandyhacks.org</p>
 			<img src="img/page4/tree3.svg" className="sponsorTrees1 hidden-xs hidden-sm"/>
 			<img src="img/page4/tree4.svg" className="sponsorTrees2 hidden-xs hidden-sm"/>
 			<img src="img/page4/squirrel_and_laptop.svg" className="squirrelLaptop hidden-xs hidden-sm"/>
