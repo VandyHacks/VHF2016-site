@@ -723,12 +723,12 @@ tr {
 /* Page 4 */
 
 .sponsors {
-    font-size: 1em;
+    font-size: .88em;
     font-family: 'sofiaprocondblack';
     position: absolute;
-    bottom: 31%;
-    left: 442.5%;
-    width: 20%;
+    bottom: 15%;
+    left: 429.25%;
+    width: 15%;
     text-transform: uppercase;
     z-index: 10;
     line-height: 15px;
@@ -1038,16 +1038,6 @@ tr {
     width: 100px;
   }
 
- .sponsors {
-    position: static;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 2em;
-    line-height: 30px;
-  }
-
 }
 
 @media (max-height: 597px) {
@@ -1121,8 +1111,13 @@ tr {
     }
 
     .sponsors {
-      font-size: 1.2em;
-      line-height: 20px;
+      position: static;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+      font-size: 2em;
+      line-height: 30px;
     }
 
     #vh-description {
@@ -1242,6 +1237,10 @@ tr {
 
     .logo6, .logo7, centene-logo, .micro-logo {
       width: 75%;
+    }
+
+    .sponsors {
+      font-size: 1.2em;
     }
     
 }
