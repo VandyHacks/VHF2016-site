@@ -6,9 +6,7 @@ var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 //require('dotenv').config();
 //the above line should be uncommented when run locally and commented back again when pushed
-
-function connectDB(query){
-	var client = new pg.Client({
+var client = new pg.Client({
 	  user: process.env.DB_USER,
 	  password: process.env.DB_PASSWORD,
 	  database: process.env.DB,
@@ -16,20 +14,19 @@ function connectDB(query){
 	  host: process.env.DB_HOST,
 	  ssl: true
 	});
+client.connect();
 
-	client.connect();
 
-	var query = client.query(query, function(err, result){
+function connectDB(statement){
+	var query = client.query(statement, function(err, result){
 		if (err) {
 			console.log(err);
+			console.log(statement)		
 		};
 		//console.log(result.rows[0]);
-
-		client.end();
-
 	});
 	//query.on('end', client.end.bind(client));
-	return client;
+	
 }
 
 var updateDB =  (function () {
@@ -42,7 +39,9 @@ var updateDB =  (function () {
 	        	var res = data.responses[i];
 	        	getQueryString(res).then(function(val){
 	        		console.log(val);
-	        		connectDB(val);
+	        		if (val !== "Done"){
+	        			connectDB(val);
+	        		}
 	        	});	        	
 	        }   	
     })
@@ -63,25 +62,14 @@ function getQuestion(id, data){
 var checkEmail = async (function(email){
 
 	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
-	console.log(query);
-	var client = new pg.Client({
-	  user: process.env.DB_USER,
-	  password: process.env.DB_PASSWORD,
-	  database: process.env.DB,
-	  port: 5432,
-	  host: process.env.DB_HOST,
-	  ssl: true
-	});
-
-	client.connect();
 	let check;
 	var query = await(client.query(query, function(err, result){
 		if (err) {
 			console.log(err);
 		};
-		console.log(result.rows[0]);
-		client.end();
+		//console.log(result);
 		check =  result.rows[0].exists;
+		console.log(check);
 	}));
 
 	return check;
@@ -106,27 +94,40 @@ var getQueryString = async( function (res){
 	var check = await(checkEmail(map.email));
 	if (!check){
 		for (var prop in map){
-			if (prop !== "money"){
+			if (prop !== "money" && prop!== "team_id" && prop !== "email1"
+				&& prop !== "email2" && prop!=="email3"){
 				questions += ", "+prop;
-				answers += ", '" + map[prop]+"'";
+				if (map[prop] === "Yes"){
+					map[prop] = 'true';
+				}
+				else if (map[prop] == "No"){
+					map[prop] = 'false';
+				}
+
+				answers += ", '" + map[prop].replace(/'/g,"")+"'";
 			}
 		}
 		return new Promise(function(resolve){
 			//add qr code
 			var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+map.email;
-			resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+");"
-				+" UPDATE HACKER SET qr_code ='"+url+"' WHERE email = '"+map.email+"'; "
-				+"INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)"
-				+"VALUES ('"+map.money+"', (select id from hacker where email = '"+map.email+"'), 2, '"+ res.metadata.user_agent+"', 'true')");
+			if (map.email != undefined){
+				resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+");"
+					+" UPDATE HACKER SET qr_code ='"+url+"' WHERE email = '"+map.email+"'; "
+					+"INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)"
+					+"VALUES ('"+map.money+"', (select id from hacker where email = '"+map.email+"'), 2, '"+ res.metadata.user_agent+"', 'true')");
+			}else {
+				resolve("Done");
+			}
 		}) ; 
 	}else {
 		return new Promise(function(resolve){
-			resolve("select 'already inserted'")
+			resolve("Done");
 		});
 	}
 	
 });
 
+//a hashmap would probably look better but this is faster performance wise, and I'm lazy.
 function getTableCol(key){
 	
 	var fieldId = Number(getFieldId(key));
@@ -139,6 +140,14 @@ function getTableCol(key){
 			//last name
 			return "last_name";
 			break;
+		case 29289151:
+			return "team_id";
+		case 29289338: 
+			return "email1";
+		case 29289346:
+			return "email2";
+		case 29289368:
+			return "email3";
 		case 25562055 :
 			//email
 			return "email";
@@ -195,6 +204,8 @@ function getTableCol(key){
       	//needs
       		return "special_needs";
       		break;
+      	case 29438409:
+      		return "phone_number";
 	}
 }
 
@@ -210,5 +221,6 @@ function getFieldId(key){
 
 var exitPromise = new Promise(updateDB);
 exitPromise.then(function(){
+	client.end();
 	process.exit();
 });
