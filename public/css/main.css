@@ -39,7 +39,7 @@ h1 {
 /* moving clouds */
 @keyframes animate-cloud0-1 {
   0% {left: -15%;}
-  100% {left: 500%;}
+  100% {left: 600%;}
 }
 
 .cloud0-1 {
@@ -49,14 +49,14 @@ h1 {
   top: 3%;
   z-index: -5;
   animation-name: animate-cloud0-1;
-  animation-duration: 280s;
+  animation-duration: 336s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud0-2 {
   0% {left: 98%;}
-  40% {left: 500%;}
+  40% {left: 600%;}
   90% {left: -15%;}
   100% {left: 98%;}
 }
@@ -74,14 +74,14 @@ h1 {
   top: 15%;
   z-index: -5;
   animation-name: animate-cloud0-2;
-  animation-duration: 250s;
+  animation-duration: 300s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud0-3 {
   0% {left: 22%;}
-  40% {left: 500%;}
+  40% {left: 600%;}
   95% {left: -15%;}
   100% {left: 22%;}
 }
@@ -99,14 +99,14 @@ h1 {
   top: 35%;
   z-index: -5;
   animation-name: animate-cloud0-3;
-  animation-duration: 220s;
+  animation-duration: 265s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud1 {
   0% {left: 195%;}
-  40% {left: 500%;}
+  40% {left: 600%;}
   80% {left: -15%;}
   100% {left: 195%;}
 }
@@ -118,14 +118,14 @@ h1 {
   position: absolute;
   z-index: -5;
   animation-name: animate-cloud1;
-  animation-duration: 190s;
+  animation-duration: 265s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud2 {
   0% {left: 298%;}
-  20% {left: 500%;}
+  20% {left: 600%;}
   70% {left: -15%;}
   100% {left: 298%;}
 }
@@ -143,14 +143,14 @@ h1 {
  position: absolute;
  z-index: -5;
  animation-name: animate-cloud2;
- animation-duration: 170s;
+ animation-duration: 290s;
  animation-iteration-count: infinite;
  animation-timing-function: linear;
 }
 
 @keyframes animate-cloud3 {
   0% {left: 125%;}
-  40% {left: 500%;}
+  40% {left: 600%;}
   85% {left: -15%;}
   100% {left: 125%;}
 }
@@ -168,14 +168,14 @@ h1 {
   position: absolute;
   z-index: -5;
   animation-name: animate-cloud3;
-  animation-duration: 150s;
+  animation-duration: 215s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-cloud2-0 {
   0% {left: 230%;}
-  30% {left: 500%;}
+  30% {left: 600%;}
   75% {left: -15%;}
   100% {left: 230%;}
 }
@@ -192,14 +192,14 @@ h1 {
   top: 7%;
   left: 230%;
   animation-name: animate-cloud2-0;
-  animation-duration: 130s;
+  animation-duration: 275s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes animate-faqCloud1 {
   0% {left: 300%;}
-  20% {left: 500%;}
+  20% {left: 600%;}
   70% {left: -15%;}
   100% {left: 300%;}
 }
@@ -211,7 +211,7 @@ h1 {
   height: auto;
   left: 300%;
   animation-name: animate-faqCloud1;
-  animation-duration: 110s;
+  animation-duration: 230s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   z-index: -5;
@@ -219,7 +219,7 @@ h1 {
 
 @keyframes animate-faqCloud2 {
   0% {left: 330%;}
-  20% {left: 500%;}
+  20% {left: 600%;}
   70% {left: -15%;}
   100% {left: 330%;}
 }
@@ -237,7 +237,7 @@ h1 {
     height: auto;
     left: 330%;
     animation-name: animate-faqCloud2;
-    animation-duration: 120s;
+    animation-duration: 255s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
@@ -245,7 +245,7 @@ h1 {
 
 @keyframes animate-faqCloud3 {
   0% {left: 380%;}
-  15% {left: 500%;}
+  15% {left: 600%;}
   65% {left: -15%;}
   100% {left: 380%;}
 }
@@ -263,7 +263,7 @@ h1 {
     height: auto;
     left: 380%;
     animation-name: animate-faqCloud3;
-    animation-duration: 140s;
+    animation-duration: 225s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: -5;
@@ -416,7 +416,7 @@ tr {
 
 #grass {
     height: 12%;
-    width: 505%;
+    width: 605%;
     left: 0;
     bottom: 0;
     z-index: -2;
@@ -761,21 +761,21 @@ tr {
 
 .logo1 {
   position: absolute;
-  left: 405%;
+  left: 402.5%;
   top: calc(35% + 110px);
   width: 25%;
 }
 
 .logo2 {
   position: absolute;
-  left: 412%;
+  left: 409.5%;
   top: calc(15% + 140px);
   width: 16%;
 }
 
 .logo3 {
   position: absolute;
-  left: 412%;
+  left: 409.5%;
   top: calc(30% + 135px);
   width: 8%;
   z-index: 1;
@@ -783,21 +783,21 @@ tr {
 
 .logo4 {
   position: absolute;
-  left: 434%;
+  left: 431.5%;
   top: calc(33% + 110px);
   width: 10%;
 }
 
 .logo5 {
   position: absolute;
-  left: 409%;
+  left: 406.5%;
   top: calc(5% + 60px);
   width: 25%;
   z-index: 1;
 }
 
 .centene-logo {
-  left: 469%;
+  left: 466.5%;
   opacity: .85;
   position: absolute;
   top: calc(5% + 90px);
@@ -807,37 +807,80 @@ tr {
 
 .logo6 {
   position: absolute;
-  left: 443%;
+  left: 440.5%;
   top: calc(15% + 135px);
   width: 16%;
 }
 
 .logo7 {
   position: absolute;
-  left: 455%;
+  left: 452.5%;
   top: calc(35% + 120px);
   width: 15%;
 }
 
 .logo8 {
   position: absolute;
-  left: 476%;
+  left: 473.5%;
   top: calc(15% + 160px);
   width: 16%;
 }
 
 .logo9 {
   position: absolute;
-  left: 476%;
+  left: 473.5%;
   top: calc(35% + 100px);
   width: 18%;
 }
 
 .micro-logo {
   position: absolute;
-  left: 436.5%;
+  left: 434%;
   top: calc(5% + 40px);
   width: 30%;
+}
+
+/* Page 5 */
+
+.partners {
+	font-size: 3em;
+	font-family: 'sofiaprocondblack';
+	position: absolute;
+	top: 15%;
+	left: 505%;
+	width: 100%;
+	text-transform: uppercase;
+	z-index: 10;
+	line-height: 15px;
+}
+
+.p5tree1 {
+	position: absolute;
+	left: 513%;
+	bottom: 4%;
+	width: 8%;
+}
+
+.p5tree2 {
+	position: absolute;
+	left: 522%;
+	bottom: 6%;
+	width: 7%;
+}
+
+.p5tree3 {
+	position: absolute;
+	left: 530.5%;
+	bottom: 3%;
+	width: 6.5%;
+
+}
+
+.p5trees1 {
+	position: absolute;
+	left: 566%;
+	bottom: 4%;
+	width: 20%;
 }
 
 /* Navbar */
@@ -1014,6 +1057,14 @@ tr {
   left: 401vw;
 }
 
+#page4-arrow-right {
+  left: calc(499vw - 90px);
+}
+
+#page5-arrow-left {
+  left: 501vw;
+}
+
 /* Responsiveness */
 @media(max-width: 1680px) {
     p {
@@ -1098,7 +1149,7 @@ tr {
       font-size: 6vw;
     }
 
-    #vh-description, .squirrel0, .treehouse, .squirrel, .faq, .sponsors, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop, .mentor-description {
+    #vh-description, .squirrel0, .treehouse, .squirrel, .faq, .sponsors, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop, .mentor-description, .partners {
         position: static;
     }
 
@@ -1116,6 +1167,7 @@ tr {
       display: table;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 10%;
       width: 90%;
       font-size: 2em;
       line-height: 30px;
@@ -1180,7 +1232,7 @@ tr {
     }
 
     .logo1 {
-      width: 75%
+      width: 75%;
     }
 
     .logo2 {
@@ -1208,8 +1260,17 @@ tr {
     }
 
     .logo9 {
-    	margin-top: 5%;
     	width: 100%;
+    }
+
+    .micro-logo {
+    	margin-top: 4%;
+    	margin-bottom: -4%;
+    }
+
+    .partners {
+    	margin-top: 10%;
+    	font-size: 2em;
     }
 
 }

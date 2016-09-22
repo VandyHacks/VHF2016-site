@@ -17,6 +17,8 @@ import Ground3 from './page3/ground.js';
 import Constants from './constants.js';
 // Page 4
 import Sponsors from './page4/sponsors.js';
+// Page 5
+import Partners from './page5/partners.js';
 // Scrolling logic
 import scroll from './scroll.js';
 if ($(window).width() > 768) {
@@ -32,6 +34,7 @@ class Navbar extends React.Component {
         <span className="navbar-btn" id="nav2" onClick={scroll.scrollToPage.bind(scroll, 2)}>Mentors</span>
         <span className="navbar-btn" id="nav3" onClick={scroll.scrollToPage.bind(scroll, 3)}>FAQ</span>
         <span className="navbar-btn" id="nav4" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
+        <span className="navbar-btn" id="nav5" onClick={scroll.scrollToPage.bind(scroll, 5)}>Partners</span>
 				<span className="navbar-apply">
           <a
             className="nav-link"
@@ -120,7 +123,26 @@ class Page4 extends React.Component {
         <i
           className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
           id="page4-arrow-left"
-          onClick={scroll.scrollLeft}>
+          onClick={scroll.scrollLeft}>          
+        </i>
+		<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
+        	id="page4-arrow-right"
+        	onClick={scroll.scrollRight}>
+        </i>
+      </div>
+    );
+  }
+}
+
+class Page5 extends React.Component {
+  render() {
+    return (
+      <div>
+        <Partners />
+        <i
+          className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
+          id="page5-arrow-left"
+          onClick={scroll.scrollLeft}>          
         </i>
       </div>
     );
@@ -133,3 +155,4 @@ ReactDOM.render(<Page1 />, document.getElementById('page1'));
 ReactDOM.render(<Page2 />, document.getElementById('page2'));
 ReactDOM.render(<Page3 />, document.getElementById('page3'));
 ReactDOM.render(<Page4 />, document.getElementById('page4'));
+ReactDOM.render(<Page5 />, document.getElementById('page5'));
