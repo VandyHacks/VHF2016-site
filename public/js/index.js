@@ -62,8 +62,8 @@ class Page1 extends React.Component {
 	render() {
 		return (
 			<div>
-			<Description />
 			<Sky />
+			<Description />
 			<div id="grass"/>
 			<Ground />
 			<i className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
