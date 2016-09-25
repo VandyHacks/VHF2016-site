@@ -327,7 +327,7 @@ p {
 	display: block;
 	max-width: 100px;
 	min-width: 60px;
-	position: fixed;
+	position: absolute;
 	right: 10px;
 	top: 52px;
 	width: 10%;
