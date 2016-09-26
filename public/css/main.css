@@ -323,17 +323,6 @@ p {
 	line-height: 30px;
 }
 
-.mlh-badge {
-	display: block;
-	max-width: 100px;
-	min-width: 60px;
-	position: absolute;
-	right: 10px;
-	top: 52px;
-	width: 7%;
-	z-index: 10000;
-}
-
 .squirrel0 {
   z-index: -1;
 	position: absolute;
@@ -419,7 +408,7 @@ tr {
 
 .kirkland {
     bottom: 0;
-    left: 120%;
+    left: 110%;
     height: 95%;
     position: absolute;
     z-index: -1;
@@ -438,7 +427,7 @@ tr {
 /* trees */
 .tree1 {
     bottom: 5%;
-    left: 113%;
+    left: 103%;
     height: 35%;
     position: absolute;
     z-index: -2;
@@ -446,7 +435,7 @@ tr {
 
 .tree2 {
     bottom:3%;
-    left: 120%;
+    left: 110%;
     height: 23%;
     position: absolute;
     z-index: 1;
@@ -454,14 +443,14 @@ tr {
 
 .tree3 {
     bottom: 5%;
-    left: 122%;
+    left: 112%;
     height: 20%;
     position: absolute;
 }
 
 .tree4 {
     bottom: 3%;
-    left: 128%;
+    left: 118%;
     height: 20%;
     position: absolute;
     z-index: 1;
@@ -469,7 +458,7 @@ tr {
 
 .tree5 {
     bottom: 2%;
-    left: 133%;
+    left: 123%;
     height: 20%;
     position: absolute;
     z-index: 2;
@@ -477,7 +466,7 @@ tr {
 
 .tree6 {
     bottom: 3%;
-    left: 144%;
+    left: 134%;
     height: 17%;
     position: absolute;
     z-index: 1;
@@ -485,14 +474,14 @@ tr {
 
 .tree7 {
     bottom: 2%;
-    left: 146%;
+    left: 136%;
     height: 25%;
     position: absolute;
 }
 
 .tree8 {
     bottom: 4%;
-    left: 176%;
+    left: 166%;
     height: 40%;
     position: absolute;
     z-index: -1;
@@ -1093,7 +1082,7 @@ tr {
     .mobileCloud2 {
       width: 30%;
       position: absolute;
-      top: 17%;
+      top: 6%;
       right: 3%;
     }
 
