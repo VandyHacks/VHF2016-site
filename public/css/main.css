@@ -325,13 +325,11 @@ p {
 
 .mlh-badge {
 	display: block;
-	max-width: 100px;
-	min-width: 60px;
 	position: absolute;
 	right: 10px;
 	top: 52px;
-	width: 7%;
-	z-index: 10000;
+	width: 8%;
+	z-index: 10;
 }
 
 .squirrel0 {
