@@ -19,7 +19,7 @@ client.connect();
 var updateTeams = function (){
 	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true').then(function(htmlString){
 		var data = JSON.parse(htmlString);
-		for (int i =0; i< data.responses.length;i++){
+		for (var i =0; i< data.responses.length;i++){
 			var res = data.responses[i];
 			var map = getMap(res);
 			var check = checkEmail(map.email);
