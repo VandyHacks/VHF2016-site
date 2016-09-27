@@ -36,6 +36,17 @@ h1 {
 	margin: 10% auto 0 auto;
 }
 
+.mlh-badge {
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: absolute;
+  right: 10px;
+  top: 52px;
+  width: 7%;
+  z-index: 100;
+ }
+ 
 /* moving clouds */
 @keyframes animate-cloud0-1 {
   0% {left: -15%;}
@@ -1087,6 +1098,12 @@ tr {
       margin-top: 0;
       background: #99D6D3;
     }
+
+   .mlh-badge {
+      position: absolute;
+      top: 0;
+      right: 10px;
+   }
 
     .mobileCloud1 {
       width: 30%;
