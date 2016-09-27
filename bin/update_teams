@@ -16,23 +16,23 @@ var client = new pg.Client({
 	});
 client.connect();
 
-var updateTeams = function (){
+var updateTeams = async(function (){
 	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true').then(function(htmlString){
 		var data = JSON.parse(htmlString);
 		for (var i =0; i< data.responses.length;i++){
 			var res = data.responses[i];
 			var map = getMap(res);
-			var check = checkEmail(map.email);
+			var check = await(checkEmail(map.email));
 			console.log(check);
 		}
 	}).catch(function(err){
 		console.log(err);
 	});
-};
+});
 
 var checkEmail = async (function(email){
 
-	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
+	var query = "SELECT exists (SELECT 1 FROM teams WHERE email ='"+ email + "' )";
 	let check;
 	var query = await(client.query(query, function(err, result){
 		if (err) {
