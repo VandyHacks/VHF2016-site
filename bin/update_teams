@@ -48,7 +48,7 @@ var checkEmail = async (function(email){
 
 updateTeams();
 
-var getMap = function(){
+var getMap = function(res){
 	var map = new Object();
 	var questions = "";
 	var answers = "";
