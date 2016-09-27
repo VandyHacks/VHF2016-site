@@ -22,31 +22,27 @@ var updateTeams = (function (){
 		for (var i =0; i< data.responses.length;i++){
 			var res = data.responses[i];
 			var map = getMap(res);
-			checkEmail(map.email).then(function(val){
-				console.log(val);
-			});
+			var emails = getEmails(map);
+			console.log(emails);
 		}
 	}).catch(function(err){
 		console.log(err);
 	});
 });
 
-var checkEmail = async (function(email){
-
-	var query = "SELECT exists (SELECT 1 FROM teams WHERE email ='"+ email + "' )";
-	let check;
-	var query = await(client.query(query, function(err, result){
-		if (err) {
-			console.log(err);
-		};
-		//console.log(result);
-		check =  result.rows[0].exists;
-		console.log(check);
-	}));
-	return new Promise(function(resolve){
-		resolve(check);
-	});
-});
+var getEmails = function(map){
+	var emails = "|";
+	if (map.hasOwnProperty(email1) && map.email1 !== ""){
+		emails = emails + map.email1 + "|";
+	}
+	if (map.hasOwnProperty(email2) && map.email2 !== ""){
+		emails = emails + map.email1 + "|";
+	}
+	if (map.hasOwnProperty(email3) && map.email3 !== ""){
+		emails = emails + map.email1 + "|";
+	}
+	return emails;
+}
 
 updateTeams();
 
