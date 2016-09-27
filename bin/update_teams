@@ -23,12 +23,29 @@ var updateTeams = (function (){
 			var res = data.responses[i];
 			var map = getMap(res);
 			var emails = getEmails(map);
-			console.log(emails);
+			if (emails !== "|"){
+				console.log(emails);
+				insertIntoTeams(emails).then(function(val){
+					console.log(val);
+				});
+			}			
 		}
 	}).catch(function(err){
 		console.log(err);
 	});
 });
+
+var insertIntoTeams = function(emails){
+	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' FROM TEAMS WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"'";
+	var query = await(client.query(statement, function(err, result){
+		if (err) {
+			console.log(err);
+		};
+	}));
+	return new Promise(function(resolve){
+		resolve("Done");
+	});
+}
 
 var getEmails = function(map){
 	var emails = "|";
