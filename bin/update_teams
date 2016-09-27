@@ -35,7 +35,7 @@ var updateTeams = (function (){
 	});
 });
 
-var insertIntoTeams = function(emails){
+var insertIntoTeams = async(function(emails){
 	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' FROM TEAMS WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"'";
 	var query = await(client.query(statement, function(err, result){
 		if (err) {
@@ -45,7 +45,7 @@ var insertIntoTeams = function(emails){
 	return new Promise(function(resolve){
 		resolve("Done");
 	});
-}
+});
 
 var getEmails = function(map){
 	var emails = "|";
