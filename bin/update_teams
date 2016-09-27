@@ -32,13 +32,13 @@ var updateTeams = (function (){
 
 var getEmails = function(map){
 	var emails = "|";
-	if (map.hasOwnProperty(email1) && map.email1 !== ""){
+	if (map.hasOwnProperty("email1") && map.email1 !== ""){
 		emails = emails + map.email1 + "|";
 	}
-	if (map.hasOwnProperty(email2) && map.email2 !== ""){
+	if (map.hasOwnProperty("email2") && map.email2 !== ""){
 		emails = emails + map.email1 + "|";
 	}
-	if (map.hasOwnProperty(email3) && map.email3 !== ""){
+	if (map.hasOwnProperty("email3") && map.email3 !== ""){
 		emails = emails + map.email1 + "|";
 	}
 	return emails;
