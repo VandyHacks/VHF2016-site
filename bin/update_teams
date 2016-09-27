@@ -16,14 +16,15 @@ var client = new pg.Client({
 	});
 client.connect();
 
-var updateTeams = async(function (){
+var updateTeams = (function (){
 	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true').then(function(htmlString){
 		var data = JSON.parse(htmlString);
 		for (var i =0; i< data.responses.length;i++){
 			var res = data.responses[i];
 			var map = getMap(res);
-			var check = await(checkEmail(map.email));
-			console.log(check);
+			checkEmail(map.email).then(function(val){
+				console.log(val);
+			});
 		}
 	}).catch(function(err){
 		console.log(err);
@@ -42,8 +43,9 @@ var checkEmail = async (function(email){
 		check =  result.rows[0].exists;
 		console.log(check);
 	}));
-
-	return check;
+	return new Promise(function(resolve){
+		resolve(check);
+	});
 });
 
 updateTeams();
