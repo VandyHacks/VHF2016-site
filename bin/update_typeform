@@ -95,7 +95,8 @@ var getQueryString = async( function (res){
 	if (!check){
 		for (var prop in map){
 			if (prop !== "money" && prop!== "team_id" && prop !== "email1"
-				&& prop !== "email2" && prop!=="email3"){
+				&& prop !== "email2" && prop!=="email3" && prop!="agree"
+				&& prop!="agree2"){
 				questions += ", "+prop;
 				if (map[prop] === "Yes"){
 					map[prop] = 'true';
@@ -206,6 +207,10 @@ function getTableCol(key){
       		break;
       	case 29438409:
       		return "phone_number";
+      	case 30041941:
+      		return "agree";
+      	case 30042425:
+      		return "agree2";
 	}
 }
 
