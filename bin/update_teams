@@ -1,0 +1,153 @@
+#! /app/.heroku/node/bin/node
+"use strict";
+var rp = require('request-promise');
+var pg = require('pg');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
+//require('dotenv').config();
+//the above line should be uncommented when run locally and commented back again when pushed
+var client = new pg.Client({
+	  user: process.env.DB_USER,
+	  password: process.env.DB_PASSWORD,
+	  database: process.env.DB,
+	  port: 5432,
+	  host: process.env.DB_HOST,
+	  ssl: true
+	});
+client.connect();
+
+var updateTeams = function (){
+	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true').then(function(htmlString){
+		var data = JSON.parse(htmlString);
+		for (int i =0; i< data.responses.length;i++){
+			var res = data.responses[i];
+			var map = getMap(res);
+			var check = checkEmail(map.email);
+			console.log(check);
+		}
+	}).catch(function(err){
+		console.log(err);
+	});
+};
+
+var checkEmail = async (function(email){
+
+	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
+	let check;
+	var query = await(client.query(query, function(err, result){
+		if (err) {
+			console.log(err);
+		};
+		//console.log(result);
+		check =  result.rows[0].exists;
+		console.log(check);
+	}));
+
+	return check;
+});
+
+updateTeams();
+
+var getMap = function(){
+	var map = new Object();
+	var questions = "";
+	var answers = "";
+	for (var answer in res.answers){
+		if (res.answers[answer] !== ""){
+			var question  = getTableCol(answer);			
+			if (map.hasOwnProperty(question)){
+				map[question] += " " + res.answers[answer];
+			}
+			else {
+				map[question] = res.answers[answer];
+			}			
+		}
+	}
+	return map;
+};
+
+//a hashmap would probably look better but this is faster performance wise, and I'm lazy.
+function getTableCol(key){
+	
+	var fieldId = Number(getFieldId(key));
+	switch(fieldId){
+		case 25561789:
+			//name
+			return "first_name";
+			break;
+		case 25562012:
+			//last name
+			return "last_name";
+			break;
+		case 29289151:
+			return "team_id";
+		case 29289338: 
+			return "email1";
+		case 29289346:
+			return "email2";
+		case 29289368:
+			return "email3";
+		case 25562055 :
+			//email
+			return "email";
+			break;
+     	case 25562418 :
+     	//school
+     		return "school";
+     		break;
+     	case 25860376 :
+     	//graduation date
+     		return "grad_year";
+     		break;
+      	case 25860181 :
+      	//major
+      		return "major";
+      		break;
+     	case 25561791 :
+     	//gender
+     		return "gender";
+     		break;
+     	case 25860662 : 
+     	//food
+     		return "food_restriction";
+     		break;
+     	case 25860615 :
+     	//shirt
+     		return "shirt_size";
+     		break;
+      	case 25561793 :
+      	//travel
+      		return "money";
+      		break;
+      	case 25860777 : 
+      	//github
+      		return "github";
+      		break;
+      	case 25860782 :
+      	//linkedin
+      		return "linkedin";
+      		break;
+      	case 25945030 :
+      	//website
+      		return "website";
+      		break;
+      	case 27747401 :
+      	//resume
+      		return "resume";
+      		break;
+      	case 25859652 :
+      	//race
+      		return "race";
+      		break;
+      	case 25561794 :
+      	//needs
+      		return "special_needs";
+      		break;
+      	case 29438409:
+      		return "phone_number";
+      	case 30041941:
+      		return "agree";
+      	case 30042425:
+      		return "agree2";
+	}
+}
