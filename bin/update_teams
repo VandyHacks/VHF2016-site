@@ -151,3 +151,13 @@ function getTableCol(key){
       		return "agree2";
 	}
 }
+
+function getFieldId(key){
+	var index = key.indexOf('_');
+	var indexLast = key.indexOf('_', index+1);
+	if (indexLast === -1){
+		return key.substring(index+1);
+	} else {
+		return key.substring(index+1, indexLast);
+	}
+}
