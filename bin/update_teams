@@ -24,9 +24,9 @@ var updateTeams = (function (){
 			var map = getMap(res);
 			var emails = getEmails(map);
 			if (emails !== "|"){
-				console.log(emails);
-				insertIntoTeams(emails).then(function(val){
-					console.log(val);
+				//console.log(emails);
+				insertIntoTeams(emails).then(function(){
+					console.log("Done");
 				});
 			}			
 		}
@@ -42,10 +42,9 @@ var insertIntoTeams = async(function(emails){
 		if (err) {
 			console.log(err);
 		};
+		console.log(result);
 	}));
-	return new Promise(function(resolve){
-		resolve("Done");
-	});
+	return new Promise();
 });
 
 var getEmails = function(map){
