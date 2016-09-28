@@ -55,10 +55,10 @@ var getEmails = function(map){
 		emails = emails + map.email1 + "|";
 	}
 	if (map.hasOwnProperty("email2") && map.email2 !== ""){
-		emails = emails + map.email1 + "|";
+		emails = emails + map.email2 + "|";
 	}
 	if (map.hasOwnProperty("email3") && map.email3 !== ""){
-		emails = emails + map.email1 + "|";
+		emails = emails + map.email3 + "|";
 	}
 	return emails;
 }
