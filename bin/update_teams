@@ -16,66 +16,56 @@ var client = new pg.Client({
 	});
 client.connect();
 
-
-function connectDB(statement){
-	var query = client.query(statement, function(err, result){
-		if (err) {
-			console.log(err);
-			console.log(statement)		
-		};
-		//console.log(result.rows[0]);
-	});
-	//query.on('end', client.end.bind(client));
-	
-}
-
-var updateDB =  (function () {
-	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true')
-    .then(function (htmlString) {
-        // Process html...
-       
-        	var data = JSON.parse(htmlString);
-	        for (var i =0; i< data.responses.length; i++){
-	        	var res = data.responses[i];
-	        	getQueryString(res).then(function(val){
-	        		console.log(val);
-	        		if (val !== "Done"){
-	        			connectDB(val);
-	        		}
-	        	});	        	
-	        }   	
-    })
-    .catch(function (err) {
-        // Crawling failed...
-        console.log(err);
-    });	  
-});
-
-function getQuestion(id, data){
-	for (var question in data.questions){
-		if (data.questions[question].id === id){
-			return data.questions[question].question;
+var updateTeams = (function (){
+	rp('https://api.typeform.com/v1/form/RqdpnL?key='+process.env.TYPEFORM_KEY+'&completed=true').then(function(htmlString){
+		var data = JSON.parse(htmlString);
+		for (var i =0; i< data.responses.length;i++){
+			var res = data.responses[i];
+			var map = getMap(res);
+			var emails = getEmails(map);
+			if (emails !== "|"){
+				//console.log(emails);
+				insertIntoTeams(emails).then(function(val){
+					console.log("Done");
+				});
+			}			
 		}
-	}
-}
+	}).catch(function(err){
+		console.log(err);
+	});
+});
 
-var checkEmail = async (function(email){
-
-	var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='"+ email + "' )";
-	let check;
-	var query = await(client.query(query, function(err, result){
+var insertIntoTeams = async(function(emails){
+	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"');";
+	console.log(statement);
+	var query = await(client.query(statement, function(err, result){
 		if (err) {
 			console.log(err);
 		};
-		//console.log(result);
-		check =  result.rows[0].exists;
-		console.log(check);
+		console.log(result);
 	}));
-
-	return check;
+	return new Promise(function(resolve){
+		resolve("DOne");
+	});
 });
 
-var getQueryString = async( function (res){
+var getEmails = function(map){
+	var emails = "|";
+	if (map.hasOwnProperty("email1") && map.email1 !== ""){
+		emails = emails + map.email1 + "|";
+	}
+	if (map.hasOwnProperty("email2") && map.email2 !== ""){
+		emails = emails + map.email2 + "|";
+	}
+	if (map.hasOwnProperty("email3") && map.email3 !== ""){
+		emails = emails + map.email3 + "|";
+	}
+	return emails;
+}
+
+updateTeams();
+
+var getMap = function(res){
 	var map = new Object();
 	var questions = "";
 	var answers = "";
@@ -90,43 +80,8 @@ var getQueryString = async( function (res){
 			}			
 		}
 	}
-
-	var check = await(checkEmail(map.email));
-	if (!check){
-		for (var prop in map){
-			if (prop !== "money" && prop!== "team_id" && prop !== "email1"
-				&& prop !== "email2" && prop!=="email3" && prop!="agree"
-				&& prop!="agree2"){
-				questions += ", "+prop;
-				if (map[prop] === "Yes"){
-					map[prop] = 'true';
-				}
-				else if (map[prop] == "No"){
-					map[prop] = 'false';
-				}
-
-				answers += ", '" + map[prop].replace(/'/g,"")+"'";
-			}
-		}
-		return new Promise(function(resolve){
-			//add qr code
-			var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+map.email;
-			if (map.email != undefined){
-				resolve("INSERT INTO HACKER (" + questions.substring(2)+") VALUES (" + answers.substring(2)+");"
-					+" UPDATE HACKER SET qr_code ='"+url+"' WHERE email = '"+map.email+"'; "
-					+"INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)"
-					+"VALUES ('"+map.money+"', (select id from hacker where email = '"+map.email+"'), 2, '"+ res.metadata.user_agent+"', 'true')");
-			}else {
-				resolve("Done");
-			}
-		}) ; 
-	}else {
-		return new Promise(function(resolve){
-			resolve("Done");
-		});
-	}
-	
-});
+	return map;
+};
 
 //a hashmap would probably look better but this is faster performance wise, and I'm lazy.
 function getTableCol(key){
@@ -223,9 +178,3 @@ function getFieldId(key){
 		return key.substring(index+1, indexLast);
 	}
 }
-
-var exitPromise = new Promise(updateDB);
-exitPromise.then(function(){
-	client.end();
-	process.exit();
-});

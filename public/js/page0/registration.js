@@ -5,6 +5,9 @@ export default class Registration extends React.Component {
 	render() {
 		return(
 			<div className="registration">
+        <a href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=white" target="_blank" rel="noopen">
+          <Image class="mlh-badge" path="img/page0/mlh-badge.svg" alt="Major League Hacking 2017 Hackathon Season"/>
+        </a>
         <Image class="logo" path="img/VHLogo.svg"/>
         <h1 className="vandy-heading">VANDY<span className="trademark">&reg;</span>HACKS III</h1>
         <h2 className="hackathon-date">November 11 - 13 | Vanderbilt University </h2><br />
