@@ -299,6 +299,24 @@ h1 {
   margin: auto;
 }
 
+.cohosted-by {
+  font-family: 'sofiaprocondlight';
+  font-size: 1.5em;
+  color: #1A3244;
+  font-style: italic;
+  text-align: center;
+  display: table;
+  margin: auto;
+  height: 1%;
+}
+
+.cohost {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 20%;
+}
+
 .register-button-container {
   text-align: center;
   display: table;
@@ -426,9 +444,23 @@ tr {
   text-decoration: underline;
 }
 
+.beginner {
+  position: absolute;
+  left: 103.5%;
+  font-family: 'sofiaprocondlight';
+  top: calc(5% + 40px);
+  color: #1C3144;
+  width: 25%;
+  margin: 0 auto 0 auto;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+}
+
 .kirkland {
     bottom: 0;
-    left: 120%;
+    left: 125%;
     height: 95%;
     position: absolute;
     z-index: -1;
@@ -447,7 +479,7 @@ tr {
 /* trees */
 .tree1 {
     bottom: 5%;
-    left: 113%;
+    left: 118%;
     height: 35%;
     position: absolute;
     z-index: -2;
@@ -455,7 +487,7 @@ tr {
 
 .tree2 {
     bottom:3%;
-    left: 120%;
+    left: 125%;
     height: 23%;
     position: absolute;
     z-index: 1;
@@ -463,14 +495,14 @@ tr {
 
 .tree3 {
     bottom: 5%;
-    left: 122%;
+    left: 127%;
     height: 20%;
     position: absolute;
 }
 
 .tree4 {
     bottom: 3%;
-    left: 128%;
+    left: 133%;
     height: 20%;
     position: absolute;
     z-index: 1;
@@ -478,7 +510,7 @@ tr {
 
 .tree5 {
     bottom: 2%;
-    left: 133%;
+    left: 138%;
     height: 20%;
     position: absolute;
     z-index: 2;
@@ -486,7 +518,7 @@ tr {
 
 .tree6 {
     bottom: 3%;
-    left: 144%;
+    left: 149%;
     height: 17%;
     position: absolute;
     z-index: 1;
@@ -494,14 +526,14 @@ tr {
 
 .tree7 {
     bottom: 2%;
-    left: 146%;
+    left: 151%;
     height: 25%;
     position: absolute;
 }
 
 .tree8 {
     bottom: 4%;
-    left: 176%;
+    left: 181%;
     height: 40%;
     position: absolute;
     z-index: -1;
@@ -1058,6 +1090,14 @@ tr {
     display: none !important;
   }
 
+  .tree0-1, .tree0-2, .tree0-3, .tree0-4 {
+    height: 40%;
+  }
+
+  .tree0-2 {
+    transform: translateY(3%);
+  }
+
 }
 
 @media(max-width: 800px) {
@@ -1068,7 +1108,7 @@ tr {
 
 }
 
-@media (max-height: 597px) {
+@media (max-height: 700px) {
   .squirrel0 {
     display: none !important;
   }
@@ -1099,11 +1139,15 @@ tr {
       background: #99D6D3;
     }
 
-   .mlh-badge {
+    .mlh-badge {
       position: absolute;
       top: 0;
       right: 10px;
-   }
+    }
+
+    .cohost {
+      max-width: 90%;
+    }
 
     .mobileCloud1 {
       width: 30%;
@@ -1131,8 +1175,14 @@ tr {
       font-size: 6vw;
     }
 
-    #vh-description, .squirrel0, .treehouse, .squirrel, .faq, .sponsor-message, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop, .mentor-description {
+    #vh-description, .squirrel0, .treehouse, .squirrel, .faq, .sponsor-message, .sponsorTrees1, .sponsorTrees2, .squirrelLaptop, .mentor-description, .beginner {
         position: static;
+    }
+
+    .beginner {
+      width: 95%;
+      font-size: 1.3em;
+      font-style: italic;
     }
 
     .squirrel0 {
