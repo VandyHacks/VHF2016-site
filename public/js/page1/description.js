@@ -3,8 +3,7 @@ import React from 'react';
 export default class Description extends React.Component {
   render () {
     return (
-      <div id="row">
-      <div id="vh-description" className="col-md-5 col-md-offset-7 text-center">
+      <div id="vh-description">
 	    <h1>What is VandyHacks?</h1>
 	      <p>
           Founded in the spring of 2015, VandyHacks was the first collegiate
@@ -17,7 +16,6 @@ export default class Description extends React.Component {
           </a>).<br />
           We hope to see y'all there!
         </p>
-      </div>
       </div>
     );
   }
