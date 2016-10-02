@@ -916,19 +916,19 @@ tr {
 .devpost-logo {
     position: absolute;
     left: 543%;
-    top: calc(35% + 130px);
+    top: calc(47%);
     width: 16%;
 }
 .logo9 {
     position: absolute;
     left: 502.5%;
-    top: calc(35% + 85px);
+    top: calc(42%);
     width: 25%;
 }
 .mlh-logo {
     position: absolute;
     left: 583%;
-    top: calc(35% + 100px);
+    top: calc(45%);
     width: 11%;
 }
 /* Navbar */
