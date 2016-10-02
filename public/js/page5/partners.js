@@ -4,7 +4,6 @@ import React from 'react';
  	render() {
  		return(
  			<div>
- 			<p className="partners">Partners</p>
            	<a target="_blank" rel="noopener" href="https://www.google.com/">
            		<img className="google-logo" src="img/page5/google.png"/>
            	</a>

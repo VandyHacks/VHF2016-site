@@ -865,18 +865,6 @@ tr {
     width: 30%;
 }
 /* Page 5 */
-
-.partners {
-    font-size: 3em;
-    font-family: 'sofiaprocondblack';
-    position: absolute;
-    top: 15%;
-    left: 505%;
-    width: 100%;
-    text-transform: uppercase;
-    z-index: 10;
-    line-height: 15px;
-}
 .p5tree1 {
     position: absolute;
     left: 513%;
@@ -1171,6 +1159,9 @@ tr {
     .tree0-2 {
         transform: translateY(3%);
     }
+    #navbar {
+        display: none;
+    }
 }
 @media(max-width: 800px) {
     .navbar-btn {
@@ -1195,9 +1186,8 @@ tr {
         text-align: center;
         height: 100%;
     }
-    #grass,
-    #navbar {
-        display: none;
+    #grass {
+      display: none;
     }
     #pages-table {
         margin-top: 0;
@@ -1242,9 +1232,8 @@ tr {
     .sponsorTrees2,
     .squirrelLaptop,
     .mentor-description,
-    .beginner,
-    .partners {
-        position: static;
+    .beginner {
+      position: static;
     }
     .beginner {
         width: 95%;
@@ -1369,11 +1358,6 @@ tr {
     .micro-logo {
         margin-top: 4%;
         margin-bottom: -4%;
-    }
-    .partners {
-        margin-top: 10%;
-        font-size: 2em;
-        margin-bottom: -10%;
     }
     .google-logo {
         width: 70%;
