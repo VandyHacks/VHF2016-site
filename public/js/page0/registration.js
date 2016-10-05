@@ -11,6 +11,9 @@ export default class Registration extends React.Component {
         <Image class="logo" path="img/VHLogo.svg"/>
         <h1 className="vandy-heading">VANDY<span className="trademark">&reg;</span>HACKS III</h1>
         <h2 className="hackathon-date">November 11 - 13 | Vanderbilt University </h2><br />
+        <p className="cohosted-by">Cohosted by:</p>
+        <Image class="cohost" path="img/page4/micro_strategy.png"/>
+        <br />
         <div id = 'sub_text'></div>
         <div className="register-button-container">
           <a
