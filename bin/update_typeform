@@ -108,7 +108,7 @@ var getQueryString = async(function(res) {
     }
     var longQuery = "";
     if (check) {
-    	longQuery+="DELETE FROM APPLICATION WHERE HACKERID = (select id from hacker where email = '" + map.email + "');";
+    	longQuery+="DELETE FROM APPLICATION WHERE HACKERID = (select id from hacker where email = '" + map.email + " LIMIT 1');";
         longQuery+="DELETE FROM HACKER WHERE EMAIL = '" + map.email + "';";
     }
     return new Promise(function(resolve) {
