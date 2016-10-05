@@ -18,17 +18,18 @@ var client = new pg.Client({
 client.connect();
 
 
-function connectDB(statement) {
-    var query = client.query(statement, function(err, result) {
+var connectDB = async(function (statement) {
+    var query = await(client.query(statement, function(err, result) {
         if (err) {
             console.log(err);
             console.log(statement);
         }
         //console.log(result.rows[0]);
     });
+    );
     //query.on('end', client.end.bind(client));
 
-}
+});
 
 var updateDB = (function() {
     rp('https://api.typeform.com/v1/form/RqdpnL?key=' + process.env.TYPEFORM_KEY + '&completed=true')
