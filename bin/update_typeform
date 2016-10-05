@@ -106,15 +106,16 @@ var getQueryString = async(function(res) {
             answers += ", '" + map[prop].replace(/'/g, "") + "'";
         }
     }
+    var longQuery = "";
     if (check) {
-    	await(connectDB("DELETE FROM TEAMS WHERE HACKERID = (select id from hacker where email = '" + map.email + "')"));
-        await(connectDB("DELETE FROM HACKER WHERE EMAIL = '" + map.email + "'"));
+    	longQuery+="DELETE FROM TEAMS WHERE HACKERID = (select id from hacker where email = '" + map.email + "');";
+        longQuery+="DELETE FROM HACKER WHERE EMAIL = '" + map.email + "';";
     }
     return new Promise(function(resolve) {
         //add qr code
         var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + map.email;
         if (map.email != undefined) {
-            resolve("INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
+            resolve(longQuery+" INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
                 " UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; " +
                 "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)" +
                 "VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true')");
