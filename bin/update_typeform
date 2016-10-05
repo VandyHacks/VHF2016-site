@@ -22,8 +22,8 @@ function connectDB(statement) {
     var query = client.query(statement, function(err, result) {
         if (err) {
             console.log(err);
-            console.log(statement)
-        };
+            console.log(statement);
+        }
         //console.log(result.rows[0]);
     });
     //query.on('end', client.end.bind(client));
@@ -121,9 +121,6 @@ var getQueryString = async(function(res) {
             resolve("Done");
         }
     });
-
-
-
 });
 
 //a hashmap would probably look better but this is faster performance wise, and I'm lazy.
