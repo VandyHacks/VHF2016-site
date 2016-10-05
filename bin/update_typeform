@@ -107,8 +107,8 @@ var getQueryString = async(function(res) {
         }
     }
     if (check) {
-    	connectDB("DELETE FROM TEAMS WHERE HACKERID = (select id from hacker where email = '" + map.email + "')");
-        connectDB("DELETE FROM HACKER WHERE EMAIL = '" + map.email + "'");
+    	await(connectDB("DELETE FROM TEAMS WHERE HACKERID = (select id from hacker where email = '" + map.email + "')"));
+        await(connectDB("DELETE FROM HACKER WHERE EMAIL = '" + map.email + "'"));
     }
     return new Promise(function(resolve) {
         //add qr code
