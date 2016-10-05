@@ -25,8 +25,7 @@ var connectDB = async(function (statement) {
             console.log(statement);
         }
         //console.log(result.rows[0]);
-    });
-    );
+    }));
     //query.on('end', client.end.bind(client));
 
 });
