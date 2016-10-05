@@ -11,6 +11,12 @@ export default class Sponsors extends React.Component {
       		<a target="_blank" rel="noopener" href="https://www.bnymellon.com">
         		<img src="img/page4/bny.png" className="logo5" />
       		</a>
+      		<a target="_blank" rel="noopener" href="http://www.isis.vanderbilt.edu/">
+        		<img src="img/page4/isis-logo.svg" className="isis-logo hidden-xs hidden-sm" />
+      		</a>
+      		<a target="_blank" rel="noopener" href="http://www.isis.vanderbilt.edu/">
+        		<img src="img/page4/isis-logo-2.svg" className="isis-logo2 hidden-md hidden-lg" />
+      		</a>
       		<a target="_blank" rel="noopener" href="http://www.centene.com/">
         		<img src="img/page4/centene_logo.png" className="centene-logo" />
       		</a>

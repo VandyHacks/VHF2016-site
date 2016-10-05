@@ -803,32 +803,32 @@ tr {
 .logo1 {
     position: absolute;
     left: 402.5%;
-    top: calc(35% + 110px);
+    top: calc(35% + 130px);
     width: 25%;
 }
 .logo2 {
     position: absolute;
     left: 409.5%;
-    top: calc(15% + 140px);
+    top: calc(15% + 160px);
     width: 16%;
 }
 .logo3 {
     position: absolute;
-    left: 409.5%;
-    top: calc(30% + 135px);
+    left: 410%;
+    top: calc(30% + 155px);
     width: 8%;
     z-index: 1;
 }
 .logo4 {
     position: absolute;
     left: 444%;
-    top: calc(33% + 110px);
+    top: calc(33% + 130px);
     width: 10%;
 }
 .logo5 {
     position: absolute;
     left: 406.5%;
-    top: calc(5% + 60px);
+    top: calc(5% + 80px);
     width: 25%;
     z-index: 1;
 }
@@ -836,32 +836,38 @@ tr {
     left: 472.5%;
     opacity: .85;
     position: absolute;
-    top: calc(5% + 90px);
+    top: calc(5% + 110px);
     width: 23%;
     z-index: 1;
 }
 .logo6 {
     position: absolute;
     left: 440.5%;
-    top: calc(15% + 135px);
+    top: calc(15% + 155px);
     width: 16%;
 }
 .logo7 {
     position: absolute;
     left: 474.5%;
-    top: calc(35% + 120px);
+    top: calc(35% + 140px);
     width: 15%;
 }
 .logo8 {
     position: absolute;
     left: 473.5%;
-    top: calc(15% + 160px);
+    top: calc(15% + 190px);
     width: 16%;
+}
+.isis-logo {
+    position: absolute;
+    left: 437%;
+    top: calc(5% + 100px);
+    width: 32%;
 }
 .micro-logo {
     position: absolute;
     left: 436.5%;
-    top: calc(5% + 40px);
+    top: calc(5% + 5px);
     width: 30%;
 }
 /* Page 5 */
@@ -1310,12 +1316,19 @@ tr {
     .weebly-logo,
     .twilio-logo,
     .namecheap-logo,
-    .devpost-logo {
+    .devpost-logo,
+    .isis-logo2
+    {
         position: static;
         margin-top: 10%;
         display: table;
         margin-left: auto;
         margin-right: auto;
+    }
+    .isis-logo2 {
+        width: 50%;
+        margin-top: -5%;
+        margin-bottom: -10%;
     }
     .micro-logo {
         width: 75%;
