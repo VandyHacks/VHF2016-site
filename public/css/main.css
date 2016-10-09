@@ -1168,6 +1168,12 @@ tr {
     #navbar {
         display: none;
     }
+    .mlh-badge {
+        top: 0;
+    }
+    .faq {
+        top: 2%;
+    }
 }
 @media(max-width: 800px) {
     .navbar-btn {
