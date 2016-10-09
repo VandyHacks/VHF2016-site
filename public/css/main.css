@@ -1171,10 +1171,12 @@ tr {
     .mlh-badge {
         top: 0;
     }
-    .faq {
+    .faq, .mentor-description, .beginner {
         top: 2%;
     }
-}
+    #vh-description {
+      top: -2%;
+    }
 @media(max-width: 800px) {
     .navbar-btn {
         width: 100px;
