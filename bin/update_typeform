@@ -5,7 +5,7 @@ var rp = require('request-promise');
 var pg = require('pg');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-//require('dotenv').config();
+require('dotenv').config();
 //the above line should be uncommented when run locally and commented back again when pushed
 var client = new pg.Client({
     user: process.env.DB_USER,
@@ -80,6 +80,7 @@ var getQueryString = async(function(res) {
     var map = new Object();
     var questions = "";
     var answers = "";
+    var updateString = "";
     for (var answer in res.answers) {
         if (res.answers[answer] !== "") {
             var question = getTableCol(answer);
@@ -102,28 +103,33 @@ var getQueryString = async(function(res) {
             } else if (map[prop] == "No") {
                 map[prop] = 'false';
             }
-
             answers += ", '" + map[prop].replace(/'/g, "") + "'";
+            updateString += ", "+prop+"=, '"+map[prop].replace(/'/g,"")+"'";
         }
     }
-    var longQuery = "";
+    //add qr code
+	var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + map.email;
     if (check) {
-    	longQuery+="DELETE FROM APPLICATION WHERE HACKERID = (select id from hacker where email = '" + map.email + " LIMIT 1');";
-        longQuery+="DELETE FROM HACKER WHERE EMAIL = '" + map.email + "';";
-    }
-    return new Promise(function(resolve) {
-        //add qr code
-        var url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + map.email;
-        if (map.email != undefined) {
-        	console.log(longQuery);
-            resolve(longQuery+" INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
-                " UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; " +
-                "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)" +
-                "VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + " LIMIT 1'), 2, '" + res.metadata.user_agent + "', 'true')");
-        } else {
-            resolve("Done");
-        }
-    });
+    	return new Promise(function(resolve){
+    		resolve("UPDATE HACKER SET "+updateString.substring(2)+" WHERE email = '"+map.email+"';"+
+    			"UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; "+
+    			"INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)"+
+    			"VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true')");
+    	});
+    }else {
+	    return new Promise(function(resolve) {
+	        
+	        if (map.email != undefined) {
+	        	//console.log(longQuery);
+	            resolve(" INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
+	                " UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; " +
+	                "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)" +
+	                "VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true')");
+	        } else {
+	            resolve("Done");
+	        }
+	    });
+	}
 });
 
 //a hashmap would probably look better but this is faster performance wise, and I'm lazy.
