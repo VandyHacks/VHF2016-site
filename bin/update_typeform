@@ -114,7 +114,7 @@ var getQueryString = async(function(res) {
     		resolve("UPDATE HACKER SET "+updateString.substring(2)+" WHERE email = '"+map.email+"';"+
     			"UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; "+
     			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"' hackerid=(select id from hacker where email = '" + map.email + "'), hackathonid=2,user_agent='"+
-    			res.metadata.user_agent+"', applied=true;";
+    			res.metadata.user_agent+"', applied=true;");
     	});
     }else {
 	    return new Promise(function(resolve) {
