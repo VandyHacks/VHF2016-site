@@ -93,6 +93,9 @@ var getQueryString = async(function(res) {
     }
 
     var check = await (checkEmail(map.email));
+    if (!map.hasOwnProperty('money')){
+    	map[money] = 'false';
+    }
     for (var prop in map) {
         if (prop !== "money" && prop !== "team_id" && prop !== "email1" &&
             prop !== "email2" && prop !== "email3" && prop != "agree" &&
