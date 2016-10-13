@@ -104,7 +104,7 @@ var getQueryString = async(function(res) {
                 map[prop] = 'false';
             }
             answers += ", '" + map[prop].replace(/'/g, "") + "'";
-            updateString += ", "+prop+"=, '"+map[prop].replace(/'/g,"")+"'";
+            updateString += ", "+prop+"= '"+map[prop].replace(/'/g,"")+"'";
         }
     }
     //add qr code
@@ -113,8 +113,8 @@ var getQueryString = async(function(res) {
     	return new Promise(function(resolve){
     		resolve("UPDATE HACKER SET "+updateString.substring(2)+" WHERE email = '"+map.email+"';"+
     			"UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; "+
-    			"INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)"+
-    			"VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true')");
+    			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"' hackerid=(select id from hacker where email = '" + map.email + "'), hackathonid=2,user_agent='"+
+    			res.metadata.user_agent+"', applied=true;"
     	});
     }else {
 	    return new Promise(function(resolve) {
