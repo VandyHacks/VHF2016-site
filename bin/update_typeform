@@ -102,6 +102,8 @@ var getQueryString = async(function(res) {
                 map[prop] = 'true';
             } else if (map[prop] == "No") {
                 map[prop] = 'false';
+            } else if (map[prop]===undefined){
+            	map[prop] = 'false';
             }
             answers += ", '" + map[prop].replace(/'/g, "") + "'";
             updateString += ", "+prop+"= '"+map[prop].replace(/'/g,"")+"'";
