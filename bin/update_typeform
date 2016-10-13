@@ -100,7 +100,7 @@ var getQueryString = async(function(res) {
             questions += ", " + prop;
             if (map[prop] === "Yes") {
                 map[prop] = 'true';
-            } else if (map[prop] == "No") {
+            } else  {
                 map[prop] = 'false';
             }
             answers += ", '" + map[prop].replace(/'/g, "") + "'";
