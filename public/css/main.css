@@ -1188,7 +1188,7 @@ tr {
         width: 100px;
     }
 }
-@media (max-height: 700px) {
+@media (max-height: 800px) {
     .squirrel0 {
         display: none !important;
     }
