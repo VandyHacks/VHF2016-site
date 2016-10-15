@@ -20,11 +20,14 @@ import React from 'react';
            		<img className="devpost-logo" src="img/page5/devpost.svg"/>
            	</a>
            	<a target="_blank" rel="noopener" href="https://www.stickermule.com/">
-				<img src="img/page4/sticker_mule.png" className="logo9"/>
-  			</a>
-  			<a target="_blank" rel="noopener" href="https://mlh.io/">
-				<img src="img/page4/mlh-logo-color.svg" className="mlh-logo"/>
-  			</a>
+    				  <img src="img/page4/sticker_mule.png" className="logo9"/>
+      			</a>
+            <a target="_blank" rel="noopener" href="https://www.clerky.com/">
+              <img src="img/page5/clerky.svg" className="clerky-logo"/>
+            </a>
+      			<a target="_blank" rel="noopener" href="https://mlh.io/">
+    				  <img src="img/page4/mlh-logo-color.svg" className="mlh-logo"/>
+      			</a>
            	<img className="p5tree1 hidden-xs hidden-sm" src="img/page5/tree1.svg"/>
            	<img className="p5tree2 hidden-xs hidden-sm" src="img/page5/tree2.svg"/>
            	<img className="p5tree3 hidden-xs hidden-sm" src="img/page5/tree3.svg"/>

@@ -821,7 +821,7 @@ tr {
 }
 .logo4 {
     position: absolute;
-    left: 444%;
+    left: 433%;
     top: 49.5%;
     width: 7%;
 }
@@ -848,7 +848,7 @@ tr {
 }
 .logo7 {
     position: absolute;
-    left: 474.5%;
+    left: 452.5%;
     top: 52%;
     width: 12%;
 }
@@ -875,6 +875,12 @@ tr {
     left: 455%;
     top: 22%;
     width: 15%;
+}
+.commons-logo {
+    position: absolute;
+    left: 476.5%;
+    top: 52%;
+    width: 12%;
 }
 /* Page 5 */
 .p5tree1 {
@@ -927,7 +933,7 @@ tr {
 }
 .devpost-logo {
     position: absolute;
-    left: 543%;
+    left: 533%;
     top: 47%;
     width: 16%;
 }
@@ -939,9 +945,15 @@ tr {
 }
 .mlh-logo {
     position: absolute;
-    left: 583%;
+    left: 558%;
     top: 45%;
     width: 11%;
+}
+.clerky-logo {
+    position: absolute;
+    left: 578%;
+    top: 45%;
+    width: 17%;
 }
 /* Navbar */
 
@@ -1332,7 +1344,9 @@ tr {
     .namecheap-logo,
     .devpost-logo,
     .isis-logo2,
-    .mantech-logo
+    .mantech-logo,
+    .clerky-logo,
+    .commons-logo
     {
         position: static;
         margin-top: 10%;
@@ -1411,6 +1425,14 @@ tr {
     .devpost-logo {
         width: 50%;
     }
+    .clerky-logo {
+        width: 65%;
+        margin-top: 0;
+        margin-bottom: 10%;
+    }
+    .commons-logo {
+        width: 60%;
+    }
 }
 @media(max-width: 560px) {
     .logo1 {
@@ -1473,10 +1495,16 @@ tr {
     top: 17.5%;
 }
 .mantech-logo {
-    top: 17%;
+    top: 27%;
 }
-    .squirrelLaptop, .sponsorTrees1, .sponsorTrees2, .sponsor-message {
-        display: none !important;
-    }
+.clerky-logo {
+    top: 50%;
+}
+.commons-logo {
+    top: 57%;
+}
+.squirrelLaptop, .sponsorTrees1, .sponsorTrees2, .sponsor-message {
+    display: none !important;
+}
 
 }
