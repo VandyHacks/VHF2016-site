@@ -36,7 +36,8 @@ var updateTeams = (function (){
 });
 
 var insertIntoTeams = async(function(emails){
-	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"');";
+	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"');"+
+	"UPDATE APPLICATION SET TEAM_ID = (SELECT ID FROM TEAMS WHERE EMAILS = '"+emails+"');";
 	console.log(statement);
 	var query = await(client.query(statement, function(err, result){
 		if (err) {
