@@ -116,8 +116,8 @@ var getQueryString = async(function(res) {
     if (check) {
     	return new Promise(function(resolve){
     		resolve("UPDATE HACKER SET "+updateString.substring(2)+" WHERE email = '"+map.email+"';"+
-    			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"', hackerid=(select id from hacker where email = '" + map.email + "'), hackathonid=2,user_agent='"+
-    			res.metadata.user_agent+"', applied=true;");
+    			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"',  hackathonid=2,user_agent='"+
+    			res.metadata.user_agent+"', applied=true where hackerid=(select id from hacker where email = '" + map.email + "');");
     	});
     }else {
 	    return new Promise(function(resolve) {
