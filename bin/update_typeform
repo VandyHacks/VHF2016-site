@@ -33,7 +33,7 @@ var updateDB = (function() {
             // Process html...
 
             var data = JSON.parse(htmlString);
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < data.responses.length; i++) {
                 var res = data.responses[i];
                 getQueryString(res).then(function(val) {
                     console.log(val);
