@@ -20,14 +20,14 @@ const pg = require('pg');
   
   function rsvp_post(app) {
     app.post('/rsvp/:user_id/', (req, res) => {
-      let hashed_id = req.params.user_id;
-      let client = getDB();
+      var hashed_id = req.params.user_id;
+      var client = getDB();
       try {
         client.connect();
       } catch(err) {
         console.log(err);
       }
-      let query = 'select id from hacker where hashed_id = \'' + hashed_id + '\';';
+      var query = 'select id from hacker where hashed_id = \'' + hashed_id + '\';';
       console.log(query);
       client.query(query, function(err, result) {
         if (err || !result.rows[0]) {
@@ -36,13 +36,13 @@ const pg = require('pg');
             res.status(400).send('error')
             return;
         }
-        let hacker_id = result.rows[0].id;
+        var hacker_id = result.rows[0].id;
         if (!hacker_id) {
           res.status(400).send('error')
           return;
         }
         query = 'update application set rsvp = TRUE where hackerid = \'' + hacker_id + '\'';
-        let hacker_udate = client.query(query, function(err, result) {
+        var hacker_udate = client.query(query, function(err, result) {
             if (err) {
                 console.log(err);
                 console.log(query);
