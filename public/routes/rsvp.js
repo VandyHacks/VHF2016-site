@@ -1,5 +1,6 @@
 const path = require('path'); 
 const pg = require('pg');
+const validator = require('validator');
 
   function getDB() {
     return new pg.Client({
@@ -21,6 +22,11 @@ const pg = require('pg');
   function rsvp_post(app) {
     app.post('/rsvp/:user_id/', (req, res) => {
       var hashed_id = req.params.user_id;
+      if (!validator.isAlphanumeric(hashed_id)) {
+        console.log('non alphanumberic hashed_id');
+        res.status(400).send('error')
+        return;
+      }
       var client = getDB();
       try {
         client.connect();
