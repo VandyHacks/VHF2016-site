@@ -5,7 +5,7 @@ var rp = require('request-promise');
 var pg = require('pg');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-require('dotenv').config();
+//require('dotenv').config();
 //the above line should be uncommented when run locally and commented back again when pushed
 var client = new pg.Client({
     user: process.env.DB_USER,
@@ -16,28 +16,29 @@ var client = new pg.Client({
     ssl: true
 });
 client.connect();
+let emails = {};
+let email_count = 0;
 
 
 var connectDB = async(function (statement) {
-    console.log(statement);
+    //console.log(statement);
     var query = await(client.query(statement, function(err, result) {
         if (err) {
             console.log(err);
             console.log(statement);
         }
-        console.log(result.rows[0]);
     }));
-    console.log(query);
-    //query.on('end', client.end.bind(client));
 
 });
 
 var updateDB = (function() {
-    rp('https://api.typeform.com/v1/form/RqdpnL?key=' + process.env.TYPEFORM_KEY + '&completed=true')
+    rp('https://api.typeform.com/v1/form/RqdpnL?key=' + process.env.TYPEFORM_KEY +
+      '&completed=true&since=1475347621')
         .then(function(htmlString) {
             // Process html...
 
             var data = JSON.parse(htmlString);
+            console.log('response length: ' + data.responses.length);
             for (var i = 0; i < data.responses.length; i++) {
                 var res = data.responses[i];
                 getQueryString(res).then(function(val) {
@@ -47,6 +48,7 @@ var updateDB = (function() {
                     }
                 });
             }
+            console.log('email count: ' + email_count);
         })
         .catch(function(err) {
             // Crawling failed...
@@ -63,6 +65,16 @@ function getQuestion(id, data) {
 }
 
 var checkEmail = async(function(email) {
+    if (!emails[email]) {
+      //console.log(email);
+      //console.log(emails.email);
+      email_count += 1;
+      emails[email] = 1;
+    }
+    if (email === 'khushboo_agarwal@Knights.ucf.edu') {
+      console.log('EMAIL FOUND');
+      console.log(email);
+    }
 
     var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='" + email + "' )";
     let check;
@@ -119,15 +131,15 @@ var getQueryString = async(function(res) {
     if (check) {
     	return new Promise(function(resolve){
     		resolve("UPDATE HACKER SET "+updateString.substring(2)+" WHERE email = '"+map.email+"';"+
-    			"UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; "+
-    			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"', hackerid=(select id from hacker where email = '" + map.email + "'), hackathonid=2,user_agent='"+
-    			res.metadata.user_agent+"', applied=true;");
+    			"UPDATE APPLICATION SET need_reimbursement='"+map.money+"',  hackathonid=2,user_agent='"+
+    			res.metadata.user_agent+"', applied=true where hackerid=(select id from hacker where email = '" + map.email + "');");
     	});
     }else {
 	    return new Promise(function(resolve) {
 	        
 	        if (map.email != undefined) {
 	        	//console.log(longQuery);
+              console.log('inserting hacker');
 	            resolve(" INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
 	                " UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; " +
 	                "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)" +

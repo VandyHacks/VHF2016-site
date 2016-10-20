@@ -1,0 +1,109 @@
+#! /app/.heroku/node/bin/node
+
+"use strict";
+var rp = require('request-promise');
+var pg = require('pg');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
+let crypto = require('crypto');
+let MailChimpAPI = require('mailchimp').MailChimpAPI;
+
+//require('dotenv').config();
+//the above line should be uncommented when run locally and commented back again when pushed
+var client = new pg.Client({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB,
+  port: 5432,
+  host: process.env.DB_HOST,
+  ssl: true
+});
+client.connect();
+let apiKey = process.env.MAILCHIMP_KEY;
+let list_id = "d8dc898cc4";
+
+var connectDB = async(function (statement) {
+  console.log(apiKey);
+  console.log(statement);
+  let query_result = await(client.query(statement, function(err, result) {
+      if (err) {
+          console.log(err);
+          console.log(statement);
+      }
+      //console.log(result.rows[0]);
+  }));
+  //console.log(query_result.rows);
+  let batch = []
+  let values_str = '';
+  for (let i = 0; i < query_result.rows.length; ++i) {
+    let hash = crypto.createHash('sha1');
+    hash.update(query_result.rows[i].id + '');
+    let hashed_id = hash.digest('hex');
+    let entry = {
+      'EMAIL': query_result.rows[i].email,
+      'REGURL': hashed_id, 
+    }
+    batch.push(entry);
+    values_str += ' (\'' + query_result.rows[i].email + '\', \'' + hashed_id + '\'),';
+  }
+  values_str = values_str.substring(0,values_str.length - 1);
+  let insert_hash_query = 'update hacker set hashed_id = vals.hashed_id' +
+    ' from (values' + values_str + ') as vals(email, hashed_id) where vals.email = hacker.email;';
+  //console.log(insert_hash_query); 
+  let update_db_result = client.query(insert_hash_query, function(err, result) {
+      if (err) {
+        console.log(err);
+        console.log(statement);
+      }
+      else {
+        //console.log(result);
+        console.log('finished updating db');
+      }
+  });
+  let mailchimp_api = new MailChimpAPI(apiKey, { version : '1.3', secure: true });
+  let opt_in = false;
+  let update_existing = true;
+  let replace_interests = false;
+  console.log(batch);
+  console.log('making api request');
+  mailchimp_api.listBatchSubscribe({'id': list_id, 'batch': batch, 'double_optin': opt_in,
+    'update_existing': update_existing, 'replace_interests': replace_interests},
+    (error, data) => {
+      if (error) {
+        console.log('error');
+        console.log(error);
+      }
+      else {
+        console.log(data);
+        console.log('done');
+      }
+  });
+});
+
+var updateForm = (function() {
+  //let query = 'select id, email from hacker where email=\'ethan.o.raymond@vanderbilt.edu\' limit 11';
+  let query = 'select id, email from hacker';
+  connectDB(query);
+});
+
+var checkEmail = async(function(email) {
+
+    var query = "SELECT exists (SELECT 1 FROM hacker WHERE email ='" + email + "' )";
+    let check;
+    var query = await (client.query(query, function(err, result) {
+        if (err) {
+            console.log(err);
+        };
+        //console.log(result);
+        check = result.rows[0].exists;
+        //console.log(check);
+    }));
+
+    return check;
+});
+
+var exitPromise = new Promise(updateForm);
+exitPromise.then(function() {
+    client.end();
+    process.exit();
+});

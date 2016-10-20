@@ -25,7 +25,7 @@ var updateTeams = (function (){
 			var emails = getEmails(map);
 			if (emails !== "|"){
 				//console.log(emails);
-				insertIntoTeams(emails).then(function(val){
+				insertIntoTeams(emails, map).then(function(val){
 					console.log("Done");
 				});
 			}			
@@ -35,8 +35,10 @@ var updateTeams = (function (){
 	});
 });
 
-var insertIntoTeams = async(function(emails){
-	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"');";
+var insertIntoTeams = async(function(emails, map){
+	var statement = "INSERT INTO TEAMS (EMAILS) SELECT '"+emails+"' WHERE NOT EXISTS (SELECT 1 FROM TEAMS WHERE EMAILS = '"+emails+"');"+
+	"UPDATE APPLICATION SET TEAM_ID = (SELECT ID FROM TEAMS WHERE EMAILS = '"+emails+"') WHERE HACKERID = (SELECT ID FROM HACKER WHERE EMAIL = '"+
+	map.email+"');";
 	console.log(statement);
 	var query = await(client.query(statement, function(err, result){
 		if (err) {
