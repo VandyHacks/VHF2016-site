@@ -31,6 +31,7 @@ h1 {
     font-size: 3em;
     margin: 10% auto 0 auto;
 }
+
 /* Rsvp page */
 .rsvp-container {
   display: flex;
@@ -59,6 +60,10 @@ h1 {
 .squirrel {
   width: 40%;
   margin-left: -8%;
+}
+
+.rsvp-info {
+  text-align: left;
 }
 
 .no-js #loader { display: none;  }

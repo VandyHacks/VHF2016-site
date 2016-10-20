@@ -8,7 +8,7 @@ function rsvp() {
 }
 
 function _handleSuccess() {
-  $('#resp-msg').html('<h1>RSVP is SUCCESSFUL!</h1>');
+  $('#resp-msg').html('<h1>RSVP SUCCESSFUL!</h1>');
 }
 
 function _handleFailure() {
