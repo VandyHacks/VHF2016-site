@@ -20,4 +20,8 @@ app.get('/', function response(req, res) {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
+app.get('/slkfsafdsfad/sdf', (req, res) => {
+  res.send('hi');
+});
+
 app.listen(process.env.PORT || 3000);
