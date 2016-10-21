@@ -5,6 +5,7 @@ function rsvp() {
     success: () => { _handleSuccess() },
     error: () => { _handleFailure() },
   });
+  $.('.rsvp-info').css({'text-align':'left'});
 }
 
 function _handleSuccess() {
