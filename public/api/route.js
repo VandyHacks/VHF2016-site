@@ -51,7 +51,19 @@ app.route('/checkemail')
 app.route('/checkin')
 	.post(function(req, res){
 		console.log("POST request to check in email " + req.query.email);
-		res.send(req.query);
+		
+		var query = "update application set attended = true where email='" + email + "')";
+
+		client.query(query, function(err, result) {
+	        if (err) {
+	            console.log(err);
+	            console.log(query);
+	            res.status(400).send(false);
+	            return;
+	        }
+                	
+	        res.status(200).send(true);	        	        	
+      	});
 	});
 
 
