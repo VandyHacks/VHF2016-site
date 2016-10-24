@@ -6,6 +6,7 @@ const rsvp = require('./routes/rsvp.js');
 const bodyParser = require('body-parser');
 const app = express(); 
 
+
 const oneDay = 86400000;
 const publicPath = path.resolve(__dirname);
 console.log(publicPath)
