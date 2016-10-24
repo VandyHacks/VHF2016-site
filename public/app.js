@@ -11,6 +11,7 @@ const publicPath = path.resolve(__dirname);
 console.log(publicPath)
 app.use(express.static(__dirname, { maxAge: oneDay }));
 
+
 app.use(bodyParser.json());
 
 rsvp.rsvp_get(app);
