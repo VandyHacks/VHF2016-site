@@ -40,11 +40,13 @@ const validator = require('validator');
             console.log(err);
             console.log(query);
             res.status(400).send('error')
+            client.end();
             return;
         }
         var hacker_id = result.rows[0].id;
         if (!hacker_id) {
           res.status(400).send('error')
+          client.end();
           return;
         }
         query = 'update application set rsvp = TRUE where hackerid = \'' + hacker_id + '\'';
@@ -53,9 +55,11 @@ const validator = require('validator');
                 console.log(err);
                 console.log(query);
                 res.status(400).send('error')
+                client.end();
                 return;
             }
             res.status(200).send();
+            client.end();
         });
       });
     });
