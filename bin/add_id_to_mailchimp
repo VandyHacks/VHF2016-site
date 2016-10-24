@@ -8,7 +8,7 @@ var await = require('asyncawait/await');
 let crypto = require('crypto');
 let MailChimpAPI = require('mailchimp').MailChimpAPI;
 
-//require('dotenv').config();
+require('dotenv').config();
 //the above line should be uncommented when run locally and commented back again when pushed
 var client = new pg.Client({
   user: process.env.DB_USER,
@@ -20,7 +20,7 @@ var client = new pg.Client({
 });
 client.connect();
 let apiKey = process.env.MAILCHIMP_KEY;
-let list_id = "";
+let list_id = "59aa0ce6af";
 
 var connectDB = async(function (statement) {
   console.log(apiKey);
@@ -81,7 +81,8 @@ var connectDB = async(function (statement) {
 });
 
 var updateForm = (function() {
-  let query = 'select id, email from hacker;';
+  //let query = 'select id, email from hacker where school in (\'Georgia State University\',\'Emory University\',\'University of Georgia\');';
+  let query = 'select id, email from hacker where school not in (\'Georgia State University\', \'Emory University\', \'University of Georgia\', \'Purdue University\', \'University of Illinois at Urbana-Champaign\', \'University of Florida\', \'Florida State University\');';
   connectDB(query);
 });
 
