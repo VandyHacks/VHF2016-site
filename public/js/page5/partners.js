@@ -25,6 +25,9 @@ import React from 'react';
             <a target="_blank" rel="noopener" href="https://www.clerky.com/">
               <img src="img/page5/clerky.svg" className="clerky-logo"/>
             </a>
+            <a target="_blank" rel="noopener" href="https://microsoft.com/">
+              <img src="img/page5/microsoft.png" className="microsoft-logo"/>
+            </a>
       			<a target="_blank" rel="noopener" href="https://mlh.io/">
     				  <img src="img/page4/mlh-logo-color.svg" className="mlh-logo"/>
       			</a>

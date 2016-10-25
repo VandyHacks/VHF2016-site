@@ -60,6 +60,7 @@ h1 {
     animation-duration: 336s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud0-2 {
     0% {
@@ -91,6 +92,7 @@ h1 {
     animation-duration: 300s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud0-3 {
     0% {
@@ -122,6 +124,7 @@ h1 {
     animation-duration: 265s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud1 {
     0% {
@@ -147,6 +150,7 @@ h1 {
     animation-duration: 265s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud2 {
     0% {
@@ -178,6 +182,7 @@ h1 {
     animation-duration: 290s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud3 {
     0% {
@@ -209,6 +214,7 @@ h1 {
     animation-duration: 215s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-cloud2-0 {
     0% {
@@ -239,6 +245,7 @@ h1 {
     animation-duration: 275s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes animate-faqCloud1 {
     0% {
@@ -264,6 +271,7 @@ h1 {
     animation-duration: 230s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
     z-index: -5;
 }
 @keyframes animate-faqCloud2 {
@@ -296,6 +304,7 @@ h1 {
     animation-duration: 255s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
     z-index: -5;
 }
 @keyframes animate-faqCloud3 {
@@ -328,6 +337,7 @@ h1 {
     animation-duration: 225s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-backface-visibility: hidden;
     z-index: -5;
 }
 
@@ -815,14 +825,14 @@ tr {
 .logo3 {
     position: absolute;
     left: 410%;
-    top: 49%;
+    top: 48.5%;
     width: 5%;
     z-index: 1;
 }
 .logo4 {
     position: absolute;
     left: 433%;
-    top: 49.5%;
+    top: 49%;
     width: 7%;
 }
 .logo5 {
@@ -849,7 +859,7 @@ tr {
 .logo7 {
     position: absolute;
     left: 452.5%;
-    top: 52%;
+    top: 49.5%;
     width: 12%;
 }
 .logo8 {
@@ -879,7 +889,7 @@ tr {
 .commons-logo {
     position: absolute;
     left: 476.5%;
-    top: 52%;
+    top: 49.5%;
     width: 12%;
 }
 /* Page 5 */
@@ -934,26 +944,32 @@ tr {
 .devpost-logo {
     position: absolute;
     left: 533%;
-    top: 47%;
+    top: 36.5%;
     width: 16%;
 }
 .logo9 {
     position: absolute;
     left: 502.5%;
-    top: 42%;
+    top: 33%;
     width: 25%;
 }
 .mlh-logo {
     position: absolute;
     left: 558%;
-    top: 45%;
+    top: 34.5%;
     width: 11%;
 }
 .clerky-logo {
     position: absolute;
     left: 578%;
-    top: 45%;
+    top: 36.5%;
     width: 17%;
+}
+.microsoft-logo {
+    position: absolute;
+    left: 542%;
+    top: 52%;
+    width: 20%;
 }
 /* Navbar */
 
@@ -1346,7 +1362,8 @@ tr {
     .isis-logo2,
     .mantech-logo,
     .clerky-logo,
-    .commons-logo
+    .commons-logo,
+    .microsoft-logo
     {
         position: static;
         margin-top: 10%;
@@ -1433,6 +1450,10 @@ tr {
     .commons-logo {
         width: 60%;
     }
+    .microsoft-logo {
+        width: 65%;
+        margin-bottom: 10%;
+    }
 }
 @media(max-width: 560px) {
     .logo1 {
@@ -1461,7 +1482,7 @@ tr {
     }
 }
 @media(min-width: 420px) and (max-height: 554px) {
-  .logo1 {
+.logo1 {
     top: 50%;
 }
 .logo2 {
