@@ -2,6 +2,8 @@ const path = require('path');
 const pg = require('pg');
 const validator = require('validator');
 
+var pool = getPool();
+
 function getPool() {
   var config = {
     user: process.env.DB_USER,
@@ -30,7 +32,6 @@ function rsvp_post(app) {
       res.status(400).send('error')
       return;
     }
-    var pool = getPool();
     var get_hacker_id_query = 'select id from hacker where hashed_id = \'' + hashed_id + '\';';
     var update_rsvp_query = 'update application set rsvp = TRUE where hackerid = $1::int;';
     var hackerid = null;
