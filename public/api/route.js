@@ -6,7 +6,7 @@ var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 var express = require('express');
 var app = express();
-// require('dotenv').config();
+require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
 //console.log(process.env.DB);
 
@@ -30,7 +30,7 @@ app.route('/checkemail')
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query = "select id from hacker where email='" + email + "'";	 	// insecure?
+		var query = "select hacker.first_name, hacker.last_name, application.accepted, application.rsvp from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
 		client.query(query, function(err, result) {
 	        if (err) {
 	            console.log(err); console.log(query);
