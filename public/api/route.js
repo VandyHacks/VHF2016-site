@@ -6,9 +6,9 @@ var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 var express = require('express');
 var app = express();
-require('dotenv').config();
+// require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
-//console.log(process.env);
+//console.log(process.env.DB);
 
 var client = new pg.Client({
     user: process.env.DB_USER,
@@ -30,15 +30,14 @@ app.route('/checkemail')
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query = "select exists(select 1 from application where email='" + email + "')";
-
+		var query = "select id from hacker where email='" + email + "'";	 	// insecure?
 		client.query(query, function(err, result) {
 	        if (err) {
-	            console.log(err);
-	            console.log(query);
+	            console.log(err); console.log(query);
 	            res.status(400).send(false);
 	            return;
 	        }
+	        console.log(result);
         
         	if (result.rows[0])
 	        	res.status(200).send(true);
@@ -50,14 +49,14 @@ app.route('/checkemail')
 // checkin api calls
 app.route('/checkin')
 	.post(function(req, res){
-		console.log("POST request to check in email " + req.query.email);
+		var email = req.query.email;
+		console.log("POST request to check in email " + email);
 		
+		// marks owner of email as attending
 		var query = "update application set attended = true where email='" + email + "')";
-
 		client.query(query, function(err, result) {
 	        if (err) {
-	            console.log(err);
-	            console.log(query);
+	            console.log(err); console.log(query);
 	            res.status(400).send(false);
 	            return;
 	        }
@@ -67,4 +66,4 @@ app.route('/checkin')
 	});
 
 
-app.listen(port);				// Listen for calls
+app.listen(port);							// Listen for calls
