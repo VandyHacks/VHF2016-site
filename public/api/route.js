@@ -18,7 +18,7 @@ var client = new pg.Client({
     host: process.env.DB_HOST,
     ssl: true
 });
-client.connect();
+client.connect(); //pg connect is better?
 
 var port = process.env.PORT || 8080;        // set our port
 
@@ -30,7 +30,8 @@ app.route('/checkin')
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query = "select hacker.first_name, hacker.last_name, application.accepted, application.rsvp from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
+		var query_check = "select hacker.id, hacker.first_name, hacker.last_name, application.accepted, application.rsvp from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
+		var query_update = "update application set attended = true where id = $1::int";
 		client.query(query, function(err, result) {
 	        if (err) {
 	            console.log(err); console.log(query);
@@ -47,10 +48,13 @@ app.route('/checkin')
 	        	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};		// accepted could be null i.e. no decision
 	        else if (!result.rows[0].rsvp)
 	        	reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
-	        else
+	        else{
+	        	client.query(query_update, result.rows[0].id);
 	        	reply = {success: true, message: "Welcome " + name};
+	        }
 
 	        res.status(200).send(reply);
+	        client.close();
       	});
 	});
 
