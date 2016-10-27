@@ -6,7 +6,7 @@ var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 var express = require('express');
 var app = express();
-// require('dotenv').config();
+require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
 //console.log(process.env.DB);
 
@@ -18,19 +18,20 @@ var client = new pg.Client({
     host: process.env.DB_HOST,
     ssl: true
 });
-client.connect();
+client.connect(); //pg connect is better?
 
 var port = process.env.PORT || 8080;        // set our port
 
 
-// checkemail api calls
-app.route('/checkemail')
+// checkin api calls
+app.route('/checkin')
 	.get(function(req, res){
 		var email = req.query.email;
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query = "select id from hacker where email='" + email + "'";	 	// insecure?
+		var query_check = "select hacker.id, hacker.first_name, hacker.last_name, application.accepted, application.rsvp from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
+		var query_update = "update application set attended = true where id = $1::int";
 		client.query(query, function(err, result) {
 	        if (err) {
 	            console.log(err); console.log(query);
@@ -38,30 +39,22 @@ app.route('/checkemail')
 	            return;
 	        }
 	        console.log(result);
+	        var name = result.rows[0].first_name + " " + result.rows[0].last_name;
+	        var reply = {};
         
-        	if (result.rows[0])
-	        	res.status(200).send(true);
-	        else 
-	        	res.status(200).send(false);
-      	});
-	});
-
-// checkin api calls
-app.route('/checkin')
-	.post(function(req, res){
-		var email = req.query.email;
-		console.log("POST request to check in email " + email);
-		
-		// marks owner of email as attending
-		var query = "update application set attended = true where email='" + email + "')";
-		client.query(query, function(err, result) {
-	        if (err) {
-	            console.log(err); console.log(query);
-	            res.status(400).send(false);
-	            return;
+	        if (!result.rows[0])
+	        	reply = {success: false, message: "Email " + email + " not found in database"};
+        	else if (!result.rows[0].accepted)
+	        	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};		// accepted could be null i.e. no decision
+	        else if (!result.rows[0].rsvp)
+	        	reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
+	        else{
+	        	client.query(query_update, result.rows[0].id);
+	        	reply = {success: true, message: "Welcome " + name};
 	        }
-                	
-	        res.status(200).send(true);	        	        	
+
+	        res.status(200).send(reply);
+	        client.close();
       	});
 	});
 
