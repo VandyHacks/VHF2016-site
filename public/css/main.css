@@ -852,7 +852,7 @@ tr {
 }
 .logo6 {
     position: absolute;
-    left: 440.5%;
+    left: 430.5%;
     top: 35%;
     width: 13%;
 }
@@ -891,6 +891,12 @@ tr {
     left: 476.5%;
     top: 49.5%;
     width: 12%;
+}
+.rv-logo {
+    position: absolute;
+    left: 450%;
+    top: 37%;
+    width: 18%;
 }
 /* Page 5 */
 .p5tree1 {
@@ -1216,7 +1222,7 @@ tr {
         width: 100px;
     }
 }
-@media (max-height: 800px) {
+@media (max-height: 700px) {
     .squirrel0 {
         display: none !important;
     }
@@ -1363,7 +1369,8 @@ tr {
     .mantech-logo,
     .clerky-logo,
     .commons-logo,
-    .microsoft-logo
+    .microsoft-logo,
+    .rv-logo
     {
         position: static;
         margin-top: 10%;
@@ -1454,6 +1461,9 @@ tr {
         width: 65%;
         margin-bottom: 10%;
     }
+    .rv-logo {
+        width: 75%;
+    }
 }
 @media(max-width: 560px) {
     .logo1 {
@@ -1523,6 +1533,9 @@ tr {
 }
 .commons-logo {
     top: 57%;
+}
+.rv-logo {
+    top: 44.5%
 }
 .squirrelLaptop, .sponsorTrees1, .sponsorTrees2, .sponsor-message {
     display: none !important;
