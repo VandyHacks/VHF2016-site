@@ -413,12 +413,12 @@ p {
     z-index: 10;
 }
 .squirrel0 {
-    z-index: -1;
-    position: absolute;
     bottom: 3%;
-    width: 10%;
     height: auto;
     left: 43%;
+    position: absolute;
+    width: 10%;
+    z-index: -1;
 }
 .tree0-1 {
     max-height: 80%;
@@ -1204,6 +1204,13 @@ tr {
         font-size: 1.2em;
     }
 }
+
+@media(max-width: 980px) {
+    #navbar {
+        display: none;
+    }
+}
+
 @media(max-width: 1070px) {
     .faqSquirrel {
         display: none !important;
@@ -1217,9 +1224,6 @@ tr {
     .tree0-2 {
         transform: translateY(3%);
     }
-    #navbar {
-        display: none;
-    }
     .mlh-badge {
         top: 0;
     }
@@ -1229,16 +1233,20 @@ tr {
     #vh-description {
       top: -2%;
     }
+}
+
 @media(max-width: 800px) {
     .navbar-btn {
         width: 100px;
     }
 }
-@media (max-height: 700px) {
+
+@media(max-height: 710px) {
     .squirrel0 {
-        display: none !important;
+        display: none;
     }
 }
+
 @media(max-width: 769px) {
     html, body {
         height: 100%;

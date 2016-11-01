@@ -14,16 +14,6 @@ export default class Registration extends React.Component {
         <p className="cohosted-by">Cohosted by:</p>
         <Image class="cohost" path="img/page4/micro_strategy.png"/>
         <br />
-        <div id = 'sub_text'></div>
-        <div className="register-button-container">
-          <a
-            href="https://vandyhacks.typeform.com/to/RqdpnL"
-            target="_blank" rel="noopen"
-            className="register-btn btn btn-primary btn-primary"
-          >
-          <span className="register-btn-text">Apply</span>
-          </a>
-        </div>
         <ul className="soc">
           <li><a className="soc-facebook" href="https://www.facebook.com/vandyhacks" target="_blank" rel="noopen"></a></li>
           <li><a className="soc-twitter" href="https://twitter.com/vandyhacks" target="_blank" rel="noopen" ></a></li>
