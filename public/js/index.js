@@ -35,6 +35,15 @@ class Navbar extends React.Component {
         <span className="navbar-btn" id="nav3" onClick={scroll.scrollToPage.bind(scroll, 3)}>FAQ</span>
         <span className="navbar-btn" id="nav4" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
         <span className="navbar-btn" id="nav5" onClick={scroll.scrollToPage.bind(scroll, 5)}>Partners</span>
+        <span className="navbar-btn navbar-apply" id="nav6">
+          <a
+            className='nav-link'
+            href='https://docs.google.com/document/d/1N_3l4F5F1ueKTTgOT4zK-5K-Qy664Epch4lik5d59BY/edit'
+            target='_blank'
+          >
+          Reimbursement Info
+          </a>
+        </span>
       </div>
     );
   }

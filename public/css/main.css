@@ -1034,6 +1034,7 @@ tr {
     font-weight: bold;
     right: 30px;
     margin-top: 12px;
+    width: 200px;
 }
 .navbar-apply:hover {
     cursor: pointer;
@@ -1041,6 +1042,7 @@ tr {
 }
 .nav-link {
     color: black;
+    font-size: .88em;
 }
 .nav-link:link {
     color: black;
@@ -1205,7 +1207,7 @@ tr {
     }
 }
 
-@media(max-width: 980px) {
+@media(max-width: 1080px) {
     #navbar {
         display: none;
     }
