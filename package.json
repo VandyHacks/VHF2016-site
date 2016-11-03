@@ -36,6 +36,7 @@
     "font-awesome": "^4.6.3",
     "mailchimp": "^1.2.0",
     "pg": "6.1.0",
+    "pug": "^2.0.0-beta6",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "request": "^2.74.0",
