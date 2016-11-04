@@ -8,7 +8,8 @@
     "postinstall": "webpack -p --config ./webpack.config.js --progress --colors",
     "dev": "webpack-dev-server --content-base public/",
     "build": "webpack --config ./webpack.config.js --progress --colors",
-    "start": "node public/app.js"
+    "start": "node public/app.js",
+    "api": "node public/api/route.js"
   },
   "repository": {
     "type": "git",
