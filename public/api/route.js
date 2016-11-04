@@ -18,27 +18,27 @@ var client = new pg.Client({
 });
 client.connect(); //pg connect is better?
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.PORT || 3333;        // set our port
 
 
 // checkin api calls
-app.route('/checkin')
+app.route('/checkemail')
 	.get(function(req, res){
 		var email = req.query.email;
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query_check = "select application.id, hacker.first_name, hacker.last_name, hacker.phone_number, application.accepted, application.rsvp, application.attended from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
-		var query_update = "update application set attended = true where id = $1::int";
+		var query_check = "select hacker.first_name, hacker.last_name, hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction application.accepted, application.rsvp, application.attended from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
 
 		client.query(query_check, function(err, result) {
 	        if (err) {
 	            console.log(err); console.log(query);
-	            res.status(400).send(false);
+	            res.status(400).send({success: false, message: "Error: " + err});
 	            return;
 	        }
 	        console.log(result);
-	        var name = result.rows[0].first_name + " " + result.rows[0].last_name;
+	        var hacker = result.rows[0];
+	        var name = hacker.first_name + " " + hacker.last_name;
 	        var reply = {};	        
         
 	        if (!result.rows[0])
@@ -49,19 +49,33 @@ app.route('/checkin')
 	        	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};		// accepted could be null i.e. no decision
 	        else if (!result.rows[0].rsvp)
 	        	reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
-	        else{	        	// already checked in?
-	        	client.query(query_update, [result.rows[0].id]);
-	        	reply = {success: true, message: "Welcome " + name};
-	        }
-
-
-	        //  Check phone number
-	        reply["phone"] = checkPhone(result.rows[0].phone_number);
-	        reply["number"] = result.rows[0].phone_number;
+	        else
+	        	reply = {success: true, message: "Welcome " + name, name: name, school: hacker.school, tshirt_size: hacker.shirt_size, dietary_restrictions: hacker.food_restriction, phone_valid: checkPhone(hacker.phone_number), phone_number: hacker.phone_number};
 
 	        res.status(200).send(reply);	        
       	});      	
 	});
+
+app.route('/checkemail')
+	.post(function(req, res){
+		var email = req.query.email;
+		console.log("POST request to checkin email " + email);
+
+		// returns t/f for if email is in table     (could select applicant name for display)		
+		var query_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
+
+		client.query(query_check, function(err, result) {
+	        if (err) {
+	            console.log(err); console.log(query);
+	            res.status(400).send(false);
+	            return;
+	        }
+	        console.log(result);	            
+
+	        res.status(200).send(true);	        
+      	});      	
+	});
+
 
 
 app.listen(port);							// Listen for calls
