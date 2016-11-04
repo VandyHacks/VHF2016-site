@@ -19,6 +19,7 @@ app.use(express.static(__dirname, { maxAge: oneDay }));
 
 
 app.use(bodyParser.json());
+app.use('/api', api)
 
 rsvp.rsvp_get(app);
 rsvp.rsvp_post(app);
