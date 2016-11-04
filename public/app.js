@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack'); 
 const config = require('../webpack.config.js');
-const api = require('./api/route.js');
+// const api = require('./api/route.js');
 const rsvp = require('./routes/rsvp.js');
 const checkin = require('./routes/checkin.js');
 const bodyParser = require('body-parser');
@@ -19,7 +19,7 @@ app.use(express.static(__dirname, { maxAge: oneDay }));
 
 
 app.use(bodyParser.json());
-app.use('/api', api);
+// app.use('/api', api);
 
 rsvp.rsvp_get(app);
 rsvp.rsvp_post(app);
