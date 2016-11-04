@@ -1,9 +1,7 @@
 "use strict";
 var pg = require('pg');
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
 var express = require('express');
-var app = express();
+var router = express.Router()
 // require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
 //console.log(process.env.DB);
@@ -18,12 +16,9 @@ var client = new pg.Client({
 });
 client.connect(); //pg connect is better?
 
-var port = process.env.PORT || 3333;        // set our port
-
 
 // checkin api calls
-app.route('/checkemail')
-	.get(function(req, res){
+router.get('/checkemail', function(req, res){
 		var email = req.query.email;
 		console.log("GET request to check email " + email);
 
@@ -56,8 +51,7 @@ app.route('/checkemail')
       	});      	
 	});
 
-app.route('/checkemail')
-	.post(function(req, res){
+router.post('/checkin', function(req, res){
 		var email = req.query.email;
 		console.log("POST request to checkin email " + email);
 
@@ -76,10 +70,7 @@ app.route('/checkemail')
       	});      	
 	});
 
-
-
-app.listen(port);							// Listen for calls
-
+module.exports = router;
 
 
 function checkPhone(number){
