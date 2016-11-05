@@ -2,7 +2,7 @@
 var pg = require('pg');
 var express = require('express');
 var router = express.Router()
-// require('dotenv').config();
+require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
 //console.log(process.env.DB);
 
@@ -23,11 +23,11 @@ router.get('/checkemail', function(req, res){
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
-		var query_check = "select hacker.first_name, hacker.last_name, hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction application.accepted, application.rsvp, application.attended from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
+		var query_check = "select hacker.first_name, hacker.last_name, hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction, application.accepted, application.rsvp, application.attended from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
 
 		client.query(query_check, function(err, result) {
 	        if (err) {
-	            console.log(err); console.log(query);
+	            console.log(err); console.log(query_check);
 	            res.status(400).send({success: false, message: "Error: " + err});
 	            return;
 	        }
@@ -37,9 +37,7 @@ router.get('/checkemail', function(req, res){
 	        var reply = {};	        
         
 	        if (!result.rows[0])
-	        	reply = {success: false, message: "Email " + email + " not found in database"};
-	        else if (result.rows[0].accepted === null)
-	        	reply = {success: false, message: "Hacker " + name + " has no decision on acceptance?.."};
+	        	reply = {success: false, message: "Email " + email + " not found in database"};	        
         	else if (!result.rows[0].accepted)
 	        	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};		// accepted could be null i.e. no decision
 	        else if (!result.rows[0].rsvp)
@@ -54,11 +52,10 @@ router.get('/checkemail', function(req, res){
 router.post('/checkin', function(req, res){
 		var email = req.query.email;
 		console.log("POST request to checkin email " + email);
-
-		// returns t/f for if email is in table     (could select applicant name for display)		
+		
 		var query_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
 
-		client.query(query_check, function(err, result) {
+		client.query(query_update, function(err, result) {
 	        if (err) {
 	            console.log(err); console.log(query);
 	            res.status(400).send(false);
