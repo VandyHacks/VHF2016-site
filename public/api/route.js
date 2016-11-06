@@ -30,15 +30,18 @@ router.get('/checkemail', function(req, res){
 	            console.log(err); console.log(query_check);
 	            res.status(400).send({success: false, message: "Error: " + err});
 	            return;
+	        }	        
+	        // console.log(result);
+	        if (!result.rows[0]){	        	
+	        	res.status(404).send({success: false, message: "Email " + email + " not found in database"});
+	        	return;
 	        }
-	        console.log(result);
+	        
 	        var hacker = result.rows[0];
 	        var name = hacker.first_name + " " + hacker.last_name;
-	        var reply = {};	        
-        
-	        if (!result.rows[0])
-	        	reply = {success: false, message: "Email " + email + " not found in database"};	        
-        	else if (!result.rows[0].accepted)
+	        var reply = {};	              	               	
+
+        	if (!result.rows[0].accepted)
 	        	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};		// accepted could be null i.e. no decision
 	        else if (!result.rows[0].rsvp)
 	        	reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
