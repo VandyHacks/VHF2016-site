@@ -2,7 +2,7 @@
 var pg = require('pg');
 var express = require('express');
 var router = express.Router()
-require('dotenv').config();
+//require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
 //console.log(process.env.DB);
 
