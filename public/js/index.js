@@ -36,13 +36,27 @@ class Navbar extends React.Component {
         <span className="navbar-btn" id="nav4" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
         <span className="navbar-btn" id="nav5" onClick={scroll.scrollToPage.bind(scroll, 5)}>Partners</span>
         <span className="navbar-btn navbar-apply" id="nav6">
-          <a
-            className='nav-link'
-            href='https://docs.google.com/document/d/1N_3l4F5F1ueKTTgOT4zK-5K-Qy664Epch4lik5d59BY/edit'
-            target='_blank'
-          >
-          Reimbursement Info
-          </a>
+        <div className="dropdown">
+          <button className="navbar-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Useful links
+             <span className="caret"></span>
+          </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/0B4-ckENnV54DSEhnNG9nTE5QbGM/view"
+                  target='_blank'
+                >Schedule</a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.google.com/document/d/1N_3l4F5F1ueKTTgOT4zK-5K-Qy664Epch4lik5d59BY/edit"
+                  target='_blank'
+                >Reimbursement Info</a>
+              </li>
+            </ul>
+        </div>
         </span>
       </div>
     );
@@ -124,7 +138,7 @@ class Page4 extends React.Component {
         <i
           className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
           id="page4-arrow-left"
-          onClick={scroll.scrollLeft}>          
+          onClick={scroll.scrollLeft}>
         </i>
  		<i className="fa fa-fw fa-arrow-circle-o-right fa-4x hidden-xs hidden-sm"
          	id="page4-arrow-right"
@@ -134,7 +148,7 @@ class Page4 extends React.Component {
      );
    }
  }
- 
+
 class Page5 extends React.Component {
    render() {
      return (
@@ -143,7 +157,7 @@ class Page5 extends React.Component {
          <i
            className="fa fa-fw fa-arrow-circle-o-left fa-4x hidden-xs hidden-sm"
            id="page5-arrow-left"
-           onClick={scroll.scrollLeft}>          
+           onClick={scroll.scrollLeft}>
          </i>
       </div>
     );

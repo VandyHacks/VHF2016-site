@@ -5,7 +5,7 @@ var rp = require('request-promise');
 var pg = require('pg');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-//require('dotenv').config();
+require('dotenv').config();
 //the above line should be uncommented when run locally and commented back again when pushed
 var client = new pg.Client({
     user: process.env.DB_USER,
@@ -33,7 +33,7 @@ var connectDB = async(function (statement) {
 
 var updateDB = (function() {
     rp('https://api.typeform.com/v1/form/RqdpnL?key=' + process.env.TYPEFORM_KEY +
-      '&completed=true&since=1475347621')
+      '&completed=true&since=1475643600')
         .then(function(htmlString) {
             // Process html...
 
