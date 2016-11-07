@@ -53,7 +53,7 @@ router.get('/checkemail', function(req, res){
 	});
 
 router.post('/checkin', function(req, res){
-		var email = req.query.email;
+		var email = req.body.email;
 		console.log("POST request to checkin email " + email);
 		
 		var query_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
