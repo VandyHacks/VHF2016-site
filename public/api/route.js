@@ -19,7 +19,7 @@ client.connect(); //pg connect is better?
 
 // checkin api calls
 router.get('/checkemail', function(req, res){
-		var email = req.query.email.toLower();
+		var email = req.query.email.toLowerCase();
 		console.log("GET request to check email " + email);
 
 		// returns t/f for if email is in table     (could select applicant name for display)
@@ -53,7 +53,7 @@ router.get('/checkemail', function(req, res){
 	});
 
 router.post('/checkin', function(req, res){
-		var email = req.body.email.toLower();
+		var email = req.body.email.toLowerCase();
 		console.log("POST request to checkin email " + email);
 		
 		var query_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
