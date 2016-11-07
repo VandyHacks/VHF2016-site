@@ -831,7 +831,7 @@ tr {
 }
 .logo4 {
     position: absolute;
-    left: 420.5%;
+    left: 423%;
     top: 49%;
     width: 6.5%;
 }
@@ -855,12 +855,6 @@ tr {
     left: 430.5%;
     top: 35%;
     width: 13%;
-}
-.logo7 {
-    position: absolute;
-    left: 432%;
-    top: 49.5%;
-    width: 12%;
 }
 .logo8 {
     position: absolute;
@@ -888,7 +882,7 @@ tr {
 }
 .commons-logo {
     position: absolute;
-    left: 446.5%;
+    left: 437.5%;
     top: 49.5%;
     width: 12%;
 }
@@ -906,7 +900,7 @@ tr {
 }
 .vuse-logo {
     position: absolute;
-    left: 459.5%;
+    left: 454.5%;
     top: 46%;
     width: 16%;
 }
@@ -1387,7 +1381,6 @@ tr {
     .logo4,
     .logo5,
     .logo6,
-    .logo7,
     .logo8,
     .logo9,
     .centene-logo,
@@ -1444,7 +1437,6 @@ tr {
         width: 80%;
     }
     .logo6,
-    .logo7,
     centene-logo {
         width: 55%;
     }
@@ -1539,9 +1531,6 @@ tr {
 }
 .logo6 {
     top: 40%;
-}
-.logo7 {
-    top: 57%;
 }
 .logo8 {
     top: 42%;
