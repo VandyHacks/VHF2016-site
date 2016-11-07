@@ -41,9 +41,6 @@ export default class Sponsors extends React.Component {
 			<a target="_blank" rel="noopener" href="http://launchtn.org/">
 			  <img src="img/page4/launch_tn.png" className="logo4" />
       		</a>
-			<a target="_blank" rel="noopener" href="http://thielfellowship.org/">
-			  <img src="img/page4/thiel.png" className="logo7" />
-  			</a>
   			<a target="_blank" rel="noopener" href="http://commons.vanderbilt.edu/">
 			  <img src="img/page4/commons.png" className="commons-logo" />
   			</a>
