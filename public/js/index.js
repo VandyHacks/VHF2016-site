@@ -31,7 +31,7 @@ class Navbar extends React.Component {
       <div>
         <span className="navbar-logo navbar-btn" id="nav0" onClick={scroll.scrollToPage.bind(scroll, 0)}>VH</span>
         <span className="navbar-btn" id="nav1" onClick={scroll.scrollToPage.bind(scroll, 1)}>About</span>
-        <span className="navbar-btn" id="nav2" onClick={scroll.scrollToPage.bind(scroll, 2)}>Mentors</span>
+        <span className="navbar-btn" id="nav2" onClick={scroll.scrollToPage.bind(scroll, 2)}>Speakers</span>
         <span className="navbar-btn" id="nav3" onClick={scroll.scrollToPage.bind(scroll, 3)}>FAQ</span>
         <span className="navbar-btn" id="nav4" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
         <span className="navbar-btn" id="nav5" onClick={scroll.scrollToPage.bind(scroll, 5)}>Partners</span>
