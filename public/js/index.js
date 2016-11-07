@@ -36,13 +36,20 @@ class Navbar extends React.Component {
         <span className="navbar-btn" id="nav4" onClick={scroll.scrollToPage.bind(scroll, 4)}>Sponsors</span>
         <span className="navbar-btn" id="nav5" onClick={scroll.scrollToPage.bind(scroll, 5)}>Partners</span>
         <span className="navbar-btn navbar-apply" id="nav6">
-          <a
-            className='nav-link'
-            href='https://docs.google.com/document/d/1N_3l4F5F1ueKTTgOT4zK-5K-Qy664Epch4lik5d59BY/edit'
-            target='_blank'
-          >
-          Reimbursement Info
-          </a>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+             <span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
         </span>
       </div>
     );
