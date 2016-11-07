@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const cors = require('cors');
+const morgan = require('morgan');
 const config = require('../webpack.config.js');
 const api = require('./api/route.js');
 const rsvp = require('./routes/rsvp.js');
@@ -18,6 +19,7 @@ const oneDay = 86400000;
 const publicPath = path.resolve(__dirname);
 console.log(publicPath)
 app.use(express.static(__dirname, { maxAge: oneDay }));
+app.use(morgan('combined',{}));
 
 
 app.use(bodyParser.json());
