@@ -1027,6 +1027,11 @@ tr {
     cursor: pointer;
     color: orange;
 }
+
+.navbar-dropdown {
+  margin-top: -10px;
+  font-weight: bold;
+}
 .orange {
     color: orange;
 }
