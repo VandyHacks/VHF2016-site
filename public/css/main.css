@@ -985,9 +985,15 @@ tr {
 }
 .microsoft-logo {
     position: absolute;
-    left: 542%;
+    left: 519%;
     top: 52%;
     width: 20%;
+}
+.venture-logo {
+    position: absolute;
+    left: 559%;
+    top: 52%;
+    width: 23.5%;
 }
 /* Navbar */
 
@@ -1392,6 +1398,7 @@ tr {
     .clerky-logo,
     .commons-logo,
     .microsoft-logo,
+    .venture-logo,
     .rv-logo,
     .mission-logo,
     .vuse-logo
@@ -1483,6 +1490,10 @@ tr {
     }
     .microsoft-logo {
         width: 65%;
+        margin-bottom: 10%;
+    }
+    .venture-logo {
+        width: 77.5%;
         margin-bottom: 10%;
     }
     .rv-logo {
