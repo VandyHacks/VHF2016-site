@@ -21,7 +21,6 @@ console.log(publicPath)
 app.use(express.static(__dirname, { maxAge: oneDay }));
 app.use(morgan('combined',{}));
 
-
 app.use(bodyParser.json());
 app.use('/api', api);
 
