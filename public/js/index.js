@@ -45,7 +45,7 @@ class Navbar extends React.Component {
             <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li>
                 <a
-                  href="https://drive.google.com/file/d/0B4-ckENnV54DSEhnNG9nTE5QbGM/view"
+                  href="https://drive.google.com/file/d/0B4-ckENnV54DREdsenlDd2NLUXM/view"
                   target='_blank'
                 >Schedule</a>
               </li>
