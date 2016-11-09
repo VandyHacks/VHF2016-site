@@ -1,0 +1,157 @@
+#! /app/.heroku/node/bin/node
+
+"use strict";
+var rp = require('request-promise');
+var pg = require('pg');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
+
+var client = new pg.Client({
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB,
+    port: 5432,
+    host: process.env.DB_HOST,
+    ssl: true
+});
+client.connect();
+
+var connectDB = async(function (statement) {
+    //console.log(statement);
+    var query = await(client.query(statement, function(err, result) {
+        if (err) {
+            console.log(err);
+            console.log(statement);
+        }
+    }));
+});
+
+var updateDB = (function() {
+    rp('https://api.typeform.com/v1/form/RqdpnL?key=' + process.env.TYPEFORM_KEY +
+      '&completed=true&since=1475643600')
+        .then(function(htmlString) {
+            // Process html...
+
+            var data = JSON.parse(htmlString);
+            console.log('response length: ' + data.responses.length);
+            for (var i = 0; i < data.responses.length; i++) {
+                var res = data.responses[i];
+                getQueryString(res).then(function(val) {
+                    //console.log(val);
+                    if (val !== "Done") {
+                        connectDB(val);
+                    }   
+                });
+            }
+            console.log('email count: ' + email_count);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+            console.log(err);
+        });
+});
+
+function getTableCol(key) {
+
+    var fieldId = Number(getFieldId(key));
+    switch (fieldId) {
+        case 25561789:
+            //name
+            return "first_name";
+        case 25562012:
+            //last name
+            return "last_name";
+        case 29289151:
+            return "team_id";
+        case 29289338:
+            return "email1";
+        case 29289346:
+            return "email2";
+        case 29289368:
+            return "email3";
+        case 25562055:
+            //email
+            return "email";
+        case 25562418:
+            //school
+            return "school";
+        case 25860376:
+            //graduation date
+            return "grad_year";
+        case 25860181:
+            //major
+            return "major";
+        case 25561791:
+            //gender
+            return "gender";
+        case 25860662:
+            //food
+            return "food_restriction";
+        case 25860615:
+            //shirt
+            return "shirt_size";
+        case 25561793:
+            //travel
+            return "money";
+        case 25860777:
+            //github
+            return "github";
+        case 25860782:
+            //linkedin
+            return "linkedin";
+        case 25945030:
+            //website
+            return "website";
+        case 27747401:
+            //resume
+            return "resume";
+        case 25859652:
+            //race
+            return "race";
+        case 25561794:
+            //needs
+            return "special_needs";
+        case 29438409:
+            return "phone_number";
+        case 30041941:
+            return "agree";
+        case 30042425:
+            return "agree2";
+    }
+}
+
+var getQueryString = async(function(res) {
+    var map = new Object();
+    var questions = "";
+    var answers = "";
+    var updateString = "";
+    for (var answer in res.answers) {
+        if (res.answers[answer] !== "") {
+            var question = getTableCol(answer);
+            if (map.hasOwnProperty(question)) {
+                map[question] += " " + res.answers[answer];
+            } else {
+                map[question] = res.answers[answer];
+            }
+        }
+    }
+    	return new Promise(function(resolve){
+    		resolve("UPDATE APPLICATION SET date_submit + '" + res.metadata.date_submit + "');");
+        });
+});
+
+function getFieldId(key) {
+    var index = key.indexOf('_');
+    var indexLast = key.indexOf('_', index + 1);
+    if (indexLast === -1) {
+        return key.substring(index + 1);
+    } else {
+        return key.substring(index + 1, indexLast);
+    }
+}
+
+var exitPromise = new Promise(updateDB);
+exitPromise.then(function() {
+    client.end();
+    process.exit();
+});
