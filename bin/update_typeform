@@ -142,8 +142,8 @@ var getQueryString = async(function(res) {
               console.log('inserting hacker');
 	            resolve(" INSERT INTO HACKER (" + questions.substring(2) + ") VALUES (" + answers.substring(2) + ");" +
 	                " UPDATE HACKER SET qr_code ='" + url + "' WHERE email = '" + map.email + "'; " +
-	                "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied)" +
-	                "VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true')");
+	                "INSERT INTO APPLICATION (need_reimbursement, hackerid, hackathonid, user_agent, applied, submit_date)" +
+	                "VALUES ('" + map.money + "', (select id from hacker where email = '" + map.email + "'), 2, '" + res.metadata.user_agent + "', 'true,"+res.metadata.date_submit+")");
 	        } else {
 	            resolve("Done");
 	        }
