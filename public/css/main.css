@@ -818,9 +818,9 @@ tr {
 }
 .logo2 {
     position: absolute;
-    left: 409.5%;
-    top: 35%;
-    width: 13%;
+    left: 408%;
+    top: 22.5%;
+    width: 16.5%;
 }
 .logo3 {
     position: absolute;
@@ -1515,7 +1515,7 @@ tr {
     top: 50%;
 }
 .logo2 {
-    top: 40%;
+    top: 27.5%;
 }
 .logo3 {
     top: 56.5%;
@@ -1544,14 +1544,11 @@ tr {
 .mantech-logo {
     top: 27%;
 }
-.clerky-logo {
-    top: 50%;
-}
 .commons-logo {
     top: 57%;
 }
 .rv-logo {
-    top: 44.5%
+    top: 42.5%
 }
 .mission-logo {
     top: 52%;
