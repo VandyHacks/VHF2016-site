@@ -586,7 +586,15 @@ tr {
     z-index: 1;
     width: 25%;
 }
-
+.speakers {
+    display: none;
+}
+.speaker-description {
+    font-family: 'SofiaProCondLight';
+    width: 100%;
+    line-height: 150%;
+    font-size: .7em;
+}
 .jeff-description {
     font-family: 'SofiaProCondLight';
     font-size: 1.2em;
@@ -599,7 +607,6 @@ tr {
     z-index: 1;
     width: 25%;
 }
-
 .microstrat-description {
     font-family: 'SofiaProCondLight';
     font-size: 1.2em;
@@ -615,7 +622,7 @@ tr {
 .speaker-header{
     font-size: 1.5em;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
 }
 .trademark {
     font-size: .3em;
@@ -1247,6 +1254,12 @@ tr {
     #navbar {
         display: none;
     }
+    .jeff-description {
+        top: 2%;
+    }
+    .microstrat-description {
+        top: 2%;
+    }
 }
 
 @media(max-width: 1070px) {
@@ -1344,8 +1357,26 @@ tr {
     .sponsorTrees2,
     .squirrelLaptop,
     .mentor-description,
+    .speaker-description,
+    .jeff-description,
+    .microstrat-description,
     .beginner {
       position: static;
+    }
+    .speakers {
+        font-family: 'SofiaProCondBlack';
+        font-size: 1.75em;
+        font-weight: bold;
+        color: #1A3244;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7.5%;
+        position: static;
+    }
+    .jeff-description, .microstrat-description {
+        width: 100%;
     }
     .beginner {
         width: 95%;
@@ -1381,6 +1412,11 @@ tr {
     .mentor-description {
         margin-top: 10%;
         width: 95%;
+    }
+    .speaker-description {
+        margin-top: 2%;
+        width: 95%;
+        font-size: .8em;
     }
     .faq {
         margin-top: 10%;
@@ -1456,7 +1492,9 @@ tr {
         width: 75%;
     }
     .logo2 {
-        width: 50%;
+        margin-top: -17.5%;
+        width: 75%;
+        margin-bottom: -25%;
     }
     .logo3 {
         width: 25%;
