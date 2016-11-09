@@ -2,11 +2,15 @@
 var pg = require('pg');
 var express = require('express');
 var router = express.Router()
-//require('dotenv').config();
+require('dotenv').config();
 // the above line should be uncommented when run locally and commented back again when pushed
-//console.log(process.env.DB);
 
 var pool = getPool();
+var next_food_group_num = 2;
+var mutex_options = {
+  'url':process.env.REDIS_URL,
+}
+var mutex = require( 'node-mutex' )(mutex_options);
 
 function getPool() {
   var config = {
@@ -26,6 +30,7 @@ function getPool() {
 // checkin api calls
 router.get('/checkemail', function(req, res){
 	var email = req.query.email.toLowerCase();
+  email = email.replace(/<(?:.|\n)*?/gm,'');
 	console.log("GET request to check email " + email);
 
 	// returns t/f for if email is in table     (could select applicant name for display)
@@ -42,28 +47,55 @@ router.get('/checkemail', function(req, res){
           else {
             var hacker = query_res.rows[0];
             var name = hacker.first_name + " " + hacker.last_name;
-            var reply = {};	              	               	
+            var reply = null;	              	               	
 
             if (!query_res.rows[0].accepted) {
             	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};
             }
               // accepted could be null i.e. no decision
             else if (!query_res.rows[0].rsvp) {
-            	reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
+              reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
             }
-            else {
-            	reply = {
-                success: true,
+            let food_group = 1;
+            if (!hacker.food_restriction && !reply) {
+              mutex.
+                lock('next_food_group').
+                then( unlock => {
+                  food_group = next_food_group_num;
+                  if (next_food_group_num === 2) {
+                    next_food_group_num = 3;
+                  } else {
+                    next_food_group_num = 2;
+                  }
+                 	reply = {
+                    dietary_restrictions: hacker.food_restriction,
+                    food_group: food_group,
+                    message: "Welcome " + name,
+                    name: name,
+                    phone_number: hacker.phone_number,
+                    phone_valid: checkPhone(hacker.phone_number),
+                    school: hacker.school,
+                    success: true,
+                    tshirt_size: hacker.shirt_size,
+                  };
+                  res.status(200).send(reply);	
+                  unlock();
+                });
+            } else {
+              reply = reply || {
+                dietary_restrictions: hacker.food_restriction,
+                food_group: food_group,
                 message: "Welcome " + name,
                 name: name,
-                school: hacker.school,
-                tshirt_size: hacker.shirt_size,
-                dietary_restrictions: hacker.food_restriction,
+                phone_number: hacker.phone_number,
                 phone_valid: checkPhone(hacker.phone_number),
-                phone_number: hacker.phone_number
+                school: hacker.school,
+                success: true,
+                tshirt_size: hacker.shirt_size,
               };
+              res.status(200).send(reply);	
             }
-            res.status(200).send(reply);	
+
           }
         })
         .catch(e => {
@@ -74,26 +106,42 @@ router.get('/checkemail', function(req, res){
         .then(() => client)
     })
     .then(client => client.release())
-    .then(() => res.status(400).send())
 });
 
 router.post('/checkin', function(req, res){
-	var email = req.body.email && req.body.email.toLowerCase();
-	console.log("POST request to checkin email " + email);
+  console.log(req.body);
+	var email = req.body.email &&
+    req.body.email.toLowerCase().replace(/<(?:.|\n)*?/gm,'');
+  let food_group = req.body.food_group &&
+    req.body.food_group.replace(/<(?:.|\n)*?/gm,'');
 	
-	var query_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
-
+  console.log("POST request to checkin email " + email);
+	
+	var application_update = "update application set attended = true where id in (select application.id from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid)";
+	var food_group_update = "update hacker set food_group = " + food_group +
+    " where hacker.email='" + email + "';";
   pool.connect().
     then(client => {
       return client
-        .query(query_update)
+        .query(application_update)
         .then(query_res => {
           if (query_res.rowCount === 0) {
             console.log('no update');
-            res.status(200).send(false);	
           }
-          else {
-            res.status(200).send(true);	
+        })
+        .catch(e => {
+          client.release()
+          console.log(err); console.log(query);
+          res.status(400).send(false);
+        })
+        .then(() => client)
+    })
+    .then(client => {
+      return client
+        .query(food_group_update)
+        .then(query_res => {
+          if (query_res.rowCount === 0) {
+            console.log('--------- no food group update ------------');
           }
         })
         .catch(e => {
@@ -104,6 +152,7 @@ router.post('/checkin', function(req, res){
         .then(() => client)
     })
     .then(client => client.release())
+    .then(() => res.status(200).send(true))
 });
 
 module.exports = router;
