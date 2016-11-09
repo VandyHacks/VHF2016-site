@@ -37,6 +37,7 @@
     "font-awesome": "^4.6.3",
     "mailchimp": "^1.2.0",
     "morgan": "^1.7.0",
+    "node-mutex": "^0.2.2",
     "pg": "6.1.0",
     "pug": "^2.0.0-beta6",
     "react": "^15.2.1",
