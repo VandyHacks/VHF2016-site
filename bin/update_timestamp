@@ -136,7 +136,7 @@ var getQueryString = async(function(res) {
         }
     }
     	return new Promise(function(resolve){
-    		resolve("UPDATE APPLICATION SET date_submit + '" + res.metadata.date_submit + "');");
+    		resolve("UPDATE APPLICATION SET date_submit = '" + res.metadata.date_submit + "');");
         });
 });
 
