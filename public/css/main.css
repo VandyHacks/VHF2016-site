@@ -593,7 +593,7 @@ tr {
     font-family: 'SofiaProCondLight';
     width: 100%;
     line-height: 150%;
-    font-size: .7em;
+    font-size: .8em;
 }
 .jeff-description {
     font-family: 'SofiaProCondLight';
@@ -726,7 +726,7 @@ tr {
     left: 218.5%;
 }
 .treehouse {
-    height: 90%;
+    height: 86%;
     width: auto;
     position: absolute;
     margin-left: auto;
