@@ -586,6 +586,37 @@ tr {
     z-index: 1;
     width: 25%;
 }
+
+.jeff-description {
+    font-family: 'SofiaProCondLight';
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1A3244;
+    position: absolute;
+    top: calc(5% + 60px);
+    left: 205%;
+    text-align: center;
+    z-index: 1;
+    width: 25%;
+}
+
+.microstrat-description {
+    font-family: 'SofiaProCondLight';
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1A3244;
+    position: absolute;
+    top: calc(5% + 60px);
+    left: 271%;
+    text-align: center;
+    z-index: 1;
+    width: 25%;
+}
+.speaker-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+}
 .trademark {
     font-size: .3em;
     vertical-align: top;
@@ -688,12 +719,12 @@ tr {
     left: 218.5%;
 }
 .treehouse {
-    height: 110%;
+    height: 90%;
     width: auto;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    left: 233%;
+    left: 230%;
     right: 0;
     bottom: -1%;
 }
@@ -706,7 +737,7 @@ tr {
     bottom: 3%;
     width: 10%;
     height: auto;
-    left: 275%;
+    left: 257%;
 }
 /* Page 3 */
 
