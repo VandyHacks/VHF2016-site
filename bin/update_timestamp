@@ -43,7 +43,6 @@ var updateDB = (function() {
                     }   
                 });
             }
-            console.log('email count: ' + email_count);
         })
         .catch(function(err) {
             // Crawling failed...
