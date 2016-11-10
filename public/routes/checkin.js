@@ -49,7 +49,6 @@ function checkin_qrcode_get(app) {
           .then(() => client)
       })
       .then(client => client.release())
-      .then(() => res.status(400).send())
 
     pool.on('error', function (err, client) {
       console.error('idle client error', err.message, err.stack)
