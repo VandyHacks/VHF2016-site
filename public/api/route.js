@@ -30,6 +30,11 @@ function getPool() {
 // checkin api calls
 router.get('/checkemail', function(req, res){
 	var email = req.query.email.toLowerCase();
+  var api_key = req.query.api_key;
+  if (api_key !== process.env.CHECKIN_API_KEY) {
+    res.status(401).send({'error':'unauthorized'});
+    return;
+  }
   email = email.replace(/<(?:.|\n)*?/gm,'');
 	console.log("GET request to check email " + email);
 
@@ -109,11 +114,16 @@ router.get('/checkemail', function(req, res){
 });
 
 router.post('/checkin', function(req, res){
+  var api_key = req.body.api_key;
+  if (api_key !== process.env.CHECKIN_API_KEY) {
+    res.status(401).send({'error': 'unauthorized'});
+    return;
+  }
   console.log(req.body);
 	var email = req.body.email &&
     req.body.email.toLowerCase().replace(/<(?:.|\n)*?/gm,'');
   let food_group = req.body.food_group &&
-    req.body.food_group.replace(/<(?:.|\n)*?/gm,'');
+    req.body.food_group.toString().replace(/<(?:.|\n)*?/gm,'');
 	
   console.log("POST request to checkin email " + email);
 	
