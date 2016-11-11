@@ -29,25 +29,35 @@ function getPool() {
 
 // checkin api calls
 router.get('/checkemail', function(req, res){
-	var email = req.query.email.toLowerCase();
+  var identifier = req.query.email.toLowerCase();
+  let where_clause = '';
+  if (/^\d+$/.test(identifier)) {
+    where_clause = "hacker.email='" + identifier + "'";
+  }
+  else {
+    where_clause = "hacker.id=" + identifier;
+  }
   var api_key = req.query.api_key;
   if (api_key !== process.env.CHECKIN_API_KEY) {
     res.status(401).send({'error':'unauthorized'});
     return;
   }
-  email = email.replace(/<(?:.|\n)*?/gm,'');
-	console.log("GET request to check email " + email);
+  identifier = identifier.replace(/<(?:.|\n)*?/gm,'');
+	console.log("GET request to check email " + identifier);
 
-	// returns t/f for if email is in table     (could select applicant name for display)
-	var query_check = "select hacker.first_name, hacker.last_name, hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction, application.accepted, application.rsvp, application.attended from hacker, application where hacker.email='" + email + "' and hacker.id = application.hackerid";	 	// insecure?
+	// returns t/f for if email or id is in table     (could select applicant name for display)
+	var query_check = "select hacker.first_name, hacker.last_name, hacker.email," +
+    "hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction," + 
+    "application.accepted, application.rsvp, application.attended from hacker, application" +
+    "where " + where_clause + " and hacker.id = application.hackerid";	 	// insecure?
   pool.connect().
     then(client => {
       return client
         .query(query_check)
         .then(query_res => {
           if (query_res.rowCount === 0) {
-            console.log('couldn\'t find email');
-        	  res.status(404).send({success: false, message: "Email " + email + " not found in database"});
+            console.log('couldn\'t find identifier');
+        	  res.status(404).send({success: false, message: "Identifier" + identifier + " not found in database"});
           }
           else {
             var hacker = query_res.rows[0];
@@ -74,6 +84,7 @@ router.get('/checkemail', function(req, res){
                   }
                  	reply = {
                     dietary_restrictions: hacker.food_restriction,
+                    email: hacker.email,
                     food_group: food_group,
                     message: "Welcome " + name,
                     name: name,
@@ -89,6 +100,7 @@ router.get('/checkemail', function(req, res){
             } else {
               reply = reply || {
                 dietary_restrictions: hacker.food_restriction,
+                email: hacker.email,
                 food_group: food_group,
                 message: "Welcome " + name,
                 name: name,
