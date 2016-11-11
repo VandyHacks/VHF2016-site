@@ -28,14 +28,14 @@ function getPool() {
 
 
 // checkin api calls
-router.get('/checkemail', function(req, res){
-  var identifier = req.query.email.toLowerCase();
+router.get('/checkemail/:email', function(req, res){
+  var identifier = req.params.email.toLowerCase();
   let where_clause = '';
   if (/^\d+$/.test(identifier)) {
-    where_clause = "hacker.email='" + identifier + "'";
+    where_clause = "hacker.id=" + identifier;
   }
   else {
-    where_clause = "hacker.id=" + identifier;
+    where_clause = "hacker.email='" + identifier + "'";
   }
   var api_key = req.query.api_key;
   if (api_key !== process.env.CHECKIN_API_KEY) {
@@ -47,9 +47,10 @@ router.get('/checkemail', function(req, res){
 
 	// returns t/f for if email or id is in table     (could select applicant name for display)
 	var query_check = "select hacker.first_name, hacker.last_name, hacker.email," +
-    "hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction," + 
-    "application.accepted, application.rsvp, application.attended from hacker, application" +
-    "where " + where_clause + " and hacker.id = application.hackerid";	 	// insecure?
+    " hacker.phone_number, hacker.school, hacker.shirt_size, hacker.food_restriction," + 
+    " application.accepted, application.rsvp, application.attended from hacker, application" +
+    " where " + where_clause + " and hacker.id = application.hackerid";	 	// insecure?
+  console.log(query_check);
   pool.connect().
     then(client => {
       return client
@@ -57,7 +58,7 @@ router.get('/checkemail', function(req, res){
         .then(query_res => {
           if (query_res.rowCount === 0) {
             console.log('couldn\'t find identifier');
-        	  res.status(404).send({success: false, message: "Identifier" + identifier + " not found in database"});
+        	  res.status(404).send({success: false, message: "Identifier " + identifier + " not found in database"});
           }
           else {
             var hacker = query_res.rows[0];
@@ -68,9 +69,9 @@ router.get('/checkemail', function(req, res){
             	reply = {success: false, message: "Hacker " + name + " wasn't accepted"};
             }
               // accepted could be null i.e. no decision
-            else if (!query_res.rows[0].rsvp) {
-              reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
-            }
+            //else if (!query_res.rows[0].rsvp) {
+            //  reply = {success: false, message: "Hacker " + name + " didn't rsvp"};
+            //}
             let food_group = 1;
             if (!hacker.food_restriction && !reply) {
               mutex.
