@@ -24,13 +24,14 @@ export default class Sky2 extends React.Component {
 			<div className="microstrat-description">
         <h5 className='speaker-header'>Timothy Lang</h5>
         <p className="speaker-description">
-        Timothy E. Lang has served as Senior Executive Vice President & Chief Technology Officer
-        since November 2014 and previously served as Senior Vice President, Analytics,
-        since September 2014. Prior to joining MicroStrategy, Mr. Lang served as the chief product officer
-        for Talemetry Inc., a leading provider of talent generation SaaS solutions, from September
-        2010 to September 2014. He served as
-        vice president, product for SAP SE from January 2008 to September 2010. Prior to that, Mr. Lang held positions
-        at SAP BusinessObjects and Crystal Decisions. Mr. Lang received a B.Soc.Sci. in Information Management from the University of Melbourne.
+        Timothy E. Lang is the Senior Executive Vice President & Chief Technology Officer at
+        Microstrategy. He previously served as Senior Vice President of Analytics. Mr. Lang, after
+        earning his Bachelor’s in Information Management at the University of Melbourne, gained work
+        experience at SAP BusinessObjects and Crystal Decisions. He served as Vice President of
+        Production for SAP SE from 2008 to 2010. He then moved on to Talemetry Inc., a leading
+        provider of talent generation Saas solutions. In 2014, Mr. Lang joined Microstrategy as the
+        Chief Technology Officer responsible for the Technology Organization at Microstrategy. He
+        works today building world class Analytics (Business Intelligence) and Identity Platforms.
         </p>
 			</div>
 			</div>
