@@ -2,7 +2,7 @@ const path = require('path');
 const pg = require('pg');
 const validator = require('validator');
 
-var pool = getPool();
+//var pool = getPool();
 
 function getPool() {
   var config = {
@@ -20,7 +20,8 @@ function getPool() {
 
 function rsvp_get(app) {
   app.get('/rsvp/:user_id', (req, res) => {
-    res.sendFile(path.join(__dirname, '../rsvp.html'));
+    res.sendFile(path.join(__dirname, '../rsvpclosed.html'));
+    //res.sendFile(path.join(__dirname, '../rsvp.html'));
   });
 }
 
