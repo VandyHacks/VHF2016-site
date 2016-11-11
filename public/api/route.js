@@ -28,8 +28,8 @@ function getPool() {
 
 
 // checkin api calls
-router.get('/checkemail/:email', function(req, res){
-  var identifier = req.params.email.toLowerCase();
+router.get('/checkemail', function(req, res){
+  var identifier = req.query.email.toLowerCase();
   let where_clause = '';
   if (/^\d+$/.test(identifier)) {
     where_clause = "hacker.id=" + identifier;
