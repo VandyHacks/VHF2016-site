@@ -28,6 +28,10 @@ rsvp.rsvp_get(app);
 rsvp.rsvp_post(app);
 checkin.checkin_qrcode_get(app);
 
+app.get('/expo/', function response(req, res) {
+  res.redirect(301, 'http://vandyhacks.github.io/expo');
+});
+
 app.get('/', function response(req, res) {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
